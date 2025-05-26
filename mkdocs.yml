@@ -1,0 +1,108 @@
+site_name: McRUN Tech Docs
+#repo_name: mcrace code
+#repo_url: https://github.com/mcrunningclub/mcrace-code.git
+
+nav:
+    - Home: index.md
+    - Getting Started: getting-started.md
+    - McRace Code:
+        - Overview: mcrace-code.md
+        - Installation: mcrace-code/installation.md
+        - Configuration: mcrace-code/configuration.md
+        - Troubleshooting: mcrace-code/troubleshooting.md
+        - FAQ: mcrace-code/faq.md
+    - User Guide: https://example.com/
+    - Bug Tracker: https://example.com/
+
+theme:
+  name: material
+  logo: assets/mcrun-logo-circle.png
+
+  palette:
+  # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+  font:
+    text: Inter
+    code: Red Hat Mono
+
+  features:
+    - navigation.footer
+    - navigation.expand
+    - navigation.top
+    - navigation.instant
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.path
+    - navigation.indexes
+
+    - toc.follow
+    - toc.integrate
+
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+
+# plugins:
+#   - git-revision-date-localized:
+#       enable_creation_date: true
+#       fallback_to_build_date: true
+#       include_build_date: true
+#       include_git_hash: true
+#       git_hash_format: short
+
+#   - git-committers:
+#       repository: squidfunk/mkdocs-material
+#       branch: master
+#       committers:
+#         - name: AndreyG
+
+#   - git-authors
+#       
+
+extra:
+  social:
+    - icon: fontawesome/brands/youtube
+      link: https://youtube.com/@james-willett
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/willettjames
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:<mcrunningclub@ssmu.ca>
+
+  version:
+    provider: mike
+
+copyright: >
+  Copyright &copy; 2025 McGill Student Running Club -
+   <a href="#__consent">Cookies Preference</a>
