@@ -5,7 +5,7 @@ site_author: McGill Student Running Club (Tech Team)
 #repo_url: https://github.com/mcrunningclub/mcrace-code.git
 
 nav:
-  - Home: start/index.md
+  - Home: index.md
   - Getting Started: start/getting-started.md
   - Projects: 
       - Overview: projects/projects.md
@@ -15,12 +15,16 @@ nav:
         - Communications: projects/new-member-communications-code.md
       
       - Attendance Code:
-        - Semester: projects/attendance-code.md
+        - Semester: projects/attendance-semester-code.md
+        - Semester (old): projects/attendance-code-old.md
         - Master: projects/attendance-master-code.md
       
-      - Points System Code: projects/points-system-code.md
+      - Points System Code: 
+        - Ledger: projects/points-system-code.md
+        - Points Email: projects/points-email-code.md
 
-      - McRace Code: projects/mcrace-code.md
+      - Other:
+        - McRace Code: projects/mcrace-code.md
 
   - Examples: start/code-examples.md
 
@@ -35,6 +39,7 @@ nav:
 theme:
   name: material
   logo: assets/mcrun-logo-circle.png
+  favicon: assets/mcrun-favicon.png
 
   palette:
   # Palette toggle for automatic mode
@@ -64,17 +69,17 @@ theme:
     - content.code.select
 
     - navigation.footer
-    - navigation.expand
     - navigation.top
     - navigation.instant
-    - navigation.sections
     - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.expand
+    - navigation.sections
     - navigation.path
     - navigation.indexes
 
     - toc.follow
-    - toc.integrate
+    # - toc.integrate
 
 
 extra_css:
@@ -82,6 +87,10 @@ extra_css:
 
 markdown_extensions:
   - attr_list
+  - toc:
+      permalink: true
+      toc_depth: 3
+
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -95,6 +104,12 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+
+  # - material.extensions.preview:
+  #     configurations:
+  #       - targets:
+  #           include:
+  #             - projects/mcrun-code.md
 
 # plugins:
 #   - git-revision-date-localized:
@@ -111,7 +126,6 @@ markdown_extensions:
 #         - name: AndreyG
 
 #   - git-authors
-#       
 
 extra:
   social:
