@@ -3,11 +3,20 @@ site_description: Documentation for the McRUN System, including McRace Code and 
 site_author: McGill Student Running Club (Tech Team)
 #repo_name: mcrace code
 #repo_url: https://github.com/mcrunningclub/mcrace-code.git
+copyright: Copyright &copy; 2025 McGill Student Running Club - <a href="#__consent">Cookies Preference</a>
 
 nav:
   - Home: index.md
-  - Getting Started: start/getting-started.md
-  - Projects: 
+
+  - Getting Started:
+      - Setup: start/setup.md
+      - Contributing:
+        - mkdocs: start/getting-started.md
+        - Syntax: start/syntax.md
+        - Code Examples: start/code-examples.md
+      - FAQ: start/faq.md
+
+  - Project: 
       - Overview: projects/projects.md
       
       - Membership Code: 
@@ -25,16 +34,6 @@ nav:
 
       - Other:
         - McRace Code: projects/mcrace-code.md
-
-  - Examples: start/code-examples.md
-
-
-  # - Overview: mcrace-code.md
-  # - Installation: mcrace-code/installation.md
-  # - Configuration: mcrace-code/configuration.md
-  # - Troubleshooting: mcrace-code/troubleshooting.md
-  # - User Guide: https://example.com/
-  # - Bug Tracker: https://example.com/
 
 theme:
   name: material
@@ -87,6 +86,7 @@ extra_css:
 
 markdown_extensions:
   - attr_list
+
   - toc:
       permalink: true
       toc_depth: 3
@@ -94,15 +94,20 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  
   - admonition
 
   - pymdownx.details
+  
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+  
   - pymdownx.inlinehilite
+  
   - pymdownx.snippets
+  
   - pymdownx.superfences
 
   # - material.extensions.preview:
@@ -129,16 +134,12 @@ markdown_extensions:
 
 extra:
   social:
-    - icon: fontawesome/brands/youtube
-      link: https://youtube.com/@james-willett
-    - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/willettjames
     - icon: fontawesome/solid/paper-plane
       link: mailto:<mcrunningclub@ssmu.ca>
+    - icon: fontawesome/brands/github
+      link: https://github.com/mcrunningclub
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/mcgillstudentsrunningclub/
 
   version:
     provider: mike
-
-copyright: >
-  Copyright &copy; 2025 McGill Student Running Club -
-   <a href="#__consent">Cookies Preference</a>

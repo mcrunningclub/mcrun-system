@@ -1,44 +1,10 @@
 # Membership Registry
 
-## Quick Start
-
-1. **Access the Google Sheet:**
-   - [Open the McRUN Membership Google Sheet](https://docs.google.com/spreadsheets/d/1qvoL3mJXCvj3m7Y70sI-FAktCiSWqEmkDxfZWz0lFu4/edit?usp=sharing)
-2. **Register a New Member:**
-   - Use the [Fillout registration form](https://www.mcrun.fillout.com/register).
-3. **Scripts Setup:**
-   - Ensure you have edit access to the Google Sheet.
-   - Open the Apps Script editor (Extensions > Apps Script) to view or modify scripts.
-4. **Run Scripts:**
-   - Most scripts run automatically on form submission or via custom menu in the Sheet.
-   - Manual triggers can be run from the Apps Script editor if needed.
-
----
-
-## How-to
-
-New members can register on [Fillout](https://www.mcrun.fillout.com/register).
-
 ## Database
 
 Our database uses Google Sheets to store all member registrations and related information:
 - Full Name
 - Email (used as identifier)
-
-# McRUN Membership List
-
-## Permissions & Setup
-
-- **Required Permissions:**
-  - Google Sheets: Edit access
-  - Gmail: Read access (for payment verification)
-- **Setup Steps:**
-  1. Open the Google Sheet and ensure you are signed in with the correct Google account.
-  2. Authorize the Apps Script project when prompted (first use or after script changes).
-  3. If using scheduled triggers, ensure you have permission to create time-based triggers in Apps Script.
-
-
-
 
 ## McRUN Membership List
 
@@ -52,6 +18,8 @@ Our database uses Google Sheets to store all member registrations and related in
 
 This repository contains all Google Apps Script code used to manage the McRUN (McGill Students Running Club) membership list.  
 It automates the registration process, membership fee verification, data consolidation, and communication with new members through integration with Google Sheets and Gmail.
+
+New members can register on [Fillout](https://www.mcrun.fillout.com/register).
 
 **Key Features:**
 
@@ -247,8 +215,6 @@ For more help, see the [GitHub Issues page](https://github.com/mcrunningclub/mcr
 ## Contributing
 
 For bug reports or feature requests, please use the [GitHub Issues page](https://github.com/mcrunningclub/mcrun-membership-list/issues).
-
----
 
 ---
 
