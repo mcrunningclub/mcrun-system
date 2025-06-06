@@ -1,9 +1,10 @@
 # McRUN Attendance Code
 
-## Project Description
+## About 
 The McRUN Attendance Code is a Google Apps Script-based solution designed to streamline attendance tracking for the McRUN club. It integrates with Google Sheets, Google Forms, and external tools to automate attendance submissions, formatting, and reporting. The system also includes features for email notifications, data validation, and integration with a Points Ledger for tracking participation.
 
-## Key Features
+**Key Features:**
+
 - **Attendance Management**: Automates the processing of attendance submissions from Google Forms and the McRUN app.
 - **Data Formatting**: Ensures uniform formatting of names, headruns, and other attendance details.
 - **Email Notifications**: Sends reminders and attendance copies to headrunners and club executives.
@@ -11,23 +12,17 @@ The McRUN Attendance Code is a Google Apps Script-based solution designed to str
 - **Custom Menus**: Provides a user-friendly interface in Google Sheets for executing scripts.
 - **Triggers and Scheduling**: Automates tasks like checking for missing attendance and updating calendar-based triggers.
 
-## Folder Structure
-```
-appsscript.json
-Attendance-Variables.gs
-Copy-Email.html
-Formatting.gs
-HeadRun-Attendance.gs
-HeadRun-Info.gs
-Import.gs
-LICENSE
-Points-Ledger.gs
-README.md
-Reminder-Email.html
-Triggers.gs
-Unregistered.gs
-User-Menu.gs
-```
+## Files
+
+### Github repo
+
+### Google Sheets
+
+### Apps Script project
+
+## Documentation
+
+### Functions
 
 ## Example Usage
 

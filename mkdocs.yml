@@ -1,22 +1,25 @@
 site_name: McRUN System Documentation
 site_description: Documentation for the McRUN System, including McRace Code and user guides.
 site_author: McGill Student Running Club (Tech Team)
-#repo_name: mcrace code
-#repo_url: https://github.com/mcrunningclub/mcrace-code.git
-copyright: Copyright &copy; 2025 McGill Student Running Club - <a href="#__consent">Cookies Preference</a>
+site_url: https://mcrunningclub.github.io/mcrun-system/
+
+repo_url: https://github.com/mcrunningclub/mcrun-system
+repo_name: mcrun-system
+copyright: Copyright &copy; 2025 McGill Students Running Club
 
 nav:
   - Home: index.md
-
   - Getting Started:
-      - Setup: start/setup.md
+      - mkdocs:
+         - Setup: start/getting-started.md
+         - Examples: start/code-examples.md
       - Contributing:
-        - mkdocs: start/getting-started.md
-        - Syntax: start/syntax.md
-        - Code Examples: start/code-examples.md
+         - Contributing: start/setup.md
+         - Syntax: start/syntax.md
+         - Typography: start/typography.md
       - FAQ: start/faq.md
-
-  - Project: 
+  
+  - Projects: 
       - Overview: projects/projects.md
       
       - Membership Code: 
@@ -41,27 +44,32 @@ theme:
   favicon: assets/mcrun-favicon.png
 
   palette:
+
   # Palette toggle for automatic mode
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Switch to light mode
+    # - media: "(prefers-color-scheme)"
+    #   scheme: default
+    #   toggle:
+    #     icon: material/brightness-auto
+    #     name: Switch to system preference
+
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       toggle:
-        icon: material/weather-night
+        icon: fontawesome/solid/moon
         name: Switch to dark mode
+
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       toggle:
-        icon: material/weather-sunny
+        icon: fontawesome/solid/sun 
         name: Switch to light mode
 
   font:
     text: Inter
-    code: Red Hat Mono
+    code: Roboto Mono
+
 
   features:
     - content.code.copy
@@ -141,5 +149,5 @@ extra:
     - icon: fontawesome/brands/instagram
       link: https://www.instagram.com/mcgillstudentsrunningclub/
 
-  version:
-    provider: mike
+#  version:
+#       provider: mike

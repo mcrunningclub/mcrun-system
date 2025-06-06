@@ -1,73 +1,36 @@
----
-title: McRUN Attendance Documentation
-summary: A brief description of my documentation.
+
 authors:
     - andrey
 date: 2025-05-26
-links:
-    - start/faq.md
----
+
 
 # McRUN Attendance Documentation
 
+## About
+
 Welcome to the **McRUN Attendance** codebase documentation. This project automates and manages attendance for the McGill Students Running Club using Google Apps Script and Google Sheets.
 
-> **Note:** This documentation is generated from a code search and may not include every function in the repository.  
-> [View all code on GitHub](https://github.com/mcrunningclub/mcrun-attendance/search?q=function)
+## Files
 
-<!-- ---
+### Github repo
+[mcrun-attendance](https://github.com/mcrunningclub/mcrun-attendance)
 
-## Table of Contents
+### Google Sheets
+[Head Run Attendance -
+2024-25](https://docs.google.com/spreadsheets/d/1SnaD9UO4idXXb07X8EakiItOOORw5UuEOg0dX_an3T4/edit?usp=drive_web)
 
-1. [Quick Start](#quick-start)
-2. [Environment & Permissions](#environment--permissions)
-3. [Function Index & Reference](#function-index--reference)
-   - [How to Read Function Docs](#how-to-read-function-docs)
-4. [Troubleshooting & FAQ](#troubleshooting--faq)
-5. [Related Docs](#related-docs) -->
+### Apps Script project
+[Attendance Code
+2024/25](https://script.google.com/u/2/home/projects/1alVHJTwNdIvc_3t2jSNhhy_1kVI-sjryNoJJvZsTe9nDgLtIv9HKfL6c)
 
----
-
-## Quick Start
-
-This guide is for contributors and club admins to get up and running with the McRUN Attendance scripts.
-
-### 1. Prerequisites
-
-- A Google Workspace (Gmail) account with edit access to the [Attendance Sheet](https://docs.google.com/spreadsheets/d/1SnaD9UO4idXXb07X8EakiItOOORw5UuEOg0dX_an3T4/).
-- Permissions to view and edit Google Apps Script attached to this Sheet.
-- Club admin email(s) must be added to the `PERM_USER_` constant in the code.
-
-### 2. Setup Steps
-
-- **Clone or Fork**: [GitHub Repo](https://github.com/mcrunningclub/mcrun-attendance)
-- **Open Google Sheet**: Open the [Attendance Sheet](https://docs.google.com/spreadsheets/d/1SnaD9UO4idXXb07X8EakiItOOORw5UuEOg0dX_an3T4/) and go to Extensions > Apps Script.
-- **Add/Update Scripts**: Copy script files from this repo into the Apps Script editor.
-- **Deploy Triggers**:  
-  - In Apps Script, go to Triggers.
-  - Set up triggers for functions like `onFormSubmission`, `onAppSubmission`, and any scheduled calendar checks as described in this documentation.
-- **Test Automation**:  
-  - Submit a test attendance form.
-  - Confirm attendance is processed, formatted, and transferred to the Points Ledger.
-  - Check logs (View > Executions) for errors.
-
-### 3. Permissions for Contributors
-
-- Add your Google account to the Editors list for the Sheet.
-- Request admin to whitelist your email in the `PERM_USER_` array.
-
----
-
-## Environment & Permissions
-
-### Google Account Permissions
+**Required Permissions:**
 
 - **Sheets API**: Read and write access to the Attendance Sheet and Points Ledger.
 - **Gmail API**: (If using email features) Send and read email.
 - **Calendar API**: For time-based and event-based triggers.
 - **Properties Service**: Store persistent data (e.g., headrunners, headruns).
 
-### Apps Script Scopes
+**Apps Script Scopes:**
 
 Be sure to grant the following scopes when authorizing for the first time:
 
@@ -78,22 +41,13 @@ Be sure to grant the following scopes when authorizing for the first time:
 - `https://www.googleapis.com/auth/script.properties`
 - `https://www.googleapis.com/auth/userinfo.email`
 
-### Setting Up Triggers
 
-1. **Form Submission**: Set up a trigger for `onFormSubmission` (From form).
-2. **App Submission**: Set up a trigger for `onAppSubmission` (From event or manual).
-3. **Scheduled Checks**:  
-   - Use time-driven triggers (e.g., weekly, daily) for functions like `updateWeeklyCalendarTriggers`.
-   - Calendar event-based triggers for event-driven attendance checks.
+## Documentation
 
----
-
-## Function Index & Reference
+### Functions
 
 All functions are grouped by file.  
 Functions ending in `_` are "hidden" but still documented and callable.
-
-### Index (Jump to Detailed Entry)
 
 - **Import.gs**: 
 [`processImportFromApp(importObj)`](#processimportfromappimportobj)
@@ -134,41 +88,15 @@ Functions ending in `_` are "hidden" but still documented and callable.
 [`formatAllConfirmations()`](#formatallconfirmations) 
 [`formatConfirmationInRow()`](#formatconfirmationinrow)
 
-- **HeadRun-Info.gs**: [`storeObject()`](#storeobject) [`getAllHeadruns()`](#getallheadruns) [`getAllHeadrunners()`](#getallheadrunners) [`getWeekday()`](#getweekday) [`getScheduleFromStore()`](#getschedulefromstore) [`getMatchedTimeKey()`](#getmatchedtimekey)
+- **HeadRun-Info.gs**:
+[`storeObject()`](#storeobject)
+[`getAllHeadruns()`](#getallheadruns)
+[`getAllHeadrunners()`](#getallheadrunners)
+[`getWeekday()`](#getweekday)
+[`getScheduleFromStore()`](#getschedulefromstore)
+[`getMatchedTimeKey()`](#getmatchedtimekey)
 
----
 
-### How to Read Function Docs
-
-Each function is documented using the following template (see image 1):
-
-#### Example:
-
-**sendEmail(recipient, subject, body)**  
-Sends an email message.
-
-```js
-MailApp.sendEmail(
-  'recipient@example.com',
-  'TPS reports',
-  'Where are the TPS reports?',
-);
-```
-
-| Name      | Type   | Description                              |
-|-----------|--------|------------------------------------------|
-| recipient | String | The addresses of the recipients          |
-| subject   | String | The subject line                         |
-| body      | String | The body of the email                    |
-
----
-
-## Detailed Function Documentation
-
-> **Note:** Only a sample of functions is shown below due to search result limits.  
-> [See all functions in GitHub](https://github.com/mcrunningclub/mcrun-attendance/search?q=function)
-
----
 
 ### Import.gs
 
@@ -191,7 +119,6 @@ processImportFromApp('{"timestamp":"2025-05-25T13:00:00Z", ...}');
 **@date:** Feb 10, 2025  
 **@update:** Apr 7, 2025
 
----
 
 #### transferLastImport()
 
@@ -208,7 +135,6 @@ transferLastImport();
 **Output:** None (side effects: submission transferred)  
 **Pitfalls:** Only for use with valid import rows.
 
----
 
 #### transferThisRow(row)
 
@@ -225,7 +151,6 @@ transferThisRow(5);
 **Output:** None.  
 **Pitfalls:** Row must contain valid JSON string.
 
----
 
 ### Unregistered.gs
 
@@ -241,7 +166,6 @@ getAllUnregisteredMembers();
 |------|------|----------------|
 | —    | —    | No parameters  |
 
----
 
 #### getUnregisteredMembersInRow(row)
 
@@ -257,7 +181,6 @@ getUnregisteredMembersInRow(10);
 
 **Output:** None; side effects on sheet.
 
----
 
 ### User-Menu.gs
 
@@ -273,7 +196,6 @@ logMenuAttempt("someone@mail.com");
 |-------|--------|--------------------------------------------------------------|
 | email | String | Email address of the active user. Defaults to empty string.   |
 
----
 
 #### onOpen()
 
@@ -285,7 +207,6 @@ onOpen();
 
 _No parameters. Triggered by opening the sheet._
 
----
 
 #### helpUI()
 
@@ -295,7 +216,6 @@ Displays a help message for the custom menu.
 helpUI();
 ```
 
----
 
 ### Triggers.gs
 
@@ -307,7 +227,6 @@ Adds/removes time-based triggers for events, ensures correct calendar is used.
 updateWeeklyCalendarTriggers();
 ```
 
----
 
 #### addSingleEventTrigger()
 
@@ -317,7 +236,6 @@ Adds a trigger for all events today.
 addSingleEventTrigger();
 ```
 
----
 
 #### createDailyAttendanceTrigger()
 
@@ -327,7 +245,6 @@ Creates time-based triggers for all relevant events in the current week.
 createDailyAttendanceTrigger();
 ```
 
----
 
 #### getStartOfDay()
 
@@ -342,7 +259,6 @@ getStartOfDay(new Date());
 
 **Output:** Date (start of the given day)
 
----
 
 ### HeadRun-Attendance.gs
 
@@ -354,7 +270,6 @@ Runs after form submission; sorts, processes, transfers, and formats the new ent
 onFormSubmission();
 ```
 
----
 
 #### onFormSubmissionInRow()
 
@@ -368,7 +283,6 @@ onFormSubmissionInRow(15);
 |------|---------|----------------------------------|
 | row  | Integer | Row in attendance sheet (1-index)|
 
----
 
 #### onAppSubmission()
 
@@ -382,7 +296,6 @@ onAppSubmission(22);
 |------|---------|----------------------------------|
 | row  | Integer | Row in attendance sheet (1-index). Defaults to `ATTENDANCE_SHEET.getLastRow()`|
 
----
 
 #### bulkFormatting()
 
@@ -396,7 +309,6 @@ bulkFormatting(7);
 |------|---------|----------------------------------|
 | row  | Integer | Row in attendance sheet          |
 
----
 
 #### transferAndFormat()
 
@@ -410,7 +322,6 @@ transferAndFormat(7);
 |------|---------|----------------------------------|
 | row  | Integer | Row in attendance sheet          |
 
----
 
 #### getLastSubmission()
 
@@ -426,7 +337,6 @@ getLastSubmission();
 
 **Output:** Integer (1-indexed row number)
 
----
 
 ### Points-Ledger.gs
 
@@ -444,7 +354,6 @@ appendMemberEmail(5, registeredArr, unregisteredArr);
 | registered  | String[][]| Registered attendees/emails |
 | unregistered| String[][]| Unregistered attendees      |
 
----
 
 #### transferSubmissionToLedger()
 
@@ -458,7 +367,6 @@ transferSubmissionToLedger(12);
 |------|---------|---------------------------------------------|
 | row  | Integer | Row in attendance sheet (default: `getLastSubmission()`) |
 
----
 
 ### Formatting.gs
 
@@ -474,7 +382,6 @@ addMissingPlatform(7);
 |------|---------|------------------------------|
 | row  | Integer | Row in attendance sheet (defaults to `ATTENDANCE_SHEET.getLastRow())`)     |
 
----
 
 #### toTitleCase()
 
@@ -490,7 +397,6 @@ toTitleCase("hello world");
 
 **Output:** String
 
----
 
 #### cleanSheetData()
 
@@ -500,7 +406,6 @@ Runs all formatting functions for the sheet.
 cleanSheetData();
 ```
 
----
 
 #### formatAllHeadRun()
 
@@ -510,7 +415,6 @@ Formats all headrun entries in the sheet.
 formatAllHeadRun();
 ```
 
----
 
 #### formatAllConfirmations()
 
@@ -520,7 +424,6 @@ Formats all confirmation columns in the sheet.
 formatAllConfirmations();
 ```
 
----
 
 #### formatConfirmationInRow()
 
@@ -534,7 +437,6 @@ formatConfirmationInRow(10);
 |------|---------|------------------------------|
 | row  | Integer | Row in attendance sheet. Default: `ATTENDANCE_SHEET.getLastRow()`      |
 
----
 
 ### HeadRun-Info.gs
 
@@ -551,7 +453,6 @@ storeObject('headrunners', {...});
 | key  | String | Property key           |
 | obj  | Object | Object to store        |
 
----
 
 #### getAllHeadruns()
 
@@ -561,7 +462,6 @@ Returns all stored headruns.
 getAllHeadruns();
 ```
 
----
 
 #### getAllHeadrunners()
 
@@ -571,7 +471,6 @@ Returns all stored headrunners.
 getAllHeadrunners();
 ```
 
----
 
 #### getWeekday()
 
@@ -585,7 +484,6 @@ getWeekday(2); // returns 'tuesday'
 |--------------|---------|--------------------|
 | weekdayIndex | Integer | 0=Sunday, 6=Saturday|
 
----
 
 #### getScheduleFromStore()
 
@@ -599,7 +497,6 @@ getScheduleFromStore('monday');
 |---------------|---------|-------------------------------|
 | currentWeekday| String|Int | Day name or index         |
 
----
 
 #### getMatchedTimeKey()
 
@@ -615,9 +512,16 @@ getMatchedTimeKey(new Date(), scheduleObj, 2);
 | runSchedule    | Object  | Schedule object                 |
 | offsetHours    | Integer | Offset window in hours (default `2`)|
 
----
+## Triggers
 
-## Troubleshooting & FAQ
+1. **Form Submission**: Set up a trigger for `onFormSubmission` (From form).
+2. **App Submission**: Set up a trigger for `onAppSubmission` (From event or manual).
+3. **Scheduled Checks**:  
+   - Use time-driven triggers (e.g., weekly, daily) for functions like `updateWeeklyCalendarTriggers`.
+   - Calendar event-based triggers for event-driven attendance checks.
+
+
+## Troubleshooting
 
 ### Common Issues
 
@@ -639,17 +543,10 @@ getMatchedTimeKey(new Date(), scheduleObj, 2);
 **Q:** Where are attendance logs stored?  
 **A:** In the Points Ledger Google Sheet (see constants).
 
----
 
-## Related Docs
+## See also 
 
-- [McRUN Membership List (Google Apps Script)](https://github.com/mcrunningclub/mcrun-membership-list)
 - [Google Apps Script Triggers Documentation](https://developers.google.com/apps-script/guides/triggers)
 - [Google Sheets API](https://developers.google.com/sheets/api)
 - [Apps Script Properties Service](https://developers.google.com/apps-script/guides/properties)
-- [See all McRUN code on GitHub](https://github.com/mcrunningclub)
 
----
-_Last updated: 26 May 2025_
-
-<!-- ![image1](image1) -->

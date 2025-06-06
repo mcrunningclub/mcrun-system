@@ -1,25 +1,17 @@
+---
+
+date: 2025-05-26
+
+---
+
 # Membership Registry
 
-## Database
-
-Our database uses Google Sheets to store all member registrations and related information:
-- Full Name
-- Email (used as identifier)
-
-## McRUN Membership List
-
-**Repository:** [mcrunningclub/mcrun-membership-list](https://github.com/mcrunningclub/mcrun-membership-list)  
-**Primary Language:** JavaScript (Google Apps Script)  
-**Created:** 20 October 2024  
-**Last Updated:** 26 May 2025  
-**Live Sheet:** [McRUN Membership Google Sheet](https://docs.google.com/spreadsheets/d/1qvoL3mJXCvj3m7Y70sI-FAktCiSWqEmkDxfZWz0lFu4/edit?usp=sharing)  
-
-## Project Summary
+## About 
 
 This repository contains all Google Apps Script code used to manage the McRUN (McGill Students Running Club) membership list.  
 It automates the registration process, membership fee verification, data consolidation, and communication with new members through integration with Google Sheets and Gmail.
 
-New members can register on [Fillout](https://www.mcrun.fillout.com/register).
+New members can register on [Fillout](https://www.mcrun.fillout.com/register)
 
 **Key Features:**
 
@@ -33,17 +25,46 @@ New members can register on [Fillout](https://www.mcrun.fillout.com/register).
 - Automated communication with new members.
 - Advanced formatting and data-cleaning utilities.
 
+## Files
 
-> [View and search all code directly in GitHub](https://github.com/mcrunningclub/mcrun-membership-list/search?q=function)
+### Github Repo
+[mcrunningclub/mcrun-membership-list](https://github.com/mcrunningclub/mcrun-membership-list)
 
----
+### Google Sheets
+Our database uses Google Sheets to store all member registrations and related
+information. The MASTER sheet collects registrations across all semesters,
+    while registrations for individual semesters can be found in their
+    corresponding sheets.
+[Memberships Collected (Main)](https://docs.google.com/spreadsheets/d/1qvoL3mJXCvj3m7Y70sI-FAktCiSWqEmkDxfZWz0lFu4/edit?usp=sharing)
 
-## Function Reference
+### Apps Script project
+[Membership Registry
+Code](https://script.google.com/u/2/home/projects/18Dmy3-UYymJ1Nk6R8vvwx08uovlzwUp0lFQkFWWef0Ltbjlzt2cmJ0aP)
 
-Below are notable functions grouped by their primary script file.  
-Each function includes a description, created/updated dates (if available), and a usage example when documented.
+**Permissions:**
+- Google Sheets: Edit access
+- Gmail: Read access (for payment verification)
+- Apps Script: Account (?) access, Create time-based triggers
 
----
+**Running the script:**
+- Ensure you are signed in with the correct Google account.
+- Most scripts run automatically on form submission or via custom menu in the Sheet.
+- Manual triggers can be run from the Apps Script editor if needed.
+
+**File descriptions:**
+
+|File name|Description|
+|---|---|
+|Semester Variables.gs|Contains constants relating to various columns and
+sheets|
+| | |
+
+## Documentation
+
+### Constants
+
+
+### Functions
 
 ### 1. Membership Registration and Processing
 
@@ -53,7 +74,7 @@ Each function includes a description, created/updated dates (if available), and 
 - **Created:** Oct 18, 2023
 - **Example:**
   ```js
-  onFormSubmit(); // Handles latest submission
+  onFormSubmit(); // Handles latest submisson
   ```
 
 #### `sendNewMemberCommunications(row)`
@@ -171,31 +192,19 @@ createNewFeeTrigger_(row, feeDetails);
 runFeeChecker();
 ```
 
----
+## Example Usage 
 
-## Constants and Sheet Structure
-
-The repo defines many constants for column indices, sheet names, and labels (see `Semester Variables.gs`).
-
----
-
-## Advanced Usage Notes
+### Advanced Usage
 
 - **Custom menus** are added through `onOpen`.
 - **Scheduled triggers** are created for fee verifications using Google Apps Script Triggers.
 - **Email notifications** for payment are parsed and verified via GmailApp.
 - **All scripts** are intended for use within the Google Sheets UI.
 
----
 
-## Viewing and Searching All Functions
+## Troubleshooting
 
-This documentation lists only a subset of all available functions due to search result limits.  
-For a full list and up-to-date information, see the [GitHub code search for 'function'](https://github.com/mcrunningclub/mcrun-membership-list/search?q=function).
-
----
-
-## Troubleshooting & FAQ
+### FAQ
 
 **Q: Scripts aren’t running or menu is missing?**
 - Try reloading the Google Sheet.
@@ -209,17 +218,3 @@ For a full list and up-to-date information, see the [GitHub code search for 'fun
 - Open the Apps Script editor, select the function, and click the Run button.
 
 For more help, see the [GitHub Issues page](https://github.com/mcrunningclub/mcrun-membership-list/issues).
-
----
-
-## Contributing
-
-For bug reports or feature requests, please use the [GitHub Issues page](https://github.com/mcrunningclub/mcrun-membership-list/issues).
-
----
-
-## Changelog
-
-- **2025-05-26:** Added Quick Start, Permissions & Setup, Troubleshooting, and Changelog sections to documentation.
-
-_Last generated: 26 May 2025_

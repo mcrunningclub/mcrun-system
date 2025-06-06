@@ -1,14 +1,32 @@
 # McRUN Master Attendance Google Apps Script
 
+## About
+
 This project automates and manages attendance tracking for McRUN events using Google Sheets and Google Apps Script. It provides tools for formatting, exporting, and maintaining attendance data, ensuring consistency and seamless integration with a semester attendance sheet.
 
-## Features
+**Key Features:**
+
 - **Automatic formatting** of names and columns for readability
 - **Export of new submissions** to a semester attendance sheet
 - **Sheet maintenance** (sorting, prettifying, and marking exports)
 - **Timezone-aware date handling**
 
-## Function Summary
+## Files
+
+### Github repo
+[mcrun-master-attendance](https://github.com/mcrunningclub/mcrun-master-attendance)
+
+### Google Sheets
+[McRun Head Run Attendance
+(MASTER)](https://docs.google.com/spreadsheets/d/1Abu4txni1zUDI79u5OtIjpffOOoYnea9_vNM9skq0Yg/edit?usp=sharing)
+
+### Apps Script project
+[Attendance Code
+(MASTER)](https://script.google.com/u/2/home/projects/1xw6D3vkg0e1iHCXndVFflxrSrUmSZAg4BeVdnaQHzk2ongvJt0DfgQQn)
+
+## Documentation
+
+### Functions
 
 ### Data-Formatting.gs
 - **getLastSubmission_()**: Returns the last non-empty row index in the master attendance sheet.
@@ -28,7 +46,7 @@ This project automates and manages attendance tracking for McRUN events using Go
 ### Variables.gs
 - **getUserTimeZone_()**: Returns the script's timezone as a string (e.g., 'America/Montreal').
 
-## Usage Examples
+## Example Usage
 
 ### Format Names in Last Row
 ```javascript
@@ -60,6 +78,3 @@ const lastRow = getLastSubmission_();
 
 ## Author
 - [Andrey Gonzalez](<mailto:andrey.gonzalez@mail.mcgill.ca>)
-
----
-For more details, see the inline JSDoc comments in each file.

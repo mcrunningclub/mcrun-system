@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "@google/clasp": "^3.0.4",
+    "jsdoc": "^4.0.4",
+    "taffydb": "^2.7.3"
+  }
+}
