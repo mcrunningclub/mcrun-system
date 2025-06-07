@@ -14,7 +14,7 @@ nav:
          - Setup: start/getting-started.md
          - Examples: start/code-examples.md
       - Contributing:
-         - Contributing: start/setup.md
+         - Contributing: start/contributing.md
          - Syntax: start/syntax.md
          - Typography: start/typography.md
       - FAQ: start/faq.md
