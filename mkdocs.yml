@@ -2,20 +2,23 @@ site_name: McRUN System Documentation
 site_description: Documentation for the McRUN System, including McRace Code and user guides.
 site_author: McGill Student Running Club (Tech Team)
 site_url: https://mcrunningclub.github.io/mcrun-system/
+copyright: Copyright &copy; 2025 McGill Student Running Club - <a href="#__consent">Cookies Preference</a>
 
 #repo_name: mcrace code
 #repo_url: https://github.com/mcrunningclub/mcrace-code.git
 
 nav:
-  - Home: index.md
-  - Getting Started: 
-      - Setup: start/getting-started.md
-      - mkdocs: index.md
-      - Syntax: start/syntax.md
-      - Typography: start/typography.md
-      - Examples: start/code-examples.md
+  - Home: start/README.md
+  - Getting Started:
+      - Setup: start/setup.md
+      - Contributing:
+        - mkdocs: start/getting-started.md 
+        - Syntax: start/syntax.md
+        - Typography: start/typography.md
+        - Code Examples: start/code-examples.md
+      - Changelog: start/changelog.md
       - FAQ: start/faq.md
-  
+
   - Projects: 
       - Overview: projects/projects.md
       
@@ -140,16 +143,12 @@ markdown_extensions:
 
 extra:
   social:
-    - icon: fontawesome/brands/youtube
-      link: https://youtube.com/@james-willett
-    - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/willettjames
     - icon: fontawesome/solid/paper-plane
       link: mailto:<mcrunningclub@ssmu.ca>
+    - icon: fontawesome/brands/github
+      link: https://github.com/mcrunningclub
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/mcgillstudentsrunningclub/
 
   version:
     provider: mike
-
-copyright: >
-  Copyright &copy; 2025 McGill Student Running Club -
-   <a href="#__consent">Cookies Preference</a>
