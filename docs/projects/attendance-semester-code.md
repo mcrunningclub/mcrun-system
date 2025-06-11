@@ -2,13 +2,31 @@
 authors:
     - andrey
 date: 2025-05-26
-
+links:
+    - start/faq.md
+---
 
 # McRUN Attendance Documentation
 
 ## About
 
 Welcome to the **McRUN Attendance** codebase documentation. This project automates and manages attendance for the McGill Students Running Club using Google Apps Script and Google Sheets.
+
+> **Note:** This documentation is generated from a code search and may not include every function in the repository.  
+> [View all code on GitHub](https://github.com/mcrunningclub/mcrun-attendance/search?q=function)
+
+<!-- ---
+
+## Table of Contents
+
+1. [Quick Start](#quick-start)
+2. [Environment & Permissions](#environment--permissions)
+3. [Function Index](#function-index--reference)
+   - [How to Read Function Docs](#how-to-read-function-docs)
+4. [Troubleshooting & FAQ](#troubleshooting--faq)
+5. [Related Docs](#related-docs) -->
+
+---
 
 ## Files
 
@@ -22,6 +40,9 @@ Welcome to the **McRUN Attendance** codebase documentation. This project automat
 ### Apps Script project
 [Attendance Code
 2024/25](https://script.google.com/u/2/home/projects/1alVHJTwNdIvc_3t2jSNhhy_1kVI-sjryNoJJvZsTe9nDgLtIv9HKfL6c)
+
+---
+
 
 **Required Permissions:**
 
@@ -41,66 +62,68 @@ Be sure to grant the following scopes when authorizing for the first time:
 - `https://www.googleapis.com/auth/script.properties`
 - `https://www.googleapis.com/auth/userinfo.email`
 
+---
 
-## Documentation
+## Function Index <small> (Jump to Detailed Entry) </small>
 
-### Functions
+This section provides a quick reference to all functions in the McRUN Attendance codebase. Click on a function name to jump to its detailed documentation.
 
-All functions are grouped by file.  
-Functions ending in `_` are "hidden" but still documented and callable.
+#### [Formatting.gs](#formatting-gs)
+- [`addMissingPlatform()`](#addmissingplatform)
+- [`toTitleCase()`](#totitlecase) 
+- [`cleanSheetData()`](#cleansheetdata)
+- [`formatAllHeadRun()`](#formatallheadrun) 
+- [`formatAllConfirmations()`](#formatallconfirmations) 
+- [`formatConfirmationInRow()`](#formatconfirmationinrow)
 
-- **Import.gs**: 
-[`processImportFromApp(importObj)`](#processimportfromappimportobj)
-[`transferLastImport()`](#transferlastimport)
-[`transferThisRow()`](#transferthisrowrow)
+#### [HeadRun-Attendance.gs](#headrun-attendance-gs)
+- [`onFormSubmission()`](#onformsubmission) 
+- [`onFormSubmissionInRow()`](#onformsubmissioninrow) 
+- [`onAppSubmission()`](#onappsubmission) 
+- [`bulkFormatting()`](#bulkformatting) 
+- [`transferAndFormat()`](#transferandformat) 
+- [`getLastSubmission()`](#getlastsubmission)
 
-- **Unregistered.gs**: 
-[`getAllUnregisteredMembers()`](#getallunregisteredmembers)
-[`getUnregisteredMembersInRow()`](#getunregisteredmembersinrowrow)
+#### [HeadRun-Info.gs](#headrun-info-gs)
+- [`storeObject()`](#storeobject)
+- [`getAllHeadruns()`](#getallheadruns)
+- [`getAllHeadrunners()`](#getallheadrunners)
+- [`getWeekday()`](#getweekday) 
+- [`getScheduleFromStore()`](#getschedulefromstore) 
+- [`getMatchedTimeKey()`](#getmatchedtimekey)
 
-- **User-Menu.gs**: 
-[`logMenuAttempt()`](#logmenuattempt)
-[`onOpen()`](#onopen) [`helpUI()`](#helpui)
+#### [Import.gs](#import-gs)
+- [`processImportFromApp(importObj)`](#processimportfromappimportobj)
+- [`transferLastImport()`](#transferlastimport)
+- [`transferThisRow()`](#transferthisrowrow)
 
-- **Triggers.gs**: 
-[`updateWeeklyCalendarTriggers()`](#updateweeklycalendartriggers) 
-[`addSingleEventTrigger()`](#addsingleeventtrigger) 
-[`createDailyAttendanceTrigger()`](#createdailyattendancetrigger) 
-[`getStartOfDay()`](#getstartofday)
+#### [Points-Ledger.gs](#points-ledger-gs)
+- [`appendMemberEmail()`](#appendmemberemail)
+- [`transferSubmissionToLedger()`](#transfersubmissiontoledger)
 
-- **HeadRun-Attendance.gs**: 
-[`onFormSubmission()`](#onformsubmission) 
-[`onFormSubmissionInRow()`](#onformsubmissioninrow) 
-[`onAppSubmission()`](#onappsubmission) 
-[`bulkFormatting()`](#bulkformatting) 
-[`transferAndFormat()`](#transferandformat) 
-[`getLastSubmission()`](#getlastsubmission)
+#### [Triggers.gs](#triggers-gs)
+- [`updateWeeklyCalendarTriggers()`](#updateweeklycalendartriggers) 
+- [`addSingleEventTrigger()`](#addsingleeventtrigger) 
+- [`createDailyAttendanceTrigger()`](#createdailyattendancetrigger) 
+- [`getStartOfDay()`](#getstartofday)
 
-- **Points-Ledger.gs**: 
-[`appendMemberEmail()`](#appendmemberemail) 
-[`transferSubmissionToLedger()`](#transfersubmissiontoledger)
+#### <u> [Unregistered.gs](#unregistered-gs) </u>
+- [`getAllUnregisteredMembers()`](#getallunregisteredmembers)
+- [`getUnregisteredMembersInRow()`](#getunregisteredmembersinrowrow)
 
-- **Formatting.gs**: 
-[`addMissingPlatform()`](#addmissingplatform) 
-[`toTitleCase()`](#totitlecase) 
-[`cleanSheetData()`](#cleansheetdata) 
-[`formatAllHeadRun()`](#formatallheadrun) 
-[`formatAllConfirmations()`](#formatallconfirmations) 
-[`formatConfirmationInRow()`](#formatconfirmationinrow)
-
-- **HeadRun-Info.gs**:
-[`storeObject()`](#storeobject)
-[`getAllHeadruns()`](#getallheadruns)
-[`getAllHeadrunners()`](#getallheadrunners)
-[`getWeekday()`](#getweekday)
-[`getScheduleFromStore()`](#getschedulefromstore)
-[`getMatchedTimeKey()`](#getmatchedtimekey)
-
+#### [User-Menu.gs](#user-menu-gs)
+- [`logMenuAttempt()`](#logmenuattempt)
+- [`onOpen()`](#onopen)
+- [`helpUI()`](#helpui)
 
 
-### Import.gs
+<br>
 
-#### processImportFromApp(importObj)
+## Detailed Function Documentation
+
+### Import.gs {id="import-gs"}
+
+#### `processImportFromApp(importObj)`
 
 Processes the latest attendance submission imported via the McRUN app.  
 Verifies if the import is JSON or multi-column, appends to the import sheet, processes and transfers to semester sheet, and triggers post-import logic.
@@ -115,10 +138,8 @@ processImportFromApp('{"timestamp":"2025-05-25T13:00:00Z", ...}');
 
 **Output:** None (side effects: rows added, triggers post-import)  
 **Pitfalls:** Import must be a valid JSON string; malformed data will throw.  
-**@author:** Andrey Gonzalez  
-**@date:** Feb 10, 2025  
-**@update:** Apr 7, 2025
 
+---
 
 #### transferLastImport()
 
@@ -152,7 +173,7 @@ transferThisRow(5);
 **Pitfalls:** Row must contain valid JSON string.
 
 
-### Unregistered.gs
+### Unregistered.gs {id="unregistered-gs"}
 
 #### getAllUnregisteredMembers()
 
@@ -182,7 +203,7 @@ getUnregisteredMembersInRow(10);
 **Output:** None; side effects on sheet.
 
 
-### User-Menu.gs
+### User-Menu.gs {id="user-menu-gs"}
 
 #### logMenuAttempt()
 
@@ -217,7 +238,7 @@ helpUI();
 ```
 
 
-### Triggers.gs
+### Triggers.gs {id="triggers-gs"}
 
 #### updateWeeklyCalendarTriggers()
 
@@ -260,7 +281,7 @@ getStartOfDay(new Date());
 **Output:** Date (start of the given day)
 
 
-### HeadRun-Attendance.gs
+### HeadRun-Attendance.gs {id="headrun-attendance-gs"}
 
 #### onFormSubmission()
 
@@ -338,7 +359,7 @@ getLastSubmission();
 **Output:** Integer (1-indexed row number)
 
 
-### Points-Ledger.gs
+### Points-Ledger.gs {id="points-ledger-gs"}
 
 #### appendMemberEmail()
 
@@ -368,7 +389,7 @@ transferSubmissionToLedger(12);
 | row  | Integer | Row in attendance sheet (default: `getLastSubmission()`) |
 
 
-### Formatting.gs
+### Formatting.gs {id="formatting-gs"}
 
 #### addMissingPlatform()
 
@@ -425,7 +446,7 @@ formatAllConfirmations();
 ```
 
 
-#### formatConfirmationInRow()
+#### formatConfirmationInRow(row)
 
 Formats confirmation as a user-friendly string.
 
@@ -435,10 +456,10 @@ formatConfirmationInRow(10);
 
 | Name | Type    | Description                  |
 |------|---------|------------------------------|
-| row  | Integer | Row in attendance sheet. Default: `ATTENDANCE_SHEET.getLastRow()`      |
+| `row`  | `Integer` | Row in attendance sheet. **Default:** `ATTENDANCE_SHEET.getLastRow()`      |
 
 
-### HeadRun-Info.gs
+### HeadRun-Info.gs {id="headrun-info-gs"}
 
 #### storeObject()
 

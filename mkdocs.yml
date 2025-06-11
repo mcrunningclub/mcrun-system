@@ -5,20 +5,24 @@ site_url: https://mcrunningclub.github.io/mcrun-system/
 
 repo_url: https://github.com/mcrunningclub/mcrun-system
 repo_name: mcrun-system
-copyright: Copyright &copy; 2025 McGill Students Running Club
+copyright: Copyright &copy; 2025 McGill Student Running Club - <a href="#__consent">Cookies Preference</a>
+
+#repo_name: mcrace code
+#repo_url: https://github.com/mcrunningclub/mcrace-code.git
 
 nav:
-  - Home: index.md
+  - Home: start/README.md
   - Getting Started:
-      - mkdocs:
-         - Setup: start/getting-started.md
-         - Examples: start/code-examples.md
+      - Setup: start/setup.md
       - Contributing:
-         - Contributing: start/contributing.md
-         - Syntax: start/syntax.md
-         - Typography: start/typography.md
+        - mkdocs: start/getting-started.md 
+        - Syntax: start/syntax.md
+        - Typography: start/typography.md
+        - Code Examples: start/code-examples.md
+        - startContributing: start/contributing.md
+      - Changelog: start/changelog.md
       - FAQ: start/faq.md
-  
+
   - Projects: 
       - Overview: projects/projects.md
       
@@ -38,6 +42,15 @@ nav:
       - Other:
         - McRace Code: projects/mcrace-code.md
 
+
+  # - Overview: mcrace-code.md
+  # - Installation: mcrace-code/installation.md
+  # - Configuration: mcrace-code/configuration.md
+  # - Troubleshooting: mcrace-code/troubleshooting.md
+  # - User Guide: https://example.com/
+  # - Bug Tracker: https://example.com/
+
+
 theme:
   name: material
   logo: assets/mcrun-logo-circle.png
@@ -56,14 +69,14 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       toggle:
-        icon: fontawesome/solid/moon
+        icon: material/toggle-switch-off-outline
         name: Switch to dark mode
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       toggle:
-        icon: fontawesome/solid/sun 
+        icon: material/toggle-switch
         name: Switch to light mode
 
   font:
@@ -149,5 +162,6 @@ extra:
     - icon: fontawesome/brands/instagram
       link: https://www.instagram.com/mcgillstudentsrunningclub/
 
-#  version:
-#       provider: mike
+
+  version:
+    provider: mike
