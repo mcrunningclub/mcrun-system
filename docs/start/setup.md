@@ -6,7 +6,9 @@ This guide is for contributors and club admins to get up and running with the Mc
 
 ## Permissions
 - Google Sheets: Edit access
-- Gmail: Read access (for payment verification)
+- Gmail: Read access
+- Calendar: Read/write access
+
 
 ## Edit Scripts
 - Open the Google Sheet and ensure you are signed in with the correct Google account.

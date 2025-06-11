@@ -1,4 +1,4 @@
-
+---
 authors:
     - andrey
 date: 2025-05-26
@@ -11,6 +11,14 @@ links:
 ## About
 
 Welcome to the **McRUN Attendance** codebase documentation. This project automates and manages attendance for the McGill Students Running Club using Google Apps Script and Google Sheets.
+
+- #### Github Repo: [mcrun-attendance](https://github.com/mcrunningclub/mcrun-attendance)
+
+- #### Google Sheets: [Head Run Attendance - 2024-25](https://docs.google.com/spreadsheets/d/1SnaD9UO4idXXb07X8EakiItOOORw5UuEOg0dX_an3T4/edit?usp=drive_web)
+
+- #### Apps Script Project: [Attendance Code 2024/25](https://script.google.com/u/2/home/projects/1alVHJTwNdIvc_3t2jSNhhy_1kVI-sjryNoJJvZsTe9nDgLtIv9HKfL6c)
+
+
 
 > **Note:** This documentation is generated from a code search and may not include every function in the repository.  
 > [View all code on GitHub](https://github.com/mcrunningclub/mcrun-attendance/search?q=function)
@@ -26,57 +34,105 @@ Welcome to the **McRUN Attendance** codebase documentation. This project automat
 4. [Troubleshooting & FAQ](#troubleshooting--faq)
 5. [Related Docs](#related-docs) -->
 
----
 
-## Files
-
-### Github repo
-[mcrun-attendance](https://github.com/mcrunningclub/mcrun-attendance)
-
-### Google Sheets
-[Head Run Attendance -
-2024-25](https://docs.google.com/spreadsheets/d/1SnaD9UO4idXXb07X8EakiItOOORw5UuEOg0dX_an3T4/edit?usp=drive_web)
-
-### Apps Script project
-[Attendance Code
-2024/25](https://script.google.com/u/2/home/projects/1alVHJTwNdIvc_3t2jSNhhy_1kVI-sjryNoJJvZsTe9nDgLtIv9HKfL6c)
-
----
-
-
-**Required Permissions:**
-
-- **Sheets API**: Read and write access to the Attendance Sheet and Points Ledger.
-- **Gmail API**: (If using email features) Send and read email.
-- **Calendar API**: For time-based and event-based triggers.
-- **Properties Service**: Store persistent data (e.g., headrunners, headruns).
-
-**Apps Script Scopes:**
-
-Be sure to grant the following scopes when authorizing for the first time:
-
-- `https://www.googleapis.com/auth/spreadsheets`
-- `https://www.googleapis.com/auth/script.external_request`
-- `https://www.googleapis.com/auth/calendar`
-- `https://www.googleapis.com/auth/gmail.send` (if emailing)
-- `https://www.googleapis.com/auth/script.properties`
-- `https://www.googleapis.com/auth/userinfo.email`
-
----
-
-## Function Index <small> (Jump to Detailed Entry) </small>
+## Function Docs <small> (Jump to Detailed Entry) </small>
 
 This section provides a quick reference to all functions in the McRUN Attendance codebase. Click on a function name to jump to its detailed documentation.
 
-#### [Formatting.gs](#formatting-gs)
+
+<!-- 
+    🔴 FORMATTING.GS 
+-->
+### # <big> Formatting.gs </big>
+
 - [`addMissingPlatform()`](#addmissingplatform)
 - [`toTitleCase()`](#totitlecase) 
 - [`cleanSheetData()`](#cleansheetdata)
 - [`formatAllHeadRun()`](#formatallheadrun) 
 - [`formatAllConfirmations()`](#formatallconfirmations) 
-- [`formatConfirmationInRow()`](#formatconfirmationinrow)
+- [`formatConfirmationInRow()`](#formatconfirmationinrowrow)
 
-#### [HeadRun-Attendance.gs](#headrun-attendance-gs)
+---
+
+#### ## <big> addMissingPlatform() </big>
+
+Adds 'Google Form' as a platform source for a row.
+
+```js
+addMissingPlatform(7);
+```
+
+| Name | Type    | Description                  |
+|------|---------|------------------------------|
+| row  | Integer | Row in attendance sheet (defaults to `ATTENDANCE_SHEET.getLastRow())`)     |
+
+---
+
+#### ## <big> toTitleCase() </big>
+
+Converts a string to title case.
+
+```js
+toTitleCase("hello world");
+```
+
+| Name        | Type   | Description         |
+|-------------|--------|---------------------|
+| inputString | String | The string to title |
+
+**Output:** String
+
+---
+
+#### ## <big> cleanSheetData() </big>
+
+Runs all formatting functions for the sheet.
+
+```js
+cleanSheetData();
+```
+
+---
+
+#### ## <big> formatAllHeadRun() </big>
+
+Formats all headrun entries in the sheet.
+
+```js
+formatAllHeadRun();
+```
+
+---
+
+#### ## <big> formatAllConfirmations() </big>
+
+Formats all confirmation columns in the sheet.
+
+```js
+formatAllConfirmations();
+```
+
+---
+
+#### ## <big> formatConfirmationInRow(row) </big>
+
+Formats confirmation as a user-friendly string.
+
+```js
+formatConfirmationInRow(10);
+```
+
+| Name  | Type    | Description                  |
+|------- |---------|------------------------------|
+| `row`  | `Integer` | Row in attendance sheet. **Default:** `ATTENDANCE_SHEET.getLastRow()` |
+
+
+
+<!-- 
+    🔴 HEADRUN-ATTENDANCE.GS 
+-->
+### # <big> HeadRun-Attendance.gs </big>
+
 - [`onFormSubmission()`](#onformsubmission) 
 - [`onFormSubmissionInRow()`](#onformsubmissioninrow) 
 - [`onAppSubmission()`](#onappsubmission) 
@@ -84,46 +140,196 @@ This section provides a quick reference to all functions in the McRUN Attendance
 - [`transferAndFormat()`](#transferandformat) 
 - [`getLastSubmission()`](#getlastsubmission)
 
-#### [HeadRun-Info.gs](#headrun-info-gs)
-- [`storeObject()`](#storeobject)
+---
+
+#### ## <big> onFormSubmission() </big>
+
+Runs after form submission; sorts, processes, transfers, and formats the new entry.
+
+```js
+onFormSubmission();
+```
+
+---
+
+#### ## <big> onFormSubmissionInRow() </big>
+
+Executes post-form-submission logic for a specific row.
+
+```js
+onFormSubmissionInRow(15);
+```
+
+| Name | Type    | Description                      |
+|------|---------|----------------------------------|
+| row  | Integer | Row in attendance sheet (1-index)|
+
+---
+
+#### ## <big> onAppSubmission() </big>
+
+Processes app-based attendance submissions.
+
+```js
+onAppSubmission(22);
+```
+
+| Name | Type    | Description                      |
+|------|---------|----------------------------------|
+| row  | Integer | Row in attendance sheet (1-index). Defaults to `ATTENDANCE_SHEET.getLastRow()`|
+
+---
+
+#### ## <big> bulkFormatting() </big>
+
+Bulk-formats a row: confirmation and names.
+
+```js
+bulkFormatting(7);
+```
+
+| Name | Type    | Description                      |
+|------|---------|----------------------------------|
+| row  | Integer | Row in attendance sheet          |
+
+---
+
+#### ## <big> transferAndFormat() </big>
+
+Transfers a row to the Points Ledger, triggers formatting.
+
+```js
+transferAndFormat(7);
+```
+
+| Name | Type    | Description                      |
+|------|---------|----------------------------------|
+| row  | Integer | Row in attendance sheet          |
+
+---
+
+#### ## <big> getLastSubmission() </big>
+
+Finds the last non-empty row in the attendance sheet.
+
+```js
+getLastSubmission();
+```
+
+| Name  | Type   | Description                          |
+|-------|--------|--------------------------------------|
+| sheet | Sheet  | (Optional) Target sheet object. Defaults to `GET_ATTENDANCE_SHEET()`  |
+
+**Output:** Integer (1-indexed row number)
+
+
+
+<br>
+<!-- 
+    🔴 HEADRUN-INFO.GS 
+-->
+### # <big> Headrun-Info.gs </big>
+
+- [`storeObject(key, obj)`](#storeobject) -> Stores object in GAS document properties.
 - [`getAllHeadruns()`](#getallheadruns)
 - [`getAllHeadrunners()`](#getallheadrunners)
 - [`getWeekday()`](#getweekday) 
 - [`getScheduleFromStore()`](#getschedulefromstore) 
 - [`getMatchedTimeKey()`](#getmatchedtimekey)
 
-#### [Import.gs](#import-gs)
+---
+
+#### ## <big> storeObject() </big>
+
+Stores `obj` in the document properties under `key`.
+
+```js
+storeObject('headrunners', {...});
+```
+
+| Name | Type   | Description            |
+|------|--------|------------------------|
+| key  | String | Property key           |
+| obj  | Object | Object to store        |
+
+---
+
+#### ## <big> getAllHeadruns() </big>
+
+Returns all stored headruns.
+
+```js
+getAllHeadruns();
+```
+
+---
+
+#### ## <big> getAllHeadrunners() </big>
+
+Returns all stored headrunners.
+
+```js
+getAllHeadrunners();
+```
+
+---
+
+#### ## <big> getWeekday() </big>
+
+Returns day string for the given index.
+
+```js
+getWeekday(2); // returns 'tuesday'
+```
+
+| Name         | Type    | Description        |
+|--------------|---------|--------------------|
+| weekdayIndex | Integer | 0=Sunday, 6=Saturday|
+
+---
+
+#### ## <big> getScheduleFromStore() </big>
+
+Returns run schedule for the specified weekday.
+
+```js
+getScheduleFromStore('monday');
+```
+
+| Name          | Type    | Description                   |
+|---------------|---------|-------------------------------|
+| currentWeekday| String|Int | Day name or index         |
+
+---
+
+#### ## <big> getMatchedTimeKey() </big> 
+
+Finds the time key in runSchedule matching submission time ± offset.
+
+```js
+getMatchedTimeKey(new Date(), scheduleObj, 2);
+```
+
+| Name           | Type    | Description                     |
+|----------------|---------|---------------------------------|
+| submissionDate | Date    | Date of the submission          |
+| runSchedule    | Object  | Schedule object                 |
+| offsetHours    | Integer | Offset window in hours (default `2`)|
+
+
+
+<!-- 
+    🔴 IMPORT.GS 
+-->
+### # <big> Import.gs </big>
+
 - [`processImportFromApp(importObj)`](#processimportfromappimportobj)
 - [`transferLastImport()`](#transferlastimport)
 - [`transferThisRow()`](#transferthisrowrow)
 
-#### [Points-Ledger.gs](#points-ledger-gs)
-- [`appendMemberEmail()`](#appendmemberemail)
-- [`transferSubmissionToLedger()`](#transfersubmissiontoledger)
+---
 
-#### [Triggers.gs](#triggers-gs)
-- [`updateWeeklyCalendarTriggers()`](#updateweeklycalendartriggers) 
-- [`addSingleEventTrigger()`](#addsingleeventtrigger) 
-- [`createDailyAttendanceTrigger()`](#createdailyattendancetrigger) 
-- [`getStartOfDay()`](#getstartofday)
-
-#### <u> [Unregistered.gs](#unregistered-gs) </u>
-- [`getAllUnregisteredMembers()`](#getallunregisteredmembers)
-- [`getUnregisteredMembersInRow()`](#getunregisteredmembersinrowrow)
-
-#### [User-Menu.gs](#user-menu-gs)
-- [`logMenuAttempt()`](#logmenuattempt)
-- [`onOpen()`](#onopen)
-- [`helpUI()`](#helpui)
-
-
-<br>
-
-## Detailed Function Documentation
-
-### Import.gs {id="import-gs"}
-
-#### `processImportFromApp(importObj)`
+#### ## <big> processImportFromApp(importObj) </big>
 
 Processes the latest attendance submission imported via the McRUN app.  
 Verifies if the import is JSON or multi-column, appends to the import sheet, processes and transfers to semester sheet, and triggers post-import logic.
@@ -141,7 +347,7 @@ processImportFromApp('{"timestamp":"2025-05-25T13:00:00Z", ...}');
 
 ---
 
-#### transferLastImport()
+#### ## <big> transferLastImport() </big>
 
 Transfers the last imported attendance submission (from Import Sheet) to the semester sheet.
 
@@ -153,11 +359,13 @@ transferLastImport();
 |------|------|----------------------------|
 | —    | —    | No parameters              |
 
+
 **Output:** None (side effects: submission transferred)  
 **Pitfalls:** Only for use with valid import rows.
 
+---
 
-#### transferThisRow(row)
+#### ## <big> transferThisRow(row) </big>
 
 Helper to transfer a specific row from the import sheet to the semester sheet.
 
@@ -173,9 +381,61 @@ transferThisRow(5);
 **Pitfalls:** Row must contain valid JSON string.
 
 
-### Unregistered.gs {id="unregistered-gs"}
 
-#### getAllUnregisteredMembers()
+<br>
+<!-- 
+    🔴 POINTS-LEDGER.GS 
+-->
+### # <big> Points-Ledger.gs </big>
+
+- [appendMemberEmail(row, registered, unregistered)](#appendmemberemail) -> Appends member emails to attendee names in a row.
+- [`transferSubmissionToLedger(row)`](#transfersubmissiontoledger) -> Transfers a submission to the Points Ledger.
+
+--- 
+
+#### ## <big><var> appendMemberEmail() </var></big>
+
+Appends member emails to attendee names in a row.
+
+```js
+appendMemberEmail(5, registeredArr, unregisteredArr);
+```
+
+
+| Name          | Type        | Description                 |
+|---------------|------------ |-----------------------------|
+| `row`         | `Integer`   | Row in attendance sheet     |
+| `registered`  | `String[][]`| Registered attendees/emails |
+| `unregistered`| `String[][]`| Unregistered attendees      |
+
+
+---
+
+#### ## <big> transferSubmissionToLedger() </big>
+
+Transfers a submission to the Points Ledger.
+
+```js
+transferSubmissionToLedger(12);
+```
+
+| Name | Type    | Description                                 |
+|------|---------|---------------------------------------------|
+| row  | Integer | Row in attendance sheet (default: `getLastSubmission()`) |
+
+
+<br>
+<!-- 
+    🔴 UNREGISTERED.GS
+-->
+### # <big> Unregistered.gs </big>
+
+- [`getAllUnregisteredMembers()`](#getallunregisteredmembers)
+- [`getUnregisteredMembersInRow()`](#getunregisteredmembersinrowrow)
+
+---
+
+#### ## <big> getAllUnregisteredMembers() </big>
 
 Runs the unregistered member check for **all** rows in the attendance sheet.
 
@@ -187,8 +447,9 @@ getAllUnregisteredMembers();
 |------|------|----------------|
 | —    | —    | No parameters  |
 
+---
 
-#### getUnregisteredMembersInRow(row)
+#### ## <big> getUnregisteredMembersInRow(row) </big>
 
 Finds attendees in a specific row who are unregistered, sets in the NOT_FOUND_COL, and appends emails to registered attendees.
 
@@ -203,9 +464,78 @@ getUnregisteredMembersInRow(10);
 **Output:** None; side effects on sheet.
 
 
-### User-Menu.gs {id="user-menu-gs"}
 
-#### logMenuAttempt()
+<br>
+<!-- 
+    🔴 TRIGGERS.GS 
+-->
+### # <big> Triggers.gs </big>
+- [`updateWeeklyCalendarTriggers()`](#updateweeklycalendartriggers) 
+- [`addSingleEventTrigger()`](#addsingleeventtrigger) 
+- [`createDailyAttendanceTrigger()`](#createdailyattendancetrigger) 
+- [`getStartOfDay()`](#getstartofday)
+
+---
+
+#### ## <big> updateWeeklyCalendarTriggers() </big>
+
+Adds/removes time-based triggers for events, ensures correct calendar is used.
+
+```js
+updateWeeklyCalendarTriggers();
+```
+
+---
+
+#### ## <big> addSingleEventTrigger() </big>
+
+Adds a trigger for all events today.
+
+```js
+addSingleEventTrigger();
+```
+
+---
+
+#### ## <big> createDailyAttendanceTrigger() </big>
+
+Creates time-based triggers for all relevant events in the current week.
+
+```js
+createDailyAttendanceTrigger();
+```
+
+---
+
+#### ## <big> getStartOfDay() </big>
+
+Returns start-of-day for a given date.
+
+```js
+getStartOfDay(new Date());
+```
+
+| Name | Type | Description    |
+|------|------|----------------|
+| date | Date | The date object|
+
+**Output:** Date (start of the given day)
+
+
+
+<br>
+<!-- 
+    🔴 USER-MENU.GS
+-->
+### # <big> User-Menu.gs </big>
+
+- [`logMenuAttempt()`](#logmenuattempt)
+- [`onOpen()`](#onopen)
+- [`helpUI()`](#helpui)
+
+---
+
+#### ## <big> logMenuAttempt() </big>
 
 Logs a user's attempt to use the custom menu.
 
@@ -218,7 +548,7 @@ logMenuAttempt("someone@mail.com");
 | email | String | Email address of the active user. Defaults to empty string.   |
 
 
-#### onOpen()
+#### ## <big> onOpen() </big>
 
 Creates the custom menu in the spreadsheet UI.
 
@@ -229,7 +559,7 @@ onOpen();
 _No parameters. Triggered by opening the sheet._
 
 
-#### helpUI()
+#### ## <big> helpUI() </big>
 
 Displays a help message for the custom menu.
 
@@ -238,300 +568,7 @@ helpUI();
 ```
 
 
-### Triggers.gs {id="triggers-gs"}
-
-#### updateWeeklyCalendarTriggers()
-
-Adds/removes time-based triggers for events, ensures correct calendar is used.
-
-```js
-updateWeeklyCalendarTriggers();
-```
-
-
-#### addSingleEventTrigger()
-
-Adds a trigger for all events today.
-
-```js
-addSingleEventTrigger();
-```
-
-
-#### createDailyAttendanceTrigger()
-
-Creates time-based triggers for all relevant events in the current week.
-
-```js
-createDailyAttendanceTrigger();
-```
-
-
-#### getStartOfDay()
-
-Returns start-of-day for a given date.
-
-```js
-getStartOfDay(new Date());
-```
-| Name | Type | Description    |
-|------|------|----------------|
-| date | Date | The date object|
-
-**Output:** Date (start of the given day)
-
-
-### HeadRun-Attendance.gs {id="headrun-attendance-gs"}
-
-#### onFormSubmission()
-
-Runs after form submission; sorts, processes, transfers, and formats the new entry.
-
-```js
-onFormSubmission();
-```
-
-
-#### onFormSubmissionInRow()
-
-Executes post-form-submission logic for a specific row.
-
-```js
-onFormSubmissionInRow(15);
-```
-
-| Name | Type    | Description                      |
-|------|---------|----------------------------------|
-| row  | Integer | Row in attendance sheet (1-index)|
-
-
-#### onAppSubmission()
-
-Processes app-based attendance submissions.
-
-```js
-onAppSubmission(22);
-```
-
-| Name | Type    | Description                      |
-|------|---------|----------------------------------|
-| row  | Integer | Row in attendance sheet (1-index). Defaults to `ATTENDANCE_SHEET.getLastRow()`|
-
-
-#### bulkFormatting()
-
-Bulk-formats a row: confirmation and names.
-
-```js
-bulkFormatting(7);
-```
-
-| Name | Type    | Description                      |
-|------|---------|----------------------------------|
-| row  | Integer | Row in attendance sheet          |
-
-
-#### transferAndFormat()
-
-Transfers a row to the Points Ledger, triggers formatting.
-
-```js
-transferAndFormat(7);
-```
-
-| Name | Type    | Description                      |
-|------|---------|----------------------------------|
-| row  | Integer | Row in attendance sheet          |
-
-
-#### getLastSubmission()
-
-Finds the last non-empty row in the attendance sheet.
-
-```js
-getLastSubmission();
-```
-
-| Name  | Type   | Description                          |
-|-------|--------|--------------------------------------|
-| sheet | Sheet  | (Optional) Target sheet object. Defaults to `GET_ATTENDANCE_SHEET()`  |
-
-**Output:** Integer (1-indexed row number)
-
-
-### Points-Ledger.gs {id="points-ledger-gs"}
-
-#### appendMemberEmail()
-
-Appends member emails to attendee names in a row.
-
-```js
-appendMemberEmail(5, registeredArr, unregisteredArr);
-```
-
-| Name        | Type      | Description                 |
-|-------------|-----------|-----------------------------|
-| row         | Integer   | Row in attendance sheet     |
-| registered  | String[][]| Registered attendees/emails |
-| unregistered| String[][]| Unregistered attendees      |
-
-
-#### transferSubmissionToLedger()
-
-Transfers a submission to the Points Ledger.
-
-```js
-transferSubmissionToLedger(12);
-```
-
-| Name | Type    | Description                                 |
-|------|---------|---------------------------------------------|
-| row  | Integer | Row in attendance sheet (default: `getLastSubmission()`) |
-
-
-### Formatting.gs {id="formatting-gs"}
-
-#### addMissingPlatform()
-
-Adds 'Google Form' as a platform source for a row.
-
-```js
-addMissingPlatform(7);
-```
-
-| Name | Type    | Description                  |
-|------|---------|------------------------------|
-| row  | Integer | Row in attendance sheet (defaults to `ATTENDANCE_SHEET.getLastRow())`)     |
-
-
-#### toTitleCase()
-
-Converts a string to title case.
-
-```js
-toTitleCase("hello world");
-```
-
-| Name        | Type   | Description         |
-|-------------|--------|---------------------|
-| inputString | String | The string to title |
-
-**Output:** String
-
-
-#### cleanSheetData()
-
-Runs all formatting functions for the sheet.
-
-```js
-cleanSheetData();
-```
-
-
-#### formatAllHeadRun()
-
-Formats all headrun entries in the sheet.
-
-```js
-formatAllHeadRun();
-```
-
-
-#### formatAllConfirmations()
-
-Formats all confirmation columns in the sheet.
-
-```js
-formatAllConfirmations();
-```
-
-
-#### formatConfirmationInRow(row)
-
-Formats confirmation as a user-friendly string.
-
-```js
-formatConfirmationInRow(10);
-```
-
-| Name | Type    | Description                  |
-|------|---------|------------------------------|
-| `row`  | `Integer` | Row in attendance sheet. **Default:** `ATTENDANCE_SHEET.getLastRow()`      |
-
-
-### HeadRun-Info.gs {id="headrun-info-gs"}
-
-#### storeObject()
-
-Stores `obj` in the document properties under `key`.
-
-```js
-storeObject('headrunners', {...});
-```
-
-| Name | Type   | Description            |
-|------|--------|------------------------|
-| key  | String | Property key           |
-| obj  | Object | Object to store        |
-
-
-#### getAllHeadruns()
-
-Returns all stored headruns.
-
-```js
-getAllHeadruns();
-```
-
-
-#### getAllHeadrunners()
-
-Returns all stored headrunners.
-
-```js
-getAllHeadrunners();
-```
-
-
-#### getWeekday()
-
-Returns day string for the given index.
-
-```js
-getWeekday(2); // returns 'tuesday'
-```
-
-| Name         | Type    | Description        |
-|--------------|---------|--------------------|
-| weekdayIndex | Integer | 0=Sunday, 6=Saturday|
-
-
-#### getScheduleFromStore()
-
-Returns run schedule for the specified weekday.
-
-```js
-getScheduleFromStore('monday');
-```
-
-| Name          | Type    | Description                   |
-|---------------|---------|-------------------------------|
-| currentWeekday| String|Int | Day name or index         |
-
-
-#### getMatchedTimeKey()
-
-Finds the time key in runSchedule matching submission time ± offset.
-
-```js
-getMatchedTimeKey(new Date(), scheduleObj, 2);
-```
-
-| Name           | Type    | Description                     |
-|----------------|---------|---------------------------------|
-| submissionDate | Date    | Date of the submission          |
-| runSchedule    | Object  | Schedule object                 |
-| offsetHours    | Integer | Offset window in hours (default `2`)|
+<br>
 
 ## Triggers
 
