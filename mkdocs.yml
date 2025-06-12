@@ -32,7 +32,6 @@ nav:
       
       - Attendance Code:
         - Semester: projects/attendance-semester-code.md
-        - Semester (old): projects/attendance-code-old.md
         - Master: projects/attendance-master-code.md
       
       - Points System Code: 

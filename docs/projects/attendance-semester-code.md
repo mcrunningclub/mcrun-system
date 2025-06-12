@@ -1,41 +1,43 @@
 ---
 authors:
     - andrey
-date: 2025-05-26
+date: 2025-06-11
 links:
     - start/faq.md
 ---
 
 # McRUN Attendance Documentation
 
+---
+
 ## About
 
-Welcome to the **McRUN Attendance** codebase documentation. This project automates and manages attendance for the McGill Students Running Club using Google Apps Script and Google Sheets.
+Welcome to the **McRUN Attendance** codebase documentation. This project is a Google Apps Script-based solution designed to streamline attendance tracking for the McRUN club. It integrates with Google Sheets, Google Forms, and external tools to automate attendance submissions, formatting, and reporting. 
 
-- #### Github Repo: [mcrun-attendance](https://github.com/mcrunningclub/mcrun-attendance)
+The system also includes features for email notifications, data validation, and integration with the Points Ledger for tracking participation.
 
-- #### Google Sheets: [Head Run Attendance - 2024-25](https://docs.google.com/spreadsheets/d/1SnaD9UO4idXXb07X8EakiItOOORw5UuEOg0dX_an3T4/edit?usp=drive_web)
+<!-- automates and manages attendance for the McGill Students Running Club using Google Apps Script and Google Sheets. -->
 
-- #### Apps Script Project: [Attendance Code 2024/25](https://script.google.com/u/2/home/projects/1alVHJTwNdIvc_3t2jSNhhy_1kVI-sjryNoJJvZsTe9nDgLtIv9HKfL6c)
+### Files
 
+- **Github Repo:** [mcrun-attendance](https://github.com/mcrunningclub/mcrun-attendance)
+- **Google Sheets:** [Head Run Attendance - 2024-25](https://docs.google.com/spreadsheets/d/1SnaD9UO4idXXb07X8EakiItOOORw5UuEOg0dX_an3T4/edit?usp=drive_web)
+- **Apps Script Project:** [Attendance Code 2024/25](https://script.google.com/u/2/home/projects/1alVHJTwNdIvc_3t2jSNhhy_1kVI-sjryNoJJvZsTe9nDgLtIv9HKfL6c) _(Accessible via Extensions > Apps Script in the Google Sheet)_
 
+### Key Features
+
+- **Attendance Management:** Automates the processing of attendance submissions from Google Forms and the McRUN app.
+- **Data Formatting:** Ensures uniform formatting of names, headruns, and other attendance details.
+- **Email Notifications:** Sends reminders and attendance copies to headrunners and club executives.
+- **Integration with Points Ledger:** Transfers attendance data to a Points Ledger for tracking participation.
+- **Custom Menus:** Provides a user-friendly interface in Google Sheets for executing scripts.
+- **Triggers and Scheduling:** Automates tasks like checking for missing attendance and updating calendar-based triggers.
 
 > **Note:** This documentation is generated from a code search and may not include every function in the repository.  
 > [View all code on GitHub](https://github.com/mcrunningclub/mcrun-attendance/search?q=function)
 
-<!-- ---
 
-## Table of Contents
-
-1. [Quick Start](#quick-start)
-2. [Environment & Permissions](#environment--permissions)
-3. [Function Index](#function-index--reference)
-   - [How to Read Function Docs](#how-to-read-function-docs)
-4. [Troubleshooting & FAQ](#troubleshooting--faq)
-5. [Related Docs](#related-docs) -->
-
-
-## Function Docs <small> (Jump to Detailed Entry) </small>
+## Function Docs
 
 This section provides a quick reference to all functions in the McRUN Attendance codebase. Click on a function name to jump to its detailed documentation.
 
@@ -393,7 +395,7 @@ transferThisRow(5);
 
 --- 
 
-#### ## <big><var> appendMemberEmail() </var></big>
+#### ## <big> appendMemberEmail() </big>
 
 Appends member emails to attendee names in a row.
 
@@ -422,46 +424,6 @@ transferSubmissionToLedger(12);
 | Name | Type    | Description                                 |
 |------|---------|---------------------------------------------|
 | row  | Integer | Row in attendance sheet (default: `getLastSubmission()`) |
-
-
-<br>
-<!-- 
-    🔴 UNREGISTERED.GS
--->
-### # <big> Unregistered.gs </big>
-
-- [`getAllUnregisteredMembers()`](#getallunregisteredmembers)
-- [`getUnregisteredMembersInRow()`](#getunregisteredmembersinrowrow)
-
----
-
-#### ## <big> getAllUnregisteredMembers() </big>
-
-Runs the unregistered member check for **all** rows in the attendance sheet.
-
-```js
-getAllUnregisteredMembers();
-```
-
-| Name | Type | Description    |
-|------|------|----------------|
-| —    | —    | No parameters  |
-
----
-
-#### ## <big> getUnregisteredMembersInRow(row) </big>
-
-Finds attendees in a specific row who are unregistered, sets in the NOT_FOUND_COL, and appends emails to registered attendees.
-
-```js
-getUnregisteredMembersInRow(10);
-```
-
-| Name | Type    | Description                                                                       |
-|------|---------|-----------------------------------------------------------------------------------|
-| row  | Integer | Row in the attendance sheet (1-indexed). Default: `ATTENDANCE_SHEET.getLastRow()` |
-
-**Output:** None; side effects on sheet.
 
 
 
@@ -525,6 +487,46 @@ getStartOfDay(new Date());
 
 <br>
 <!-- 
+    🔴 UNREGISTERED.GS
+-->
+### # <big> Unregistered.gs </big>
+
+- [`getAllUnregisteredMembers()`](#getallunregisteredmembers)
+- [`getUnregisteredMembersInRow()`](#getunregisteredmembersinrowrow)
+
+---
+
+#### ## <big> getAllUnregisteredMembers() </big>
+
+Runs the unregistered member check for **all** rows in the attendance sheet.
+
+```js
+getAllUnregisteredMembers();
+```
+
+| Name | Type | Description    |
+|------|------|----------------|
+| —    | —    | No parameters  |
+
+---
+
+#### ## <big> getUnregisteredMembersInRow(row) </big>
+
+Finds attendees in a specific row who are unregistered, sets in the NOT_FOUND_COL, and appends emails to registered attendees.
+
+```js
+getUnregisteredMembersInRow(10);
+```
+
+| Name | Type    | Description                                                                       |
+|------|---------|-----------------------------------------------------------------------------------|
+| row  | Integer | Row in the attendance sheet (1-indexed). Default: `ATTENDANCE_SHEET.getLastRow()` |
+
+**Output:** None; side effects on sheet.
+
+
+<br>
+<!-- 
     🔴 USER-MENU.GS
 -->
 ### # <big> User-Menu.gs </big>
@@ -556,8 +558,6 @@ Creates the custom menu in the spreadsheet UI.
 onOpen();
 ```
 
-_No parameters. Triggered by opening the sheet._
-
 
 #### ## <big> helpUI() </big>
 
@@ -574,9 +574,9 @@ helpUI();
 
 1. **Form Submission**: Set up a trigger for `onFormSubmission` (From form).
 2. **App Submission**: Set up a trigger for `onAppSubmission` (From event or manual).
-3. **Scheduled Checks**:  
-   - Use time-driven triggers (e.g., weekly, daily) for functions like `updateWeeklyCalendarTriggers`.
-   - Calendar event-based triggers for event-driven attendance checks.
+3. **Scheduled Checks**:
+   1. Use time-driven triggers (e.g., weekly, daily) for functions like `updateWeeklyCalendarTriggers`.
+   2. Calendar event-based triggers for event-driven attendance checks.
 
 
 ## Troubleshooting

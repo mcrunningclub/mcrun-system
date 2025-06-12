@@ -1,6 +1,6 @@
 # Private Use License
 
-## Copyright (c) 2024 Andrey Gonzalez
+## Copyright (c) 2025 Andrey Gonzalez
 
 ## Table of Contents
 

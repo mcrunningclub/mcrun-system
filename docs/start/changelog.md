@@ -16,8 +16,13 @@ The format is based on [Material for MkDocs](https://squidfunk.github.io/mkdocs-
 - `Security` in case of vulnerabilities.
 
 ---
+### 0.1.1 - <small>June 12, 2025</small> { id="0.1.1" }
 
-### 0.1.0 - <small>June 11, 2025</small> { id="1.1.0" }
+- Changed sections in code docs to ensure consistent design.
+- Removed unused documents.
+
+### 0.1.0 - <small>June 11, 2025</small> { id="0.1.0" }
+
 - Updated project layout in `getting-started.md`.
 - Merged `docs-test` with `docs-m` branch.
 - Updated `authors.yml` for new tech team members.

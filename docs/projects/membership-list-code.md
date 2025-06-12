@@ -1,220 +1,430 @@
 ---
+authors:
+    - andrey
+date: 2025-06-11
+links:
+    - start/faq.md
+---
 
-date: 2025-05-26
+# McRUN Membership List
 
 ---
 
-# Membership Registry
+## About
 
-## About 
+**McRUN Membership List** is a Google Apps Script codebase for managing the membership roster of the McGill Students Running Club.
 
-This repository contains all Google Apps Script code used to manage the McRUN (McGill Students Running Club) membership list.  
-It automates the registration process, membership fee verification, data consolidation, and communication with new members through integration with Google Sheets and Gmail.
+This project automates the collection, verification, and maintenance of member data, integrates with Google Sheets, Gmail, and automates registration, fee-tracking, and communication workflows. It is designed for efficient, accurate, and scalable club membership management.
 
-New members can register on [Fillout](https://www.mcrun.fillout.com/register)
+**Purpose**
 
-**Key Features:**
+- Centralize and automate member registration (including form and manual entry).
+- Verify membership fee payments via email (Zeffy, Stripe, Interac).
+- Synchronize semester and master sheets, ensuring consistent member history.
+- Automate communications and reporting for new members.
 
-- Automated registration form processing.
-- Fee verification via email scraping and scheduled triggers.
-- Consolidation of member data across semesters.
-- Custom menu integration for Google Sheets.
-- Automated communication with new members.
-- Advanced formatting and data-cleaning utilities.
-- Custom menu integration for Google Sheets.
-- Automated communication with new members.
-- Advanced formatting and data-cleaning utilities.
+### Files
 
-## Files
+- **Github Repo:** [mcrun-membership-list](https://github.com/mcrunningclub/mcrun-membership-list)
+- **Google Sheets:** [McRUN Membership Sheet](https://docs.google.com/spreadsheets/d/1qvoL3mJXCvj3m7Y70sI-FAktCiSWqEmkDxfZWz0lFu4/edit?usp=sharing)
+- **Apps Script Project:** [McRUN Membership Apps Script](https://script.google.com/home/projects) _(Accessible via Extensions > Apps Script in the Google Sheet)_
 
-### Github Repo
-[mcrunningclub/mcrun-membership-list](https://github.com/mcrunningclub/mcrun-membership-list)
+### Key Features
 
-### Google Sheets
-Our database uses Google Sheets to store all member registrations and related
-information. The MASTER sheet collects registrations across all semesters,
-    while registrations for individual semesters can be found in their
-    corresponding sheets.
-[Memberships Collected (Main)](https://docs.google.com/spreadsheets/d/1qvoL3mJXCvj3m7Y70sI-FAktCiSWqEmkDxfZWz0lFu4/edit?usp=sharing)
+- Automated import from form and manual member registration.
+- Fee verification and follow-up via Gmail/Inbox search.
+- Custom Google Sheets menu for common admin workflows.
+- Synchronization between semester and master membership lists.
+- Time-based and event-based triggers for processing new members and payments.
+- Communication automation for onboarding new members.
+- Robust error handling and logging.
 
-### Apps Script project
-[Membership Registry
-Code](https://script.google.com/u/2/home/projects/18Dmy3-UYymJ1Nk6R8vvwx08uovlzwUp0lFQkFWWef0Ltbjlzt2cmJ0aP)
+### Tools Used
 
-**Permissions:**
-- Google Sheets: Edit access
-- Gmail: Read access (for payment verification)
-- Apps Script: Account (?) access, Create time-based triggers
-
-**Running the script:**
-- Ensure you are signed in with the correct Google account.
-- Most scripts run automatically on form submission or via custom menu in the Sheet.
-- Manual triggers can be run from the Apps Script editor if needed.
-
-**File descriptions:**
-
-|File name|Description|
-|---|---|
-|Semester Variables.gs|Contains constants relating to various columns and
-sheets|
-| | |
-
-## Documentation
-
-### Constants
-
-
-### Functions
-
-### 1. Membership Registration and Processing
-
-#### `onFormSubmit(newRow = getLastSubmissionInMain())`
-
-- **Description:** Processes new registration: trims, formats, generates member ID, verifies payments, sends communications, and updates both `MAIN_SHEET` and `MASTER` sheets.
-- **Created:** Oct 18, 2023
-- **Example:**
-  ```js
-  onFormSubmit(); // Handles latest submisson
-  ```
-
-#### `sendNewMemberCommunications(row)`
-- **Description:** Packages and transfers new member info to a separate comms sheet.
-- **Created:** Oct 18, 2023
-
-#### `getLastSubmissionInMain()`
-- **Description:** Returns the 1-indexed row of the last non-empty submission in `MAIN_SHEET`.
-- **Created:** Sep 1, 2024  
-- **Updated:** Dec 18, 2024
+- Google Apps Script (JavaScript)
+- Google Sheets (multiple sheets: Main, Master, Import, Internal Fee Collection, etc.)
+- Gmail API via Apps Script
+- Apps Script Triggers (onChange, time-based, onOpen)
+- Google Drive (waivers, attachments)
 
 ---
 
-### 2. Master Sheet Operations
+## Function Docs
 
-#### `createMaster()`
-- **Description:** Consolidates member data from semester sheets into the `MASTER` sheet.
-- **Created:** Oct 23, 2024
+This section is divided by project file (alphabetical order).  
+Each file lists its functions and provides a detailed reference for each.
 
-#### `addLastSubmissionToMaster(lastRow = getLastSubmissionInMain())`
-- **Description:** Processes the last row of `MAIN_SHEET` and adds it to `MASTER`, then sorts by email.
-- **Created:** Oct 23, 2024
+> **Note:** Only a selection of functions may be shown below due to search result limits.  
+> [See all code/functions in GitHub](https://github.com/mcrunningclub/mcrun-membership-list/search?q=function)
 
-#### `addPaidSemesterToHistory(memberRow, semesterSheetName)`
-- **Description:** Appends the semester code to a member's payment history.
-- **Created & Updated:** Dec 17, 2024
+<br>
+<!-- 
+    🔴 Formatting.gs
+-->
 
----
-
-### 3. Fee Payment and Triggers
-
-#### `checkAndSetPaymentRef(row = getLastSubmissionInMain())`
-- **Description:** Verifies if a member has paid using email notifications; sets up a scheduled trigger if payment is not found.
-- **Created:** Mar 16, 2025  
-- **Updated:** May 20, 2025
-
-#### `createNewFeeTrigger_(row, feeDetails)`
-- **Description:** Creates a new time-based trigger to check payment status repeatedly.
-- **Created & Updated:** May 20, 2025
-
-#### `runFeeChecker()`
-- **Description:** Triggered function to check for payment confirmation and clean up if found.
-- **Created:** May 20, 2025  
-- **Updated:** May 26, 2025
+### # <big> Formatting.gs </big>
+- [`trimWhitespace(lastRow)`](#trimwhitespacelastrow) → Trims whitespace from columns in last row
+- [`removeDiacritics(str)`](#removediacriticsstr) → Removes diacritics (accents) from a string
+- [`sortMainByName()`](#sortmainbyname) → Sorts MAIN_SHEET by first and last name
 
 ---
 
-### 4. Sheet Formatting and Utilities
+#### ## <big> trimWhitespace(lastRow) </big>
 
-#### `trimWhitespace_(lastRow = MAIN_SHEET.getLastRow())`
-- **Description:** Trims whitespace from key columns in the given row of `MAIN_SHEET`.
-- **Created:** Oct 17, 2023  
-- **Updated:** Feb 5, 2025
-
-#### `removeDiacritics(str)`
-- **Description:** Removes diacritical marks from a string (e.g., accents).
-- **Created:** Mar 5, 2025  
-- **Updated:** Mar 15, 2025
-- **Example:**
-  ```js
-  removeDiacritics("José"); // Outputs "Jose"
-  ```
-
-#### `sortMainByName()`
-- **Description:** Sorts `MAIN_SHEET` by first then last name.
-- **Created:** Oct 1, 2023  
-- **Updated:** Jan 11, 2025
-
----
-
-### 5. Transfer and Import Scripts
-
-#### `onChange(e)`
-- **Description:** Handles changes in the spreadsheet (row insertions etc.) to automate imports and formatting.
-- **No explicit dates.**
-
-#### `transferLastImport()`
-- **Description:** Transfers the latest row from the import sheet.
-- **No explicit dates.**
-
-#### `transferThisRow_(row)`
-- **Description:** Helper to transfer a specific row from import to main.
-- **No explicit dates.**
-
----
-
-### 6. Menu and UI Integration
-
-#### `onOpen()`
-- **Description:** Adds a custom menu to Google Sheets for quick access to scripts.
-- **Created:** Nov 21, 2024  
-- **Updated:** Mar 1, 2025
-
-#### `logMenuAttempt_(email = "")`
-- **Description:** Logs attempts to use the custom menu.
-- **Created:** Nov 21, 2024  
-- **Updated:** Nov 22, 2024
-
-#### `changeSheetView_(sheetName)`
-- **Description:** Activates a specific sheet in the spreadsheet.
-- **Created & Updated:** Nov 21, 2024
-
----
-
-### 7. Example: Fee Verification and Automation
+Trims whitespace from key columns in the last row of `MAIN_SHEET`.
 
 ```js
-// Check and set payment for the latest member
-checkAndSetPaymentRef();
+trimWhitespace(23);
+```
 
-// Schedule a trigger to recheck payment for a new member
-createNewFeeTrigger_(row, feeDetails);
+| Name    | Type    | Description                                |
+|---------|---------|--------------------------------------------|
+| lastRow | Integer | Row number to trim (default: last row)     |
 
-// Run the periodic fee checker (typically not called directly)
+**Output:** None (in-place formatting)
+
+**Pitfalls:** Assumes columns 3-9 are name/referral fields in MAIN_SHEET.
+
+---
+
+#### ## <big> removeDiacritics(str) </big>
+
+Removes diacritics (accents) from a string, returning ASCII-only output.
+
+```js
+const result = removeDiacritics("Élise");
+```
+
+| Name | Type   | Description         |
+|------|--------|---------------------|
+| str  | String | Input string        |
+
+**Output:** String (normalized, accents removed)
+
+---
+
+#### ## <big> sortMainByName() </big>
+
+Sorts the MAIN_SHEET by first name and then last name (columns 3, 4).
+
+```js
+sortMainByName();
+```
+
+**Output:** None
+
+---
+
+<br>
+<!-- 
+    🔴 Member Fee.gs
+-->
+
+### # <big> Member Fee.gs </big>
+- [`getPaymentItem(colIndex)`](#getpaymentitemcolindex) → Gets payment item from "Internal Fee Collection" sheet
+- [`getGmailLabel(labelName)`](#getgmaillabellabelname) → Retrieves a Gmail label by name
+- [`checkAndSetPaymentRef(row)`](#checkandsetpaymentrefrow) → Verifies fee payment and schedules follow-up if needed
+
+---
+
+#### ## <big> getPaymentItem(colIndex) </big>
+
+Retrieves the fee payment item from a specific cell in "Internal Fee Collection".
+
+```js
+const item = getPaymentItem('A3');
+```
+
+| Name     | Type   | Description     |
+|----------|--------|-----------------|
+| colIndex | String | Cell reference  |
+
+**Output:** String (cell value)
+
+---
+
+#### ## <big> getGmailLabel(labelName) </big>
+
+Retrieves a Gmail label object by its name.
+
+```js
+const label = getGmailLabel("Fee Payments/Online Emails");
+```
+
+| Name      | Type   | Description                  |
+|-----------|--------|------------------------------|
+| labelName | String | Gmail label name             |
+
+**Output:** GmailLabel
+
+---
+
+#### ## <big> checkAndSetPaymentRef(row) </big>
+
+Verifies whether a member's payment has been found in the inbox or waived; schedules a follow-up if not.
+
+```js
+checkAndSetPaymentRef(22);
+```
+
+| Name | Type    | Description                     |
+|------|---------|---------------------------------|
+| row  | Integer | Row in MAIN_SHEET (default: last submission) |
+
+**Output:** None
+
+**Pitfalls:** Creates trigger for follow-up if payment not found.
+
+---
+
+<br>
+<!-- 
+    🔴 Membership Collected.gs
+-->
+
+### # <big> Membership Collected.gs </big>
+- [`onFormSubmit(newRow)`](#onformsubmitnewrow) → Handles submission of a new registration form
+- [`sendNewMemberCommunications(row)`](#sendnewmembercommunicationsrow) → Sends onboarding comms to new member
+- [`getLastSubmissionInMain()`](#getlastsubmissioninmain) → Gets index of last non-empty row
+
+---
+
+#### ## <big> onFormSubmit(newRow) </big>
+
+Processes a new member's registration: trims, formats, verifies payment, adds to master, and sends communications.
+
+```js
+onFormSubmit(23);
+```
+
+| Name   | Type   | Description                             |
+|--------|--------|-----------------------------------------|
+| newRow | Int    | Row number (default: last submission)   |
+
+**Output:** None
+
+---
+
+#### ## <big> sendNewMemberCommunications(row) </big>
+
+Packages and transfers new member info to "NewMemberComms" sheet.
+
+```js
+sendNewMemberCommunications(23);
+```
+
+| Name | Type   | Description        |
+|------|--------|--------------------|
+| row  | Int    | Row in MAIN_SHEET  |
+
+**Output:** None
+
+---
+
+#### ## <big> getLastSubmissionInMain() </big>
+
+Returns index (1-based) of the last filled row in MAIN_SHEET.
+
+```js
+const idx = getLastSubmissionInMain();
+```
+
+**Output:** Int (row index)
+
+---
+
+<br>
+<!-- 
+    🔴 Triggers.gs
+-->
+
+### # <big> Triggers.gs </big>
+- [`createNewFeeTrigger(row, feeDetails)`](#createnewfeetriggerrow-feedetails) → Creates a time-based trigger for payment follow-up
+- [`runFeeChecker()`](#runfeechecker) → Checks all active fee-check triggers and updates sheet
+
+---
+
+#### ## <big> createNewFeeTrigger(row, feeDetails) </big>
+
+Creates a scheduled time-based trigger to check a member's payment status.
+
+```js
+createNewFeeTrigger(22, {memberName: "Elise Dubois", email: "elise@ex.com"});
+```
+
+| Name      | Type   | Description                        |
+|-----------|--------|------------------------------------|
+| row       | Int    | Row number in sheet                |
+| feeDetails| Object | Details for fee checking           |
+
+**Output:** None
+
+---
+
+#### ## <big> runFeeChecker() </big>
+
+Processes all fee check triggers: finds payments, updates sheet, or schedules further action.
+
+```js
 runFeeChecker();
 ```
 
-## Example Usage 
+**Output:** None
 
-### Advanced Usage
+---
 
-- **Custom menus** are added through `onOpen`.
-- **Scheduled triggers** are created for fee verifications using Google Apps Script Triggers.
-- **Email notifications** for payment are parsed and verified via GmailApp.
-- **All scripts** are intended for use within the Google Sheets UI.
+<br>
+<!-- 
+    🔴 Transfer Scripts.gs
+-->
 
+### # <big> Transfer Scripts.gs </big>
+- [`onChange(e)`](#onchangee) → Handles new registration imports and master updates
+- [`transferLastImport()`](#transferlastimport) → Transfers latest Import row to main sheet
+- [`transferThisRow(row)`](#transferthisrowrow) → Transfers specific Import row to main sheet
 
-## Troubleshooting
+---
 
-### FAQ
+#### ## <big> onChange(e) </big>
 
-**Q: Scripts aren’t running or menu is missing?**
-- Try reloading the Google Sheet.
-- Make sure you have authorized the Apps Script project (check for permission prompts).
+Event handler for spreadsheet changes: processes new Import entries and master updates.
 
-**Q: Payment verification isn’t working?**
-- Ensure the Google account has access to the relevant Gmail inbox.
-- Check that triggers are set up correctly in Apps Script (Edit > Current project's triggers).
+```js
+function onChange(e) {
+  // Triggered automatically
+}
+```
 
-**Q: How do I manually run a script?**
-- Open the Apps Script editor, select the function, and click the Run button.
+| Name | Type   | Description           |
+|------|--------|-----------------------|
+| e    | Object | Sheets event object   |
 
-For more help, see the [GitHub Issues page](https://github.com/mcrunningclub/mcrun-membership-list/issues).
+**Output:** None
+
+---
+
+#### ## <big> transferLastImport() </big>
+
+Transfers the last Import sheet row to the main sheet and processes as new member.
+
+```js
+transferLastImport();
+```
+
+**Output:** None
+
+---
+
+#### ## <big> transferThisRow(row) </big>
+
+Transfers a specific Import row to main sheet and processes as new member.
+
+```js
+transferThisRow(14);
+```
+
+| Name | Type   | Description           |
+|------|--------|-----------------------|
+| row  | Int    | Row number in Import  |
+
+**Output:** None
+
+---
+
+<br>
+<!-- 
+    🔴 User Menu.gs
+-->
+
+### # <big> User Menu.gs </big>
+- [`onOpen()`](#onopen) → Adds custom menu to Sheet UI
+- [`logMenuAttempt(email)`](#logmenuattemptemail) → Logs user attempting to use menu
+- [`changeSheetView(sheetName)`](#changesheetviewsheetname) → Activates a specified sheet
+
+---
+
+#### ## <big> onOpen() </big>
+
+Adds the custom McRUN menu to the sheet UI.
+
+```js
+onOpen();
+```
+
+**Output:** None
+
+---
+
+#### ## <big> logMenuAttempt(email) </big>
+
+Logs an attempt to use the menu by a user.
+
+```js
+logMenuAttempt("admin@mcgill.ca");
+```
+
+| Name  | Type   | Description                        |
+|-------|--------|------------------------------------|
+| email | String | User email (default: current user) |
+
+**Output:** None
+
+---
+
+#### ## <big> changeSheetView(sheetName) </big>
+
+Activates the specified sheet in the current spreadsheet.
+
+```js
+changeSheetView("Winter 2025");
+```
+
+| Name      | Type   | Description       |
+|-----------|--------|-------------------|
+| sheetName | String | Name of the sheet |
+
+**Output:** None
+
+---
+
+## Triggers
+
+### Types of Triggers
+
+- **onChange:**  
+  - Handles new registration import, master updates, and triggers member processing.
+- **Time-based triggers:**  
+  - For periodic fee/payment checking; created as needed for follow-up.
+- **onOpen:**  
+  - Adds the custom admin menu for member management.
+
+**Purpose:**  
+- Ensures all new members are processed, formatted, verified, and onboarded automatically.
+- Follows up on outstanding fee payments.
+
+---
+
+## Troubleshooting & FAQ
+
+| Issue/Error | Likely Cause | Solution |
+|-------------|--------------|----------|
+| "Missing required fields" | Registration data not validated | Ensure all required fields are present in import |
+| "Unauthorized" | Wrong or missing API key | Ensure correct API key when using web endpoints |
+| "Failed to find payment" | Payment email not found | Wait for payment notification or check search terms |
+| "Label does not exist" | Gmail label missing | Create Gmail label manually |
+| "Script error during onFormSubmit" | Data/range not found or sheet structure changed | Check sheet structure, update code if needed |
+
+---
+
+## See Also
+
+- [mcrun-attendance](https://github.com/mcrunningclub/mcrun-attendance) — Semester attendance system
+- [mcrun-master-attendance](https://github.com/mcrunningclub/mcrun-master-attendance) — Head run attendance
+- [mcrace-code](https://github.com/mcrunningclub/mcrace-code) — McRUN Race registration management
+- [Google Apps Script Triggers](https://developers.google.com/apps-script/guides/triggers)
+- [Google Sheets API](https://developers.google.com/sheets/api)
+- [McRUN Club GitHub](https://github.com/mcrunningclub)
+
+---
+
+_Last updated: 2025-06-12_
