@@ -48,7 +48,7 @@ updated
 - See the other sections for more information on mkdocs, syntax, and
 formatting.
 
-### Example function documentation:
+### Example function documentation
 
 	**sendEmail(recipient, subject, body)**  
 	Sends an email message.

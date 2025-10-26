@@ -22,10 +22,8 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 │   │   ├── mcrun-favicon.png
 │   │   └── mcrun-logo-circle.png
 │   ├── projects/                 # Project-specific documentation
-│   │   ├── attendance-code-old.md
 │   │   ├── attendance-master-code.md
 │   │   ├── attendance-semester-code.md
-│   │   ├── attendance-semester2-code.md
 │   │   ├── mcrace-code.md
 │   │   ├── membership-list-code.md
 │   │   ├── new-member-communications-code.md
@@ -33,19 +31,17 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 │   │   ├── points-system-code.md
 │   │   └── projects.md
 │   ├── start/                    # Start documentation
-│   │   ├── .t.md
 │   │   ├── changelog.md
 │   │   ├── code-examples.md
 │   │   ├── faq.md
 │   │   ├── getting-started.md
-│   │   ├── README.md
 │   │   ├── setup.md
 │   │   ├── syntax.md
 │   │   └── typography.md
 │   ├── stylesheets/              # Custom stylesheets
 │   │   ├── extra.css
 │   │   └── extra.scss
-├── LICENSE                       # MIT License
 ├── LICENSE.md                    # Private Use License
 ├── mkdocs.yml                    # MkDocs configuration file
+├── requirements.txt              # Required packages (for pip)
 ```
