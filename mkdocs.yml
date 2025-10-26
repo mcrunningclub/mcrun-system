@@ -5,13 +5,14 @@ site_url: https://mcrunningclub.github.io/mcrun-system/
 
 repo_url: https://github.com/mcrunningclub/mcrun-system
 repo_name: mcrun-system
-copyright: Copyright &copy; 2025 McGill Student Running Club - <a href="#__consent">Cookies Preference</a>
+copyright: Copyright &copy; 2025 McGill Student Running Club
 
 #repo_name: mcrace code
 #repo_url: https://github.com/mcrunningclub/mcrace-code.git
 
 nav:
-  - Home: start/README.md
+  - Home: 
+      - Home: index.md
   - Getting Started:
       - Setup: start/setup.md
       - Contributing:
@@ -19,7 +20,7 @@ nav:
         - Syntax: start/syntax.md
         - Typography: start/typography.md
         - Code Examples: start/code-examples.md
-        - startContributing: start/contributing.md
+        - Start Contributing: start/contributing.md
       - Changelog: start/changelog.md
       - FAQ: start/faq.md
 
@@ -162,5 +163,5 @@ extra:
       link: https://www.instagram.com/mcgillstudentsrunningclub/
 
 
-  version:
-    provider: mike
+  # version:
+  #   provider: mike
