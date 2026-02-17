@@ -64,10 +64,20 @@ Each file lists its functions and provides a detailed reference for each.
 -->
 
 ### # <big> Member Info.gs </big>
-- [`getUserTimeZone()`](#getusertimezone) → Returns user's timezone
+- [`getUserTimeZone_()`](#getusertimezone_) → Returns user's timezone
 - [`GET_LITERAL_SHEET()`](#get_literal_sheet) → Returns the "Literals" sheet object
-- [`GET_PAYMENT_LOG_SHEET()`](#get_payment_log_sheet) → Returns the "Payment Logs" sheet object
-
+- [`GET_PAYMENT_LOG_SHEET()`](#get_payment_log_sheet) → Returns the "Payment Logs" sheet object  
+- [`getCurrentUserEmail_()`](#getcurrentuseremail_) → Returns active user email  
+- [`getDraftBySubject_(subject)`](#getdraftbysubject_subject) → Returns Gmail draft by subject  
+- [`getDraftById_(id)`](#getdraftbyid_id) → Returns Gmail draft by ID  
+- [`createNewMemberCommunications(memberObj)`](#createnewmembercommunications_memberobj) → Full new member onboarding pipeline  
+- [`appendNewValues_(memberObj, sheet)`](#appendnewvalues_memberobj-sheet) → Appends new member to Literals sheet  
+- [`triggerUpdateAndSendPass(row)`](#triggerupdateandsendpass_row) → Updates pass from Payment Logs  
+- [`updateAndSendPass(statusObj, isLogged)`](#updateandsendpass_statusobj-islogged) → Updates pass and sends email  
+- [`logPaymentStatus_(status)`](#logpaymentstatus_status) → Appends payment log entry  
+- [`findRowByEmail_(email)`](#findrowbyemail_email) → Finds row index by email  
+- [`logMessage_(message, sheet, row)`](#logmessage_message-sheet-row) → Logs status message in sheet
+  
 ---
 
 #### ## <big> getUserTimeZone() </big>
@@ -113,7 +123,13 @@ const sheet = GET_PAYMENT_LOG_SHEET();
 
 ### # <big> Member Pass.gs </big>
 - [`createPassFile(passInfo)`](#createpassfilepassinfo) → Generates a digital membership pass using Google Slides
-
+- [`createNewPass(row)`](#createnewpass_row) → Regenerates pass using sheet row data  
+- [`testRuntime()`](#testruntime) → Benchmarks pass generation runtime  
+- [`generateQrUrl_(memberID)`](#generateqrurl_memberid) → Generates QR code URL  
+- [`getImage_(url)`](#getimage_url) → Fetches image from URL  
+- [`loadImageBytes_(id)`](#loadimagebytes_id) → Loads Drive file as base64  
+- [`testQRGenerator_()`](#testqrgenerator_) → Tests QR code generation and storage
+  
 ---
 
 #### ## <big> createPassFile(passInfo) </big>
@@ -147,6 +163,8 @@ const passUrl = createPassFile({
 ### # <big> Send Email.gs </big>
 - [`sendWelcomeEmailInRow(row)`](#sendwelcomeemailinrowrow) → Sends a welcome email to the member in a row
 - [`sendWelcomeEmail(memberInformation)`](#sendwelcomeemailmemberinformation) → Sends a personalized welcome email using member info
+- [`sendUpdatedPass(member)`](#sendupdatedpassmember) → Sends an updated digital pass email  
+- [`quickPassUpdate(row)`](#quickpassupdaterow) → Creates a new pass and sends updated pass email
 
 ---
 
@@ -197,7 +215,15 @@ sendWelcomeEmail({
 - [`inlineImage()`](#inlineimage) → Example: send email with inline images
 - [`saveDraftAsHtml()`](#savedraftashtml) → Saves HTML of a Gmail draft to Drive
 - [`generateHtmlFromDraft(subjectLine)`](#generatehtmlfromdraftsubjectline) → Generates and saves HTML version of an email draft
-
+- [`cacheBlobToStore()`](#cacheblobtostore) → Wrapper to cache Drive images  
+- [`cacheBlobToProperties_(fileId, blobName)`](#cacheblobtoproperties_fileid-blobname) → Stores Drive image as base64 in Script Properties  
+- [`getBlobFromProperties_(blobKey)`](#getblobfromproperties_blobkey) → Retrieves cached image blob  
+- [`testRuntime()`](#testruntime) → Benchmarks email send runtime  
+- [`sendEmail_(memberInformation)`](#sendemail_memberinformation) → Sends email from Gmail draft  
+- [`getGmailTemplateFromDrafts(subjectLine)`](#getgmailtemplatefromdraftssubjectline) → Retrieves draft template and inline images  
+- [`subjectFilter_(subjectLine)`](#subjectfilter_subjectline) → Filters drafts by subject  
+- [`fillInTemplateFromObject_(template, data)`](#fillintemplatefromobject_template-data) → Replaces `{{placeholders}}`  
+- [`escapeData_(str)`](#escapedata_str) → Escapes special characters for safe JSON parsing
 ---
 
 #### ## <big> inlineImage() </big>
