@@ -1,9 +1,12 @@
-name: ci 
+name: ci
+run-name: update mkdocs pages
 
 on:
   push:
     branches:
       - main
+    tags:
+      - update-docs
 
 permissions:
   contents: write
@@ -12,20 +15,33 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Configure Git Credentials
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Configure credentials as Github Actions bot
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-      - uses: actions/setup-python@v5
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v5
         with:
           python-version: 3.x
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-      - uses: actions/cache@v4
+      - name: Set cache number to current month
+        run: echo "cache_id=$(date --utc '+%m')" >> $GITHUB_ENV 
+      - name: Cache dependencies
+        id: cache-deps
+        uses: actions/cache@v4
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache 
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material 
+      - if: ${{ steps.cache-deps.outputs.cache-hit == 'true' }}
+        continue-on-error: true
+        run: echo "Cache hit!"
+      - if: ${{ steps.cache-deps.outputs.cache-hit != 'true' }}
+        continue-on-error: true
+        run: echo "Cache miss"
+      - name: Install Material for mkdocs
+        run: pip install mkdocs-material 
+      - name: Deploy
       - run: mkdocs gh-deploy --force
