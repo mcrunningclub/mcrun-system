@@ -2,135 +2,83 @@ site_name: McRUN System Documentation
 site_description: Documentation for the McRUN System, including McRace Code and user guides.
 site_author: McGill Student Running Club (Tech Team)
 site_url: https://mcrunningclub.github.io/mcrun-system/
-
 repo_url: https://github.com/mcrunningclub/mcrun-system
 repo_name: mcrun-system
-copyright: Copyright &copy; 2025 McGill Student Running Club
-
-#repo_name: mcrace code
-#repo_url: https://github.com/mcrunningclub/mcrace-code.git
+copyright: Copyright &copy; 2026 McGill Student Running Club
 
 nav:
-  - Home: 
+  - Home:
       - Home: index.md
   - Getting Started:
       - Setup: start/setup.md
       - Contributing:
-        - mkdocs: start/getting-started.md 
-        - Syntax: start/syntax.md
-        - Typography: start/typography.md
-        - Code Examples: start/code-examples.md
-        - Start Contributing: start/contributing.md
+          - mkdocs: start/getting-started.md
+          - Syntax: start/syntax.md
+          - Typography: start/typography.md
+          - Code Examples: start/code-examples.md
+          - Start Contributing: start/contributing.md
       - Changelog: start/changelog.md
       - FAQ: start/faq.md
-
-  - Projects: 
+  - Projects:
       - Overview: projects/projects.md
-      
-      - Membership Code: 
-        - Registry: projects/membership-list-code.md
-        - Communications: projects/new-member-communications-code.md
-      
+      - Membership Code:
+          - Membership List: projects/membership-list-code.md
+          - New Member Communications: projects/new-member-communications-code.md
       - Attendance Code:
-        - Semester: projects/attendance-semester-code.md
-        - Master: projects/attendance-master-code.md
-      
-      - Points System Code: 
-        - Ledger: projects/points-system-code.md
-        - Points Email: projects/points-email-code.md
-
-      - Other:
-        - McRace Code: projects/mcrace-code.md
-
-
-  # - Overview: mcrace-code.md
-  # - Installation: mcrace-code/installation.md
-  # - Configuration: mcrace-code/configuration.md
-  # - Troubleshooting: mcrace-code/troubleshooting.md
-  # - User Guide: https://example.com/
-  # - Bug Tracker: https://example.com/
-
+          - Master: projects/attendance-master-code.md
+          - Semester: projects/attendance-semester-code.md
+      - Points System Code:
+          - Ledger: projects/points-system-code.md
+          - Points Email: projects/points-email-code.md
+      - McRace Code:
+          - Registrations: projects/mcrace-code.md
+          - Timing System: projects/mcrace-timing-code.md
 
 theme:
+  language: en
   name: material
-  logo: assets/mcrun-logo-circle.png
+  logo: assets/mcrun-logo.png
   favicon: assets/mcrun-favicon.png
-
   palette:
-
-  # Palette toggle for automatic mode
-    # - media: "(prefers-color-scheme)"
-    #   scheme: default
-    #   toggle:
-    #     icon: material/brightness-auto
-    #     name: Switch to system preference
-
-    # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to dark mode
-
-    # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode
-
+    primary: custom
+    accent: custom
   font:
-    text: Inter
-    code: Roboto Mono
-
-
+    text: Roboto
+    code: JetBrains Mono
   features:
     - content.code.copy
     - content.code.select
-
-    - navigation.footer
-    - navigation.top
     - navigation.instant
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.expand
     - navigation.sections
     - navigation.path
-    - navigation.indexes
-
+    - navigation.prune
+    - navigation.top
     - toc.follow
-    # - toc.integrate
-
+    - header.autohide
 
 extra_css:
   - stylesheets/extra.css
 
 markdown_extensions:
   - attr_list
-
   - toc:
       permalink: true
       toc_depth: 3
-
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  
   - admonition
-
   - pymdownx.details
-  
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
-  
   - pymdownx.inlinehilite
-  
   - pymdownx.snippets
-  
   - pymdownx.superfences
-
   # - material.extensions.preview:
   #     configurations:
   #       - targets:
@@ -144,13 +92,11 @@ markdown_extensions:
 #       include_build_date: true
 #       include_git_hash: true
 #       git_hash_format: short
-
 #   - git-committers:
 #       repository: squidfunk/mkdocs-material
 #       branch: master
 #       committers:
 #         - name: AndreyG
-
 #   - git-authors
 
 extra:
@@ -160,8 +106,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/mcrunningclub
     - icon: fontawesome/brands/instagram
-      link: https://www.instagram.com/mcgillstudentsrunningclub/
-
+      link: https://www.instagram.com/mcrun.mcgill
 
   # version:
   #   provider: mike
