@@ -1,30 +1,62 @@
 ---
 authors:
     - andrey
+    - rama
+    - mona
 date: 2025-06-11
-links:
-    - start/faq.md
+
 ---
 
 # McRUN New Member Communications
 
 ---
 
-Automates the process of sending welcome emails and digital passes to new members of the McGill Students Running Club. This Google Apps Script project integrates with Google Sheets, Gmail, and Google Drive to streamline member onboarding and communication.
+## About
 
-## Features
-- Automatically sends a personalized welcome email to new members.
-- Generates and attaches a digital membership pass (with QR code) for each member.
-- Logs email and pass delivery status in a Google Sheet.
-- Supports updating and resending digital passes.
-- Uses Gmail drafts and HTML templates for flexible email content.
+### Files
 
-## Main Functions
+- **Github Repo:** [mcrun-new-member-communications](https://github.com/mcrunningclub/mcrun-new-member-communications)
+- **Google Sheets:** [New Member Comms](https://docs.google.com/spreadsheets/d/1PrKth6f81Dx52bB3oPX1t55US-GnNRGve-TN4rU9Wlo/edit?usp=sharing)
+- **Apps Script Project:** [New Member Communications](https://script.google.com/home/projects)
+
+### Requirements
+- Google Workspace (Gmail, Google Sheets, Google Drive)
+- Script must be run from the club's Google account for full functionality
+
+---
+
+## Functions
+
+<!-- ## Main Functions
 - **sendWelcomeEmailInRow(row)**: Sends a welcome email to the member in the specified row of the sheet.
 - **sendWelcomeEmail_(memberInformation)**: Sends a personalized welcome email to a new member using their information.
 - **createPassFile_(passInfo)**: Generates a digital pass for a member and returns a download link.
 - **updateAndSendPass(statusObj, isLogged)**: Updates member status, creates a new pass, and sends an updated pass email.
-- **logMessage_(message, sheet, row)**: Logs email or pass status to the sheet.
+- **logMessage_(message, sheet, row)**: Logs email or pass status to the sheet. -->
+
+--8<-- "communications-memberinfo.md"
+--8<-- "communications-memberpass.md"
+--8<-- "communications-mailmerge.md"
+--8<-- "communications-sendemail.md"
+
+
+---
+
+## Triggers
+
+### Types of Triggers
+
+- **Manual triggers:**  
+  - Most functions are designed to be invoked when a new member is added, or by admin action via Apps Script.
+- **Event-based triggers:**  
+  - Can be set up to run when new rows are added (e.g., via onChange in a connected membership sheet).
+- **Time-based triggers:**  
+  - Not present by default, but possible for scheduled reminders or follow-ups if extended.
+
+**Purpose:**  
+- Automate sending of welcome emails and pass generation for each new member registration.
+
+---
 
 ## Example Usage
 
@@ -55,280 +87,6 @@ const passUrl = createPassFile_({
 Logger.log(passUrl);
 ```
 
-## Requirements
-- Google Workspace (Gmail, Google Sheets, Google Drive)
-- Script must be run from the club's Google account for full functionality
-
-## About
-
-**McRUN New Member Communications** is a Google Apps Script project that automates onboarding for new members of the McGill Students Running Club.
-
-It generates and sends personalized welcome emails and digital membership passes, integrating with Google Sheets, Gmail, and Google Slides to streamline communications and record-keeping.
-
-**Purpose**
-
-- Automatically generate and send a welcome email with a digital pass to new registered members.
-- Log communications and membership information for club administrators.
-- Provide a seamless, professional onboarding experience for all new club members.
-
-### Files
-
-- **Github Repo:** [mcrun-new-member-communications](https://github.com/mcrunningclub/mcrun-new-member-communications)
-- **Google Sheets:** [New Member Communications Sheet](https://docs.google.com/spreadsheets/d/1PrKth6f81Dx52bB3oPX1t55US-GnNRGve-TN4rU9Wlo/edit?usp=sharing)
-- **Apps Script Project:** [McRUN New Member Communications Apps Script](https://script.google.com/home/projects) _(Accessible via Extensions > Apps Script in the Google Sheet)_
-
-### Key Features
-
-- Sends personalized welcome emails with inline images and digital pass attachment.
-- Generates digital membership passes from Google Slides template, including QR code.
-- Caches and reuses email templates and Drive blobs for efficiency.
-- Logs outgoing emails and member info for compliance and reporting.
-- Supports importing and processing from other club systems via Sheets.
-- Customizable HTML email templates.
-- Robust error and status logging for every communication.
-
-### Tools Used
-
-- Google Apps Script (JavaScript/HTML)
-- Google Sheets (Literals, Payment Logs, etc.)
-- Gmail API (send personalized HTML emails, inline images)
-- Google Slides API (generate custom digital passes)
-- Google Drive (store digital passes)
-- Apps Script Triggers (manual, event-based)
-
-
----
-
-## Function Docs
-
-This section is divided by project file (alphabetical order).  
-Each file lists its functions and provides a detailed reference for each.
-
-> **Note:** Only a selection of functions may be shown below due to search result limits.  
-> [See all code/functions in GitHub](https://github.com/mcrunningclub/mcrun-new-member-communications/search?q=function)
-
-<br>
-<!-- 
-    🔴 Member Info.gs
--->
-
-### # <big> Member Info.gs </big>
-- [`getUserTimeZone_()`](#getusertimezone_) → Returns user's timezone
-- [`GET_LITERAL_SHEET()`](#get_literal_sheet) → Returns the "Literals" sheet object
-- [`GET_PAYMENT_LOG_SHEET()`](#get_payment_log_sheet) → Returns the "Payment Logs" sheet object  
-- [`getCurrentUserEmail_()`](#getcurrentuseremail_) → Returns active user email  
-- [`getDraftBySubject_(subject)`](#getdraftbysubject_subject) → Returns Gmail draft by subject  
-- [`getDraftById_(id)`](#getdraftbyid_id) → Returns Gmail draft by ID  
-- [`createNewMemberCommunications(memberObj)`](#createnewmembercommunications_memberobj) → Full new member onboarding pipeline  
-- [`appendNewValues_(memberObj, sheet)`](#appendnewvalues_memberobj-sheet) → Appends new member to Literals sheet  
-- [`triggerUpdateAndSendPass(row)`](#triggerupdateandsendpass_row) → Updates pass from Payment Logs  
-- [`updateAndSendPass(statusObj, isLogged)`](#updateandsendpass_statusobj-islogged) → Updates pass and sends email  
-- [`logPaymentStatus_(status)`](#logpaymentstatus_status) → Appends payment log entry  
-- [`findRowByEmail_(email)`](#findrowbyemail_email) → Finds row index by email  
-- [`logMessage_(message, sheet, row)`](#logmessage_message-sheet-row) → Logs status message in sheet
-  
----
-
-#### ## <big> getUserTimeZone() </big>
-
-Returns the user's timezone from script settings.
-
-```js
-const tz = getUserTimeZone();
-```
-
-**Output:** String (timezone)
-
----
-
-#### ## <big> GET_LITERAL_SHEET() </big>
-
-Returns the "Literals" sheet, or opens by ID if not found.
-
-```js
-const sheet = GET_LITERAL_SHEET();
-```
-
-**Output:** Google Sheet object
-
----
-
-#### ## <big> GET_PAYMENT_LOG_SHEET() </big>
-
-Returns the "Payment Logs" sheet, or opens by ID if not found.
-
-```js
-const sheet = GET_PAYMENT_LOG_SHEET();
-```
-
-**Output:** Google Sheet object
-
----
-
-<br>
-<!-- 
-    🔴 Member Pass.gs
--->
-
-### # <big> Member Pass.gs </big>
-- [`createPassFile(passInfo)`](#createpassfilepassinfo) → Generates a digital membership pass using Google Slides
-- [`createNewPass(row)`](#createnewpass_row) → Regenerates pass using sheet row data  
-- [`testRuntime()`](#testruntime) → Benchmarks pass generation runtime  
-- [`generateQrUrl_(memberID)`](#generateqrurl_memberid) → Generates QR code URL  
-- [`getImage_(url)`](#getimage_url) → Fetches image from URL  
-- [`loadImageBytes_(id)`](#loadimagebytes_id) → Loads Drive file as base64  
-- [`testQRGenerator_()`](#testqrgenerator_) → Tests QR code generation and storage
-  
----
-
-#### ## <big> createPassFile(passInfo) </big>
-
-Generates a digital pass file for a member using a Google Slides template, fills in info, generates QR code, and returns the download link.
-
-```js
-const passUrl = createPassFile({
-  firstName: "Alice",
-  lastName: "Smith",
-  memberId: "MC1234",
-  // ...other fields
-});
-```
-
-| Name     | Type   | Description                |
-|----------|--------|----------------------------|
-| passInfo | Object | Member data (name, ID, etc)|
-
-**Output:** String (download link for pass PNG)
-
-**Pitfalls:** Template and folder IDs must be correct and accessible.
-
----
-
-<br>
-<!-- 
-    🔴 Send Email.gs
--->
-
-### # <big> Send Email.gs </big>
-- [`sendWelcomeEmailInRow(row)`](#sendwelcomeemailinrowrow) → Sends a welcome email to the member in a row
-- [`sendWelcomeEmail(memberInformation)`](#sendwelcomeemailmemberinformation) → Sends a personalized welcome email using member info
-- [`sendUpdatedPass(member)`](#sendupdatedpassmember) → Sends an updated digital pass email  
-- [`quickPassUpdate(row)`](#quickpassupdaterow) → Creates a new pass and sends updated pass email
-
----
-
-#### ## <big> sendWelcomeEmailInRow(row) </big>
-
-Sends a welcome email to the member in the specified row of the "Literals" sheet. Logs status.
-
-```js
-sendWelcomeEmailInRow(14);
-```
-
-| Name | Type    | Description                 |
-|------|---------|-----------------------------|
-| row  | Integer | Row to target (default: last row) |
-
-**Output:** None (logs status in sheet)
-
-**Pitfalls:** Must be run as the club account.
-
----
-
-#### ## <big> sendWelcomeEmail(memberInformation) </big>
-
-Sends a personalized welcome email to a new member using their information and a template.
-
-```js
-sendWelcomeEmail({
-  firstName: "Alice",
-  passUrl: "https://drive.google.com/...",
-  email: "alice@example.com"
-});
-```
-
-| Name              | Type   | Description                    |
-|-------------------|--------|--------------------------------|
-| memberInformation | Object | Includes firstName, passUrl, email, etc. |
-
-**Output:** String (status message)
-
----
-
-<br>
-<!-- 
-    🔴 Mail Merge.gs
--->
-
-### # <big> Mail Merge.gs </big>
-- [`inlineImage()`](#inlineimage) → Example: send email with inline images
-- [`saveDraftAsHtml()`](#savedraftashtml) → Saves HTML of a Gmail draft to Drive
-- [`generateHtmlFromDraft(subjectLine)`](#generatehtmlfromdraftsubjectline) → Generates and saves HTML version of an email draft
-- [`cacheBlobToStore()`](#cacheblobtostore) → Wrapper to cache Drive images  
-- [`cacheBlobToProperties_(fileId, blobName)`](#cacheblobtoproperties_fileid-blobname) → Stores Drive image as base64 in Script Properties  
-- [`getBlobFromProperties_(blobKey)`](#getblobfromproperties_blobkey) → Retrieves cached image blob  
-- [`testRuntime()`](#testruntime) → Benchmarks email send runtime  
-- [`sendEmail_(memberInformation)`](#sendemail_memberinformation) → Sends email from Gmail draft  
-- [`getGmailTemplateFromDrafts(subjectLine)`](#getgmailtemplatefromdraftssubjectline) → Retrieves draft template and inline images  
-- [`subjectFilter_(subjectLine)`](#subjectfilter_subjectline) → Filters drafts by subject  
-- [`fillInTemplateFromObject_(template, data)`](#fillintemplatefromobject_template-data) → Replaces `{{placeholders}}`  
-- [`escapeData_(str)`](#escapedata_str) → Escapes special characters for safe JSON parsing
----
-
-#### ## <big> inlineImage() </big>
-
-Sends an example email with inline images to demonstrate image embedding.
-
-```js
-inlineImage();
-```
-
-**Output:** None (sends test email)
-
----
-
-#### ## <big> saveDraftAsHtml() </big>
-
-Saves the HTML content of a Gmail draft (by subject) as a file in Drive.
-
-```js
-saveDraftAsHtml();
-```
-
-**Output:** None
-
----
-
-#### ## <big> generateHtmlFromDraft(subjectLine) </big>
-
-Generates and saves the HTML version of an email draft found by subject.
-
-```js
-generateHtmlFromDraft("Here's your post-run report! 🙌");
-```
-
-| Name        | Type   | Description         |
-|-------------|--------|---------------------|
-| subjectLine | String | Subject of draft    |
-
-**Output:** None (file created in Drive)
-
----
-
-## Triggers
-
-### Types of Triggers
-
-- **Manual triggers:**  
-  - Most functions are designed to be invoked when a new member is added, or by admin action via Apps Script.
-- **Event-based triggers:**  
-  - Can be set up to run when new rows are added (e.g., via onChange in a connected membership sheet).
-- **Time-based triggers:**  
-  - Not present by default, but possible for scheduled reminders or follow-ups if extended.
-
-**Purpose:**  
-- Automate sending of welcome emails and pass generation for each new member registration.
-
 ---
 
 ## Troubleshooting & FAQ
@@ -340,17 +98,3 @@ generateHtmlFromDraft("Here's your post-run report! 🙌");
 | "Blob not found" | Script property missing or not cached | Run cacheBlobToStore or check Drive file access |
 | "Template/Drive ID not found" | File/folder IDs incorrect | Double-check and update IDs in the code |
 | Email not received | Spam filter, wrong address | Check recipient address and Gmail spam folder |
-
----
-
-## See Also
-
-- [mcrun-membership-list](https://github.com/mcrunningclub/mcrun-membership-list) — Membership roster automation
-- [mcrace-code](https://github.com/mcrunningclub/mcrace-code) — McRUN Race registration management
-- [Google Apps Script Triggers](https://developers.google.com/apps-script/guides/triggers)
-- [Google Sheets API](https://developers.google.com/sheets/api)
-- [McRUN Club GitHub](https://github.com/mcrunningclub)
-
----
-
-_Last updated: 2025-06-12_

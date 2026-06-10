@@ -78,7 +78,7 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets:
-      base_path: docs/
+      base_path: snippets/
   - pymdownx.superfences
 
 # plugins:

@@ -44,7 +44,7 @@ There are also constants for required columns in both the semester sheet and mas
 
 ## Functions
 
---8<-- "projects/membership/registry-formatting.md"
+--8<-- "registry-formatting.md"
 
 ---
 
