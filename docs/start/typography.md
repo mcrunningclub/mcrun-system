@@ -2,8 +2,8 @@
 
 ## Typefaces
 
-- Headers: [Inter](https://github.com/rsms/inter)
-- Code: [Hack](http://sourcefoundry.org/hack/)
+- Headers: Figtree
+- Code: JetBrains Mono
 
 ---
 ## Body
