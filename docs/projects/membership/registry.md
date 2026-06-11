@@ -18,6 +18,11 @@ date: 2026-06-09
 - **Google Sheets:** [Memberships Collected (main)](https://docs.google.com/spreadsheets/d/1qvoL3mJXCvj3m7Y70sI-FAktCiSWqEmkDxfZWz0lFu4/edit?usp=sharing)
 - **Apps Script Project:** [Membership Registry Code](https://script.google.com/home/projects)
 
+### Libraries and Services
+
+- [New Member Communications](./communications.md) library
+- Gmail service
+
 
 ---
 
@@ -36,7 +41,14 @@ date: 2026-06-09
  - `TIMEZONE` - Current (user) timezone
  - `MCRUN_EMAIL` - Club email
  - `MEMBERSHIP_DURATION` - Length of membership in years
- - `WAIVER_DRIVE_ID` - DRIVE URL CONTAINING WAIVERS; NOT CONFIDENTIAL
+ - `WAIVER_DRIVE_ID` - Drive URL containing waivers. NOT CONFIDENTIAL
+ - `SEMESTER_COLS` - Latest column mapping for semester sheet
+ - `MASTER_COLS` - Latest column mapping for master sheet
+ - `IMPORT_MAP` - Mapping from Fillout registration object to semester sheet
+ - `PROCESSED_ARR` - Fields in array from processing last row in semester sheet (0-indexed)
+ - `SEMESTER_CODE_MAP` - Mapping from semesters names to semester codes e.g. Winter 2025 -> W25
+ - `ALL_SEMESTERS` - List of all semesters (names) which have sheets
+ - `isFeePaidFormula` - GSheet formula for IS_FEE_PAID_COL in master sheet
 
 There are also constants for required columns in both the semester sheet and master sheet, as well as mappings for all the column in those sheets. UPDATE THESE AS NECESSARY!
 
@@ -45,6 +57,7 @@ There are also constants for required columns in both the semester sheet and mas
 ## Functions
 
 --8<-- "registry-formatting.md"
+--8<-- "registry-masterscripts.md"
 
 ---
 
