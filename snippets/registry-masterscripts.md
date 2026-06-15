@@ -85,22 +85,6 @@ Combines data from 2024 semesters into new master sheet (overwrites existing)
 Get and process semester data and concatenate, then create a map indexed by emails
 to make sure entries are unique/combine entries with the same email. Sorts output by first name.
 
-#### getSemesterCode_(`semester`)
-
-Get semester code from semester sheet name in map, or creates if not found.
-
-First letter of code is W/F/S corresponding to first letter of semester
-and next two are digits YY corresponding to the year.
-
-Params:
-
-- `semester` (string) - Semester name e.g. Fall 2024
-
-Returns:
-
-- (string) - Semester code e.g. F24
-
-
 #### sortUniqueData()
 
 Combine data from 2024 and sort it into a new master sheet (overwrites existing)

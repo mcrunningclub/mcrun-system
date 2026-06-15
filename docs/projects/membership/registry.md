@@ -64,6 +64,23 @@ Other constants:
  - `WAIVER_DRIVE_ID` - Drive URL containing waivers. NOT CONFIDENTIAL
  - `isFeePaidFormula` - GSheet formula for IS_FEE_PAID_COL in master sheet
 
+Finally, there is a function:
+
+#### GET_COL_MAP_(sheet)
+
+Retrieves the column mapping for a given sheet.
+
+This function returns the column mapping object for the specified sheet name.
+If the sheet name is not found in the mapping, it returns `null`.
+
+Params:
+
+- `sheet` (string) - The name of the sheet to retrieve the column mapping for.
+
+Returns:
+
+- (Object|null) - The column mapping object for the sheet, or `null` if not found
+
 ---
 
 ## Functions
@@ -71,6 +88,8 @@ Other constants:
 --8<-- "registry-formatting.md"
 --8<-- "registry-masterscripts.md"
 --8<-- "registry-memberfee.md"
+--8<-- "registry-memberships.md"
+--8<-- "registry-utils.md"
 
 ---
 

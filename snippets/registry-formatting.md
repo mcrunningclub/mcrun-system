@@ -11,21 +11,6 @@ Params:
 
  - `row` (number) - The row number to target for trimming. Defaults to the last row in semester sheet.
 
-#### removeDiacritics_(`str`)
-
-Removes diacritics (accents) from a string.
-
-This function normalizes the input string and removes any diacritical marks,
-ensuring a clean, ASCII-compatible output.
-
-Params:
-
- - `str` (string) - The string to normalize and strip of diacritics.
-
-Returns:
-
- - (string) - The normalized string without diacritics.
-
 #### sortSemesterByName_()
 
 Sorts semester sheet by first name, then last name.
