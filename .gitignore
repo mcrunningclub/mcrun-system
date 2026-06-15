@@ -2,4 +2,5 @@
 .vscode/
 venv/
 site/
-docs/start/.t.md
+node_modules/
+jsdoc_site/
