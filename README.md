@@ -14,5 +14,6 @@ install locally `npm install --save-dev jsdoc`
 
 clone repository into the same parent folder as this one under default name
 
-run from this folder: `./node_modules/.bin/jsdoc -c jsdoc.conf`
+run from this folder: `./node_modules/.bin/jsdoc -c jsdoc.conf [folders or files to document]`
 
+html site is saved in jsdoc_site/
