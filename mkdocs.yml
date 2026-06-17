@@ -78,22 +78,8 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets:
-      base_path: snippets/
+      base_path: docs_snippets/
   - pymdownx.superfences
-
-# plugins:
-#   - git-revision-date-localized:
-#       enable_creation_date: true
-#       fallback_to_build_date: true
-#       include_build_date: true
-#       include_git_hash: true
-#       git_hash_format: short
-#   - git-committers:
-#       repository: squidfunk/mkdocs-material
-#       branch: master
-#       committers:
-#         - name: AndreyG
-#   - git-authors
 
 extra:
   social:
@@ -103,6 +89,3 @@ extra:
       link: https://github.com/mcrunningclub
     - icon: fontawesome/brands/instagram
       link: https://www.instagram.com/mcrun.mcgill
-
-  # version:
-  #   provider: mike
