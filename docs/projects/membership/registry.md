@@ -63,6 +63,7 @@ Other constants:
  - `MEMBERSHIP_DURATION` - Length of membership in years
  - `WAIVER_DRIVE_ID` - Drive URL containing waivers. NOT CONFIDENTIAL
  - `isFeePaidFormula` - GSheet formula for IS_FEE_PAID_COL in master sheet
+ - `INDEX_STORE_NAME` - Name of property that index store is saved under
 
 Finally, there is a function:
 
@@ -89,6 +90,7 @@ Returns:
 --8<-- "registry-masterscripts.md"
 --8<-- "registry-memberfee.md"
 --8<-- "registry-memberships.md"
+--8<-- "registry-search.md"
 --8<-- "registry-utils.md"
 
 ---
