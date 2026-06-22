@@ -91,6 +91,7 @@ Returns:
 --8<-- "registry-memberfee.md"
 --8<-- "registry-memberships.md"
 --8<-- "registry-search.md"
+--8<-- "registry-transfer.md"
 --8<-- "registry-utils.md"
 
 ---
