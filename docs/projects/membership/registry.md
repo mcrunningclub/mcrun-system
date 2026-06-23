@@ -93,6 +93,7 @@ Returns:
 --8<-- "registry-search.md"
 --8<-- "registry-transfer.md"
 --8<-- "registry-utils.md"
+--8<-- "registry-triggers.md"
 
 ---
 
