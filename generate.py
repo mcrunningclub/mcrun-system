@@ -32,31 +32,37 @@ def parse_docstring(file_path, output_file_path):
     newlines = []
     cur_comment = []
 
-    with open(file_path, "r") as f:
+    with open(file_path, "r", encoding="utf-8") as f:
         for line in f:
             # If not inside a comment block just continue, unless comment block starts
             if not in_comment:
                 if line.startswith("/**"):
+                    print(f"Found comment block: {line.strip()}")
                     in_comment = True
-                else:
-                    continue
-
-            # If inside a comment block, handle comment line
-
-            # Comment ends at start of function def
-            if FUNC_DEF_REGEX.match(line):
+                continue
+            
+            # Get function name if comment block has ended
+            if in_comment and FUNC_DEF_REGEX.match(line):
                 # Get function name
                 cur_comment.insert(0, re.sub(FUNC_DEF_REGEX, r"#### \1\n", line))
-
-                # Move out of comment block
+                print(f"Comment block ended: {line.strip()}")
+                # Stop searching
                 in_comment = False
                 newlines.extend(cur_comment)
                 newlines.append("\n")
                 cur_comment.clear()
                 continue
 
+            if in_comment and line.startswith("const"):
+                print(f"Found variable declaration: {line.strip()}")
+                # Not a function, stop searching
+                in_comment = False
+                cur_comment.clear()
+                continue
+
+
             # Regular docstring line
-            if DOCSTRING_REGEX.fullmatch(line):
+            if in_comment and DOCSTRING_REGEX.fullmatch(line):
                 if in_param:
                     in_param = False
                 if in_return:
@@ -65,7 +71,7 @@ def parse_docstring(file_path, output_file_path):
                 cur_comment.append(newline)
 
             # Empty docstring line
-            elif EMPTY_LINE_REGEX.fullmatch(line):
+            elif in_comment and EMPTY_LINE_REGEX.fullmatch(line):
                 if in_param:
                     in_param = False
                 if in_return:
@@ -73,7 +79,7 @@ def parse_docstring(file_path, output_file_path):
                 cur_comment.append("\n")
 
             # Parameter line
-            elif PARAM_REGEX.fullmatch(line):
+            elif in_comment and PARAM_REGEX.fullmatch(line):
                 if in_return:
                     in_return = False
                 if not in_param:
@@ -83,7 +89,7 @@ def parse_docstring(file_path, output_file_path):
                 cur_comment.append(newline)
 
             # Return line
-            elif RETURN_REGEX.fullmatch(line):
+            elif in_comment and RETURN_REGEX.fullmatch(line):
                 if in_param:
                     cur_comment.append("\n")
                     in_param = False
