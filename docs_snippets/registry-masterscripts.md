@@ -1,5 +1,11 @@
 ### Master Scripts.gs
 
+#### createMaster()
+
+Creates the master sheet by consolidating member data from selected semester sheets.
+
+Calls `consolidateMemberData` to fetch, process, and output data to the master sheet.
+
 #### addLastSubmissionToMaster_(`lastRow`)
 
 Adds the last submission from semester sheet to the master sheet.

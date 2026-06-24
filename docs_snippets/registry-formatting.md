@@ -18,6 +18,28 @@ Sorts semester sheet by first name, then last name.
 This function organizes the data in the semester sheet by sorting rows alphabetically
 based on the `First Name` column and then the `Last Name` column.
 
+#### tryAndSortSemester()
+
+Sorts semester sheet only if the lock is free.
+
+This function prevents concurrent processes from interfering with sorting
+by acquiring a script lock before proceeding. If the lock is unavailable,
+it logs a message and exits gracefully.
+
+#### formatSemester()
+
+Formats semester sheet for a simple and uniform user experience.
+
+- Freezing panes
+- Adjusting font styles, sizes, and weights
+- Setting column widths
+- Applying number formats and text wrapping
+- Aligning text horizontally and vertically
+- Adding checkboxes to specific columns
+- Ensuring proper letter casing for names and email addresses
+- Adding hyperlinks to waivers
+- Formatting collection dates
+
 #### addCheckboxSemester_(`row`)
 
 Adds checkboxes to specific columns in the last row of semester sheet.
@@ -39,28 +61,6 @@ Set letter case of specific columns in member entry as following:
 Params:
 
 - `row` (number)
-
-#### formatSemester()
-
-Formats semester sheet for a simple and uniform user experience.
-
-- Freezing panes
-- Adjusting font styles, sizes, and weights
-- Setting column widths
-- Applying number formats and text wrapping
-- Aligning text horizontally and vertically
-- Adding checkboxes to specific columns
-- Ensuring proper letter casing for names and email addresses
-- Adding hyperlinks to waivers
-- Formatting collection dates
-
-#### tryAndSortSemester()
-
-Sorts semester sheet only if the lock is free.
-
-This function prevents concurrent processes from interfering with sorting
-by acquiring a script lock before proceeding. If the lock is unavailable,
-it logs a message and exits gracefully.
 
 #### sortMasterByEmail()
 

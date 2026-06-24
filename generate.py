@@ -54,9 +54,12 @@ def parse_docstring(file_path, output_file_path):
                 continue
 
             if in_comment and line.startswith("const"):
+                cur_comment.insert(0, re.sub(re.compile(r"^const (.+) = (.+);\n$"), r"#### \1\n\n", line))
                 print(f"Found variable declaration: {line.strip()}")
                 # Not a function, stop searching
                 in_comment = False
+                newlines.extend(cur_comment)
+                newlines.append("\n")
                 cur_comment.clear()
                 continue
 

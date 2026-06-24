@@ -12,6 +12,9 @@ date: 2026-06-09
 ## About
 
 
+This project handles new member registrations and fee payments.
+
+
 ### Files
 
 - **Github Repo:** [mcrun-membership-list](https://github.com/mcrunningclub/mcrun-membership-list)
@@ -23,64 +26,26 @@ date: 2026-06-09
 - [New Member Communications](./communications.md) library
 - Gmail service
 
+### Permission scopes
+
+You must have edit access to the membership spreadsheet (club email).
+
+| Description | URL |
+| --- | --- |
+| See, edit, create, and delete all your Google Sheets spreadsheets | https://www.googleapis.com/auth/spreadsheets |
+| Read, compose, send, and permanently delete all your email from Gmail | https://mail.google.com/|
+| Allow this application to run when you are not present | https://www.googleapis.com/auth/script.scriptapp |
+| See your primary Google Account email address | https://www.googleapis.com/auth/userinfo.email |
+| Send email as you | https://www.googleapis.com/auth/script.send_mail |
+| See, edit, create, and delete all of your Google Drive files | https://www.googleapis.com/auth/drive |
+| Connect to an external service | https://www.googleapis.com/auth/script.external_request |
+| See, edit, create, and delete all your Google Slides presentations | https://www.googleapis.com/auth/presentations |
 
 ---
 
 ## Constants
 
-### Semester Variables.gs
-
-There are constants for important sheets within the Google Sheet file:
-
- - `SHEET_NAME`, `SEMESTER_SHEET` - Sheet name and object corresponding to current semester. MUST UPDATE EVERY SEMESTER!
- - `IMPORT_NAME`, `IMPORT_SHEET`, `IMPORT_SHEET_ID` - Sheet name, object, and ID with imports from registration form
- - `MASTER_NAME`, `MASTER_SHEET` - Sheet name and object corresponding to the master sheet
- - `MASTER_COL_SIZE` - Number of (relevant???) columns in the master sheet
-
-The columns in each sheet, as well as in the imported JSON strings and semester codes, have mapping constants:
-
- - `SEMESTER_COLS`, `MASTER_COLS` - Latest column mapping for semester sheet
- - `IMPORT_MAP` - Mapping from Fillout registration object to semester sheet
- - `PROCESSED_ARR` - Fields in array from processing last row in semester sheet (0-indexed)
- - `SEMESTER_CODE_MAP` - Mapping from semesters names to semester codes e.g. Winter 2025 -> W25
- - `ALL_SEMESTERS` - List of all semesters (names) which have sheets
-
-There are also constants for required columns in the semester sheet:
-
- - `REGISTRATION_DATE_COL`, `EMAIL_COL`, `FIRST_NAME_COL`, `LAST_NAME_COL`, `PREFERRED_NAME_COL`, `YEAR_COL`, `PROGRAM_COL`, `DESCRIPTION_COL`, `REFERRAL_COL`, `WAIVER_COL`, `PAYMENT_METHOD_COL`, `INTERAC_REF_COL`, `IS_FEE_PAID_COL`, `COLLECTION_DATE_COL`, `COLLECTION_PERSON_COL`, `IS_INTERNAL_COLLECTED_COL`, `COMMENTS_COL`, `ATTENDANCE_STATUS_COL`, `MEMBER_ID_COL`
-
-Same for the master sheet:
-
- - `MASTER_EMAIL_COL`, `MASTER_FIRST_NAME_COL`, `MASTER_LAST_NAME_COL`, `MASTER_LAST_REG_SEM`, `MASTER_FEE_STATUS`, `MASTER_FEE_EXPIRATION`, `MASTER_FEE_COLLECTOR`, `MASTER_COLLECTION_DATE`, `MASTER_IS_INTERNAL_COLLECTED`, `MASTER_PAYMENT_HIST`, `MASTER_MEMBER_ID_COL`
-
-Other constants:
-
- - `TIMEZONE` - Current (user) timezone
- - `MCRUN_EMAIL` - Club email
- - `INTERAC_EMAIL`, `ZEFFY_EMAIL`, `STRIPE_EMAIL` - Email addresses for each type of payment
- - `ONLINE_LABEL`, `INTERAC_LABEL` - Gmail labels for each type of payment
- - `INTERAC_ITEM_COL`, `ONLINE_PAYMENT_ITEM_COL`, `FEE_WAIVED_ITEM_COL` - Cells for each payment method. Found in `Internal Fee Collection` sheet.
- - `MEMBERSHIP_DURATION` - Length of membership in years
- - `WAIVER_DRIVE_ID` - Drive URL containing waivers. NOT CONFIDENTIAL
- - `isFeePaidFormula` - GSheet formula for IS_FEE_PAID_COL in master sheet
- - `INDEX_STORE_NAME` - Name of property that index store is saved under
-
-Finally, there is a function:
-
-#### GET_COL_MAP_(sheet)
-
-Retrieves the column mapping for a given sheet.
-
-This function returns the column mapping object for the specified sheet name.
-If the sheet name is not found in the mapping, it returns `null`.
-
-Params:
-
-- `sheet` (string) - The name of the sheet to retrieve the column mapping for.
-
-Returns:
-
-- (Object|null) - The column mapping object for the sheet, or `null` if not found
+--8<-- "registry-constants.md"
 
 ---
 
@@ -92,25 +57,23 @@ Returns:
 --8<-- "registry-memberships.md"
 --8<-- "registry-search.md"
 --8<-- "registry-transfer.md"
---8<-- "registry-utils.md"
 --8<-- "registry-triggers.md"
+--8<-- "registry-usermenu.md"
+--8<-- "registry-utils.md"
 
 ---
 
 ## Triggers
 
-### Types of Triggers
+### Time-based
 
-- **onChange:**  
-  - Handles new registration import, master updates, and triggers member processing.
-- **Time-based triggers:**  
-  - For periodic fee/payment checking; created as needed for follow-up.
-- **onOpen:**  
-  - Adds the custom admin menu for member management.
+- **checkExistingPaymentInSemester** runs once a day and checks for payments in the semester that need to be copied to master sheet
+- **runFeeChecker** runs every 5 minutes, checks for and handles triggers for missing payments
+- **setIndexStore** runs once a day and updates the index store for searching emails
 
-**Purpose:**  
-- Ensures all new members are processed, formatted, verified, and onboarded automatically.
-- Follows up on outstanding fee payments.
+### From spreadsheet
+- **onChange** runs when changes are made to the spreadsheet and checks for new rows to process
+- **onOpen** runs when a user opens the spreadsheet and creates the custom menu
 
 ---
 

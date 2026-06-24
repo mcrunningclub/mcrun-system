@@ -72,3 +72,13 @@ Params:
 Returns:
 
 - (boolean) - Parsed value.
+
+#### changeSheetView_(`sheetName`)
+
+Activate the sheet `sheetName` in Google Spreadsheet.
+
+Changes view to `sheetName`.
+
+Params:
+
+- `sheetName` (string) - Name of target sheet.
