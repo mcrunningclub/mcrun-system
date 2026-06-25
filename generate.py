@@ -10,9 +10,9 @@ import re
 import argparse
 
 EMPTY_LINE_REGEX = re.compile(r"^ \* (\s*)\n$")
-DOCSTRING_REGEX = re.compile(r"^ \* ([^@].+\n)$")
-PARAM_REGEX = re.compile(r"^ \* @param {(.+)}\s+(.+)\s+(.+\n)$")
-RETURN_REGEX = re.compile(r"^ \* @return {(.+)}\s+(.+\n)$")
+DOCSTRING_REGEX = re.compile(r"^ \* ([^@].+)\n$")
+PARAM_REGEX = re.compile(r"^ \* @param\s+{([^ ]+)}\s+([^ ]+) -?\s*(.+)\n$")
+RETURN_REGEX = re.compile(r"^ \* @returns? {([^ ]+)} -?\s*(.+)\n$")
 FUNC_DEF_REGEX = re.compile(r"^\s*function ([^\(]+\(.*\))\s*{")
 
 def parse_docstring(file_path, output_file_path):
@@ -39,68 +39,72 @@ def parse_docstring(file_path, output_file_path):
                 if line.startswith("/**"):
                     print(f"Found comment block: {line.strip()}")
                     in_comment = True
-                continue
-            
-            # Get function name if comment block has ended
-            if in_comment and FUNC_DEF_REGEX.match(line):
-                # Get function name
-                cur_comment.insert(0, re.sub(FUNC_DEF_REGEX, r"#### \1\n", line))
-                print(f"Comment block ended: {line.strip()}")
-                # Stop searching
-                in_comment = False
-                newlines.extend(cur_comment)
-                newlines.append("\n")
-                cur_comment.clear()
+                    cur_comment.clear()
                 continue
 
-            if in_comment and line.startswith("const"):
-                cur_comment.insert(0, re.sub(re.compile(r"^const (.+) = (.+);\n$"), r"#### \1\n\n", line))
-                print(f"Found variable declaration: {line.strip()}")
-                # Not a function, stop searching
-                in_comment = False
-                newlines.extend(cur_comment)
-                newlines.append("\n")
-                cur_comment.clear()
-                continue
+            # Inside comment, handle line or end comment
+            else:
+                # Get function name if comment block has ended
+                if FUNC_DEF_REGEX.match(line):
+                    # Get function name
+                    cur_comment.insert(0, re.sub(FUNC_DEF_REGEX, r"#### \1\n", line))
+                    print(f"Comment block ended: {line.strip()}")
+                    # Stop searching
+                    in_comment = False
+                    newlines.extend(cur_comment)
+                    newlines.append("\n")
+                    cur_comment.clear()
+                    continue
 
+                # Or get constant name
+                elif line.startswith("const"):
+                    cur_comment.insert(0, re.sub(re.compile(r"^const (.+) = (.+);\n$"), r"#### \1\n\n", line))
+                    print(f"Found variable declaration: {line.strip()}")
+                    # Not a function, stop searching
+                    in_comment = False
+                    newlines.extend(cur_comment)
+                    newlines.append("\n")
+                    cur_comment.clear()
+                    continue
+ 
+                # Empty docstring line
+                elif EMPTY_LINE_REGEX.fullmatch(line):
+                    if in_param:
+                        in_param = False
+                    if in_return:
+                        in_return = False
+                    if cur_comment[-1] != "\n":
+                        cur_comment.append("\n")
 
-            # Regular docstring line
-            if in_comment and DOCSTRING_REGEX.fullmatch(line):
-                if in_param:
-                    in_param = False
-                if in_return:
-                    in_return = False
-                newline = re.sub(DOCSTRING_REGEX, r"\1", line)
-                cur_comment.append(newline)
+                # Regular docstring line
+                elif DOCSTRING_REGEX.fullmatch(line):
+                    if in_param:
+                        in_param = False
+                    if in_return:
+                        in_return = False
+                    newline = re.sub(DOCSTRING_REGEX, r"\1\n", line)
+                    cur_comment.append(newline)
 
-            # Empty docstring line
-            elif in_comment and EMPTY_LINE_REGEX.fullmatch(line):
-                if in_param:
-                    in_param = False
-                if in_return:
-                    in_return = False
-                cur_comment.append("\n")
+                # Parameter line
+                elif in_comment and PARAM_REGEX.fullmatch(line):
+                    if in_return:
+                        in_return = False
+                    if not in_param:
+                        cur_comment.append("Params:\n\n")
+                        in_param = True
+                    newline = re.sub(PARAM_REGEX, r"- `\2` (\1) - \3\n", line)
+                    cur_comment.append(newline)
 
-            # Parameter line
-            elif in_comment and PARAM_REGEX.fullmatch(line):
-                if in_return:
-                    in_return = False
-                if not in_param:
-                    cur_comment.append("Params:\n\n")
-                    in_param = True
-                newline = re.sub(PARAM_REGEX, r"- `\2` (\1) - \3", line)
-                cur_comment.append(newline)
-
-            # Return line
-            elif in_comment and RETURN_REGEX.fullmatch(line):
-                if in_param:
-                    cur_comment.append("\n")
-                    in_param = False
-                if not in_return:
-                    cur_comment.append("Returns:\n\n")
-                    in_return = True
-                newline = re.sub(RETURN_REGEX, r"- (\1) - \2", line)
-                cur_comment.append(newline)
+                # Return line
+                elif in_comment and RETURN_REGEX.fullmatch(line):
+                    if in_param:
+                        cur_comment.append("\n")
+                        in_param = False
+                    if not in_return:
+                        cur_comment.append("Returns:\n\n")
+                        in_return = True
+                    newline = re.sub(RETURN_REGEX, r"- (\1) - \2\n", line)
+                    cur_comment.append(newline)
 
     with open(output_file_path, "w") as f:
         f.writelines(newlines)

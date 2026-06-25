@@ -4,8 +4,21 @@ The McRun system is used to add new members, keep track of existing ones, updati
 
 This repository contains the source code for our documentation, which is written using Material for mkdocs.
 
-> [!IMPORTANT]
-> **Tag commits as `update-docs` in order to update the deployed pages.** The documentation is deployed using Github Actions, which checks for commits to `main` tagged as `update-docs`.
+---
+
+**USING `GENERATE.PY`**
+
+```terminal
+python generate.py <input_file> <output_file>
+```
+
+*input_file* should be the path to the Google Apps Script (.js or .gs) to parse,
+and *output_file* should be the path to the markdown file where the parsed documentation
+will be saved.
+
+Simple parsing of docstring descriptions, parameters, and return values.
+
+Please double check output results! There may be edge cases that the script misses.
 
 ---
 
@@ -40,3 +53,5 @@ install locally `npm install --save-dev documentation`
 clone repository from git or clone apps script project using clasp (do NOT clone into this folder)
 
 run from this folder: `./node_modules/.bin/documetnation build [path to folders or files to document] -f md > docs.md`
+
+you can replace *docs.md* with the name or path of the file where you want to save the markdown

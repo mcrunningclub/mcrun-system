@@ -3,8 +3,8 @@ run-name: update mkdocs pages
 
 on:
   push:
-    tags:
-      - update-docs
+    branches:
+      - main
 
 permissions:
   contents: write
