@@ -23,7 +23,7 @@ Returns:
 Builds an index store mapping the first letter of a key (i.e. email) to 
 its first occurrence index in the master sheet. e.g { 'a': 2, 'b' : 21, ... }
 
-#### findMemberByEmail(`email`, `sheet`)
+#### findMemberByEmail(email, sheet)
 
 Searches for member entry by email in `sheet` by binary search.
 If unsuccessful, searches again via top-to-bottom iteration.
@@ -39,7 +39,7 @@ Returns:
 
 - (number|null) - Returns the 1-indexed row number where the email is found, or `null` if the email is not found.
 
-#### findMemberWithStore(`email`, `store`)
+#### findMemberWithStore(email, store)
 
 Finds a member in the master sheet by setting a stricter bound using an
 index store of each letter, searching with binary search.
@@ -55,7 +55,7 @@ Returns:
 
 - (number|null) - Returns the 1-indexed row number where the email is found, or `null` if the email is not found.
 
-#### findMemberByIteration(`email`, `sheet`, `startRow`, `endRow`)
+#### findMemberByIteration(email, sheet, startRow, endRow)
 
 Searches for member entry by email in `sheet` using iteration.
 Returns row index of `email` in GSheet (1-indexed), or null if not found.
@@ -74,7 +74,7 @@ Returns:
  - (number|null) - Returns the 1-indexed row number where the email is found, 
                        or `null` if the email is not found.
 
-#### findMemberByBinarySearch(`email`, `sheet`, `startRow`, `endRow`)
+#### findMemberByBinarySearch(email, sheet, startRow, endRow)
 
 Recursive function to search for entry by email in `sheet` using binary search.
 Returns row index of `email` in GSheet (1-indexed), or null if not found.

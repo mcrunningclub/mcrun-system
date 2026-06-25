@@ -1,6 +1,6 @@
 ### Membership Collected.gs
 
-#### onFormSubmit(`newRow`)
+#### onFormSubmit(newRow)
 
 Handles the submission of a new registration form.
 
@@ -19,7 +19,7 @@ Params:
 
 - `newRow` (number) - The row number of the new submission. Defaults to the last row in the semester sheet.
 
-#### sendNewMemberCommunications(`row`)
+#### sendNewMemberCommunications(row)
 
 Sends communications to a new member.
 
@@ -29,7 +29,7 @@ Params:
 
 - `row` (number) - The row number of the new member in the semester.
 
-#### MD5(`input`)
+#### MD5(input)
 
 Hash function using modified MD5 algorithm.
 
@@ -43,7 +43,7 @@ Returns:
 
 - (string) - Returns MD5-hashed input.
 
-#### setWaiverUrl_(`row`)
+#### setWaiverUrl_(row)
 
 Find and set waiver url to new member registration.
 
@@ -53,7 +53,7 @@ Params:
 
 - `row` (number) - Row index to find and set url. Defaults to the last row in main sheet.
 
-#### findWaiverLink_(`name`)
+#### findWaiverLink_(name)
 
 Find waiver using member's name. Helper function for setWaiverUrl_.
 
@@ -63,7 +63,7 @@ Params:
 
 - `name` (string) - The name of member.
 
-#### getExpirationDate_(`semesterCode`)
+#### getExpirationDate_(semesterCode)
 
 Get expiration date of member fee from given semester code.
 

@@ -1,6 +1,6 @@
 ### User Menu.gs
 
-#### logMenuAttempt_(`email`)
+#### logMenuAttempt_(email)
 
 Logs user attempting to use custom McRUN menu.
 
@@ -27,7 +27,7 @@ Displays a help message for the custom McRUN menu.
 
 Accessible to all users.
 
-#### confirmAndRunUserChoice_(`functionName`, `sheetName`, `additionalMsg`, `funcArg`)
+#### confirmAndRunUserChoice_(functionName, sheetName, additionalMsg, funcArg)
 
 Boiler plate function to display custom UI to run scripts.
 
@@ -45,7 +45,7 @@ Returns:
 - (string) - Return value of the executed function.
 
 
-#### isValidRow_(`row`, `sheet`)
+#### isValidRow_(row, sheet)
 
 Returns true if row is int and found in given sheet.
 Helper function for UI functions for McRUN menu.

@@ -1,6 +1,6 @@
 ### Utils.gs
 
-#### removeDiacritics_(`str`)
+#### removeDiacritics_(str)
 
 Removes diacritics (accents) from a string.
 
@@ -16,7 +16,7 @@ Returns:
  - (string) - The normalized string without diacritics.
 
 
-#### getSemesterCode_(`semester`)
+#### getSemesterCode_(semester)
 
 Get semester code from semester sheet name in map, or creates if not found.
 
@@ -49,7 +49,7 @@ Prevents incorrect time formatting during time changes like Daylight Savings Tim
 
 Returns:
 
-- (string) - Timezone as geographical location (e.g.`'America/Montreal'`).
+- (string) - Timezone as geographical location (e.g.`'America/Montreal').
 
 #### getCurrentUserEmail_()
 
@@ -73,7 +73,7 @@ Returns:
 
 - (boolean) - Parsed value.
 
-#### changeSheetView_(`sheetName`)
+#### changeSheetView_(sheetName)
 
 Activate the sheet `sheetName` in Google Spreadsheet.
 

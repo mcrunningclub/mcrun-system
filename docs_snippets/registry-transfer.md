@@ -1,6 +1,6 @@
 ### Transfer Scripts.md
 
-#### onChange(`e`)
+#### onChange(e)
 
 When a sheet is changed, check if a row was added and process it accordingly.
 
@@ -11,7 +11,7 @@ Params:
 
 - `e` (Event) - Edit event
 
-#### isNewMemberViaApp_(`row`)
+#### isNewMemberViaApp_(row)
 
 Checks whether a row (in the master sheet) was added from the app or not.
 
@@ -25,7 +25,7 @@ Returns:
 
 - (boolean) - True if row was added from app, false if not.
 
-#### setMemberId_(`sheet`, `row`)
+#### setMemberId_(sheet, row)
 
 Encode member's email from given sheet and row, and sets it in the Member ID column.
 
@@ -35,7 +35,7 @@ Params:
 - `row` (number) - Row of member to make ID for.
 
 
-#### onEdit(`e`)
+#### onEdit(e)
 
 If master or semester sheet is edited, copies changes to the other sheet as well.
 
@@ -47,7 +47,7 @@ Params:
 
 - `e` (Event) - Edit event
 
-#### isLegalEdit_(`range`, `sheet`)
+#### isLegalEdit_(range, sheet)
 
 Check whether the given range is within valid range of the given sheet.
 
@@ -63,7 +63,7 @@ Returns:
 
 - (boolean) - True if range and sheet are valid, False otherwise
 
-#### updateFeeInfo_(`range`, `sourceSheetName`, `targetRow`, `targetSheet`)
+#### updateFeeInfo_(range, sourceSheetName, targetRow, targetSheet)
 
 Update fee status from `sourceSheet` to `targetSheet`.
 
@@ -77,7 +77,7 @@ Params:
 - `targetRow` (number) - Target row to update.
 - `targetSheet` (SpreadsheetApp.Sheet) - Target sheet to update fee info.
 
-#### copyFilloutRegToSemester_(`registration`, `row`)
+#### copyFilloutRegToSemester_(registration, row)
 
 Transfer new member registration from `Import` to semester sheet.
 
@@ -86,7 +86,7 @@ Params:
 - `registration` (Object) - Information on member registration.
 - `row` (number) - Gsheet row number to target,  defaults to last row
 
-#### packageMemberInfo_(`row`)
+#### packageMemberInfo_(row)
 
 Creates an object containing member information for creating membership pass
 

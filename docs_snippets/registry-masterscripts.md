@@ -6,7 +6,7 @@ Creates the master sheet by consolidating member data from selected semester she
 
 Calls `consolidateMemberData` to fetch, process, and output data to the master sheet.
 
-#### addLastSubmissionToMaster_(`lastRow`)
+#### addLastSubmissionToMaster_(lastRow)
 
 Adds the last submission from semester sheet to the master sheet.
 
@@ -17,7 +17,7 @@ Params:
 
 - `lastRow` (number) - The row number of the last submission in the semester. Defaults to the last row.
 
-#### addPaidSemesterToMaster_(`memberRow`, `semesterSheetName`)
+#### addPaidSemesterToMaster_(memberRow, semesterSheetName)
 
 Updates Payment History in master sheet from the member's semester sheet where they registered.
 
@@ -28,7 +28,7 @@ Params:
 - `memberRow` (number) - The 1-indexed row number of the member in master sheet.
 - `semesterSheetName` (string) - The name of the member's latest registration semester sheet.
 
-#### updateFeeStatusSemester_(`payHistory`, `memberRow`, `isFeePaidCol`, `semesterSheet`)
+#### updateFeeStatusSemester_(payHistory, memberRow, isFeePaidCol, semesterSheet)
 
 Updates the `isFeePaid` status in the member's semester sheet.
 
@@ -42,9 +42,9 @@ Params:
 - `isFeePaidCol` (number) - The 1-indexed column number of the `isFeePaid` field in the semester sheet.
 - `semesterSheet` (SpreadsheetApp.Sheet) - The member's latest registration sheet (e.g., "Fall 2024").
 
-#### processLastSubmission_(`lastRow`)
+#### processLastSubmission_(lastRow)
 
-Processes the last submitted row from the semester, adding semester codes to relevant fields like `MEMBER_DESCR`, `REFERRAL`, `COMMENTS`, and payment history.
+Processes the last submitted row from the semester, adding semester codes to relevant fields like `MEMBER_DESCR, REFERRAL, COMMENTS`, and payment history.
 
 Params:
 
@@ -54,7 +54,7 @@ Returns:
 
 - (string[]) - Array of processed values for the last submission.
 
-#### consolidateLastSubmission_(`lastRow`)
+#### consolidateLastSubmission_(lastRow)
 
 Consolidates the last submitted row from semester into master sheet.
 
@@ -67,7 +67,7 @@ Params:
 
 - `lastRow` (number) - The row number of the last submission in the semester. Defaults to the last row.
 
-#### processSemesterData_(`sheetName`)
+#### processSemesterData_(sheetName)
 
 Processes data for a given semester sheet, adding semester codes to selected
 fields and returning the formatted data. 

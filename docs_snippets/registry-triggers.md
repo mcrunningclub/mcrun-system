@@ -1,6 +1,6 @@
 ### Triggers.gs
 
-#### createNewFeeTrigger_(`row`, `feeDetails`)
+#### createNewFeeTrigger_(row, feeDetails)
 
 Create time-based trigger to check fee payment.
 

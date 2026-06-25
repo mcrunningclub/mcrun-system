@@ -1,6 +1,6 @@
 ### Formatting.gs
 
-#### trimWhitespaceSemester_(`row`)
+#### trimWhitespaceSemester_(row)
 
 Trims whitespace from specific columns in the specified row of the semester sheet.
 
@@ -40,7 +40,7 @@ Formats semester sheet for a simple and uniform user experience.
 - Adding hyperlinks to waivers
 - Formatting collection dates
 
-#### addCheckboxSemester_(`row`)
+#### addCheckboxSemester_(row)
 
 Adds checkboxes to specific columns in the last row of semester sheet.
  
@@ -51,7 +51,7 @@ Params:
 
 - `row` (number) - Row number to target for formatting.
 
-#### fixRowCaseSemester_(`row`)
+#### fixRowCaseSemester_(row)
 
 Set letter case of specific columns in member entry as following:
 
@@ -85,7 +85,7 @@ Data normalization includes:
  - Insert fee status formula in `Fee Paid` col
  - Format collection date correctly; append semester code if applicable
 
-#### formatFeeCollection_(`row`)
+#### formatFeeCollection_(row)
 
 Formats fee collection date and semester for the specified row of the master sheet.
 
@@ -95,7 +95,7 @@ Params:
 
  - `row` (number) - The starting row index for the search (1-indexed). Defaults to last row.
 
-#### insertRegistrationSem_(`row`)
+#### insertRegistrationSem_(row)
 
 Inserts the 3-char semester code for the registration in the specified row of the master sheet.
 
@@ -103,7 +103,7 @@ Params:
 
 - `row` (number) - The row number to target for inserting the semester code. Defaults to the last row.
 
-#### encodeFromInput_(`input`)
+#### encodeFromInput_(input)
 
 Create Member ID from input.
 
@@ -115,7 +115,7 @@ Returns:
 
 - (string) - Hash of input
 
-#### encodeRowSemester_(`row`)
+#### encodeRowSemester_(row)
 
 Create Member ID in specified row of semester sheet.
 
@@ -123,7 +123,7 @@ Params:
 
  - `row` (number) - Row to encode. Defaults to last row.
 
-#### encodeList_(`sheet`)
+#### encodeList_(sheet)
 
 Create Member ID for every member in given sheet.
 
@@ -131,7 +131,7 @@ Params:
 
  - `sheet` (SpreadsheetApp.Sheet) - Sheet reference to encode
 
-#### encodeByRow_(`sheet`, `row`)
+#### encodeByRow_(sheet, row)
 
 Create single Member ID using specified row number and sheet.
 
