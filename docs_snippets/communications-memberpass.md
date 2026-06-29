@@ -1,8 +1,8 @@
 ### Member Pass.gs
 
-- *function* [`createPassFile_(passInfo)`](#createpassfilepassinfo)
+- *function* [`createPassFile_(passInfo)`](#createpassfile_passinfo)
 - *function* [`createPassFromRow(row)`](#createpassfromrowrow)
-- *function* [`createQrCodeUrl_(memberID)`](#createqrcodeurlmemberid)
+- *function* [`createQrCodeUrl_(memberID)`](#createqrcodeurl_memberid)
 
 #### createPassFile_(passInfo)
 

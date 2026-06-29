@@ -1,13 +1,13 @@
 ### Utils.gs
 
-- *function* [`getUserTimeZone_()`](#getusertimezone)
-- *function* [`getCurrentUserEmail_()`](#getcurrentuseremail)
-- *function* [`escapeData_(str)`](#escapedatastr)
-- *function* [`findRowByEmail_(targetEmail)`](#findrowbyemailtargetemail)
-- *function* [`toCamelCase_(str)`](#tocamelcasestr)
+- *function* [`getUserTimeZone_()`](#getusertimezone_)
+- *function* [`getCurrentUserEmail_()`](#getcurrentuseremail_)
+- *function* [`escapeData_(str)`](#escapedata_str)
+- *function* [`findRowByEmail_(targetEmail)`](#findrowbyemail_targetemail)
+- *function* [`toCamelCase_(str)`](#tocamelcase_str)
 - *function* [`cacheBlobToStore()`](#cacheblobtostore)
-- *function* [`cacheBlobToProperties_(fileId, blobName)`](#cacheblobtopropertiesfileid-blobname)
-- *function* [`getBlobFromProperties_(blobName)`](#getblobfrompropertiesblobname)
+- *function* [`cacheBlobToProperties_(fileId, blobName)`](#cacheblobtoproperties_fileid-blobname)
+- *function* [`getBlobFromProperties_(blobName)`](#getblobfromproperties_blobname)
 
 #### getUserTimeZone_()
 

@@ -1,12 +1,12 @@
 ### Send Email.gs
 
 - *function* [`sendWelcomeEmailInRow(row)`](#sendwelcomeemailinrowrow)
-- *function* [`sendWelcomeEmail_(memberInformation)`](#sendwelcomeemailmemberinformation)
-- *function* [`sendUpdatedPass_(memberInformation)`](#sendupdatedpassmemberinformation)
+- *function* [`sendWelcomeEmail_(memberInformation)`](#sendwelcomeemail_memberinformation)
+- *function* [`sendUpdatedPass_(memberInformation)`](#sendupdatedpass_memberinformation)
 - *function* [`quickPassUpdate(row)`](#quickpassupdaterow)
 - *function* [`triggerUpdateAndSendPass(row)`](#triggerupdateandsendpassrow)
-- *function* [`updateAndSendPass_(statusObj, isLogged)`](#updateandsendpassstatusobj-islogged)
-- *function* [`sendEmail_(memberInformation, draftSubject)`](#sendemailmemberinformation-draftsubject)
+- *function* [`updateAndSendPass_(statusObj, isLogged)`](#updateandsendpass_statusobj-islogged)
+- *function* [`sendEmail_(memberInformation, draftSubject)`](#sendemail_memberinformation-draftsubject)
 
 #### sendWelcomeEmailInRow(row)
 

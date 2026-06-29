@@ -1,9 +1,9 @@
 ### Member Info.gs
 
 - *function* [`createNewMemberCommunications(memberObj)`](#createnewmembercommunicationsmemberobj)
-- *function* [`createNewMemberLiteral_(memberObj)`](#createnewmemberliteralmemberobj)
-- *function* [`logPaymentStatus_(statusObj)`](#logpaymentstatusstatusobj)
-- *function* [`logEmailStatus_(message, row)`](#logemailstatusmessage-row)
+- *function* [`createNewMemberLiteral_(memberObj)`](#createnewmemberliteral_memberobj)
+- *function* [`logPaymentStatus_(statusObj)`](#logpaymentstatus_statusobj)
+- *function* [`logEmailStatus_(message, row)`](#logemailstatus_message-row)
 
 #### createNewMemberCommunications(memberObj)
 
@@ -13,6 +13,7 @@ Add new member's information to Literals sheet,
 create a pass, save pass information, and send welcome email
 
 Params:
+
 
 - `memberObj` (Object) - Object containing member informations
 

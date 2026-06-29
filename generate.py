@@ -34,7 +34,7 @@ def make_toc_line(name, is_function=True):
         str: Table of contents line
     """
     link = name.lower().replace(" ", "-")
-    link = re.sub(r"[^a-z0-9\-]", "", link)
+    link = re.sub(r"[^a-z0-9\-_]", "", link)
 
     if is_function:
         return f"- *function* [`{name}`](#{link})\n"
@@ -136,12 +136,12 @@ def parse_docstring(file_path, output_file_path):
                     if in_return:
                         in_return = False
                     if not in_param:
+                        # Add paragraph break in case there isn't any
+                        if cur_comment[-1] != "\n":
+                            cur_comment.append("\n")
                         cur_comment.append("Params:\n\n")
                         in_param = True
                     newline = PARAM_REGEX.sub(PARAM_REPLACE, line)
-                    # Add paragraph break in case there isn't any
-                    if cur_comment[-1] != "\n":
-                        cur_comment.append("\n")
                     cur_comment.append(newline)
 
                 # Return line
@@ -150,12 +150,12 @@ def parse_docstring(file_path, output_file_path):
                         cur_comment.append("\n")
                         in_param = False
                     if not in_return:
+                        # Add paragraph break in case there isn't any
+                        if cur_comment[-1] != "\n":
+                            cur_comment.append("\n")
                         cur_comment.append("Returns:\n\n")
                         in_return = True
                     newline = RETURN_REGEX.sub(RETURN_REPLACE, line)
-                    # Add paragraph break in case there isn't any
-                    if cur_comment[-1] != "\n":
-                        cur_comment.append("\n")
                     cur_comment.append(newline)
 
     # Make final content to write

@@ -1,9 +1,9 @@
 ### Email Template.gs
 
 - *function* [`saveDraftAsHtml()`](#savedraftashtml)
-- *function* [`generateHtmlFromDraft_(subjectLine)`](#generatehtmlfromdraftsubjectline)
-- *function* [`getTemplateFromDraft_(subjectLine)`](#gettemplatefromdraftsubjectline)
-- *function* [`subjectFilter_(subjectLine)`](#subjectfiltersubjectline)
+- *function* [`generateHtmlFromDraft_(subjectLine)`](#generatehtmlfromdraft_subjectline)
+- *function* [`getTemplateFromDraft_(subjectLine)`](#gettemplatefromdraft_subjectline)
+- *function* [`subjectFilter_(subjectLine)`](#subjectfilter_subjectline)
 - *function* [`fillInTemplate(template, data)`](#fillintemplatetemplate-data)
 
 #### saveDraftAsHtml()
