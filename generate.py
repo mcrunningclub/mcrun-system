@@ -14,7 +14,7 @@ DOCSTRING_REGEX = re.compile(r"^ \* ([^@].+)\n$")
 PARAM_REGEX = re.compile(r"^ \* @param\s+{([^ ]+)}\s+([^ ]+) -?\s*(.+)\n$")
 RETURN_REGEX = re.compile(r"^ \* @returns? {([^ ]+)} -?\s*(.+)\n$")
 FUNC_DEF_REGEX = re.compile(r"^\s*function ([^\(]+\(.*\))\s*{")
-CONSTANT_REGEX = re.compile(r"^const (.+) = (.+);\n$")
+CONSTANT_REGEX = re.compile(r"^const (.+) = (.+)\n$")
 
 DOCSTRING_REPLACE = r"\1\n"
 PARAM_REPLACE = r"- `\2` (\1) - \3\n"
@@ -75,7 +75,7 @@ def parse_docstring(file_path, output_file_path):
             # Inside comment, handle line or end comment
             else:
                 # Get function name if comment block has ended
-                if FUNC_DEF_REGEX.match(line):
+                if line.startswith("function"):
                     # Get function name
                     header_line = FUNC_DEF_REGEX.sub(FUNC_DEF_REPLACE, line)
                     name = FUNC_DEF_REGEX.match(line).group(1)
@@ -139,6 +139,9 @@ def parse_docstring(file_path, output_file_path):
                         cur_comment.append("Params:\n\n")
                         in_param = True
                     newline = PARAM_REGEX.sub(PARAM_REPLACE, line)
+                    # Add paragraph break in case there isn't any
+                    if cur_comment[-1] != "\n":
+                        cur_comment.append("\n")
                     cur_comment.append(newline)
 
                 # Return line
@@ -150,6 +153,9 @@ def parse_docstring(file_path, output_file_path):
                         cur_comment.append("Returns:\n\n")
                         in_return = True
                     newline = RETURN_REGEX.sub(RETURN_REPLACE, line)
+                    # Add paragraph break in case there isn't any
+                    if cur_comment[-1] != "\n":
+                        cur_comment.append("\n")
                     cur_comment.append(newline)
 
     # Make final content to write
