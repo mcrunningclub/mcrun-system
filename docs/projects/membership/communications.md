@@ -13,48 +13,51 @@ date: 2025-06-11
 
 ## About
 
+This project handles creating passes, sending welcome emails to new members, 
+and sending passes to members.
+
 ### Files
 
 - **Github Repo:** [mcrun-new-member-communications](https://github.com/mcrunningclub/mcrun-new-member-communications)
 - **Google Sheets:** [New Member Comms](https://docs.google.com/spreadsheets/d/1PrKth6f81Dx52bB3oPX1t55US-GnNRGve-TN4rU9Wlo/edit?usp=sharing)
 - **Apps Script Project:** [New Member Communications](https://script.google.com/home/projects)
+  - Contains .html files with email templates
 
-### Requirements
-- Google Workspace (Gmail, Google Sheets, Google Drive)
-- Script must be run from the club's Google account for full functionality
+### Permissions
+
+Scripts must be run from the club account.
+
+| OAuth scope | URL |
+| --- | --- |
+| Send email as you	| https://www.googleapis.com/auth/script.send_mail |
+| See, edit, create, and delete all of your Google Drive files	| https://www.googleapis.com/auth/drive |
+| Connect to an external service	| https://www.googleapis.com/auth/script.external_request |
+| Read, compose, send, and permanently delete all your email from Gmail	| https://mail.google.com/ |
+| See your primary Google Account email address	| https://www.googleapis.com/auth/userinfo.email |
+| See, edit, create, and delete all your Google Sheets spreadsheets	| https://www.googleapis.com/auth/spreadsheets |
+| See, edit, create, and delete all your Google Slides presentations	| https://www.googleapis.com/auth/presentations |
+
+---
+
+## Constants
+
+--8<-- "communications-constants.md"
 
 ---
 
 ## Functions
 
-<!-- ## Main Functions
-- **sendWelcomeEmailInRow(row)**: Sends a welcome email to the member in the specified row of the sheet.
-- **sendWelcomeEmail_(memberInformation)**: Sends a personalized welcome email to a new member using their information.
-- **createPassFile_(passInfo)**: Generates a digital pass for a member and returns a download link.
-- **updateAndSendPass(statusObj, isLogged)**: Updates member status, creates a new pass, and sends an updated pass email.
-- **logMessage_(message, sheet, row)**: Logs email or pass status to the sheet. -->
-
+--8<-- "communications-emailtemplate.md"
 --8<-- "communications-memberinfo.md"
 --8<-- "communications-memberpass.md"
---8<-- "communications-mailmerge.md"
 --8<-- "communications-sendemail.md"
-
+--8<-- "communications-utils.md"
 
 ---
 
 ## Triggers
 
-### Types of Triggers
-
-- **Manual triggers:**  
-  - Most functions are designed to be invoked when a new member is added, or by admin action via Apps Script.
-- **Event-based triggers:**  
-  - Can be set up to run when new rows are added (e.g., via onChange in a connected membership sheet).
-- **Time-based triggers:**  
-  - Not present by default, but possible for scheduled reminders or follow-ups if extended.
-
-**Purpose:**  
-- Automate sending of welcome emails and pass generation for each new member registration.
+None (?)
 
 ---
 
@@ -69,7 +72,7 @@ sendWelcomeEmailInRow();
 ### Generate and Send Updated Pass
 ```javascript
 // Update member status and send new pass for row 5
-updateAndSendPass({
+updateAndSendPass_({
   email: 'member@email.com',
   feeStatus: 'Paid',
   // ...other member info

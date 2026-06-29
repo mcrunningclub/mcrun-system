@@ -1,50 +1,51 @@
 ### Member Info.gs
-- [`getUserTimeZone_()`](#getusertimezone_) → Returns user's timezone
-- [`GET_LITERAL_SHEET()`](#get_literal_sheet) → Returns the "Literals" sheet object
-- [`GET_PAYMENT_LOG_SHEET()`](#get_payment_log_sheet) → Returns the "Payment Logs" sheet object  
-- [`getCurrentUserEmail_()`] → Returns active user email  
-- [`getDraftBySubject_(subject)`] → Returns Gmail draft by subject  
-- [`getDraftById_(id)`] → Returns Gmail draft by ID  
-- [`createNewMemberCommunications(memberObj)`] → Full new member onboarding pipeline  
-- [`appendNewValues_(memberObj, sheet)`] → Appends new member to Literals sheet  
-- [`triggerUpdateAndSendPass(row)`] → Updates pass from Payment Logs  
-- [`updateAndSendPass(statusObj, isLogged)`] → Updates pass and sends email  
-- [`logPaymentStatus_(status)`] → Appends payment log entry  
-- [`findRowByEmail_(email)`] → Finds row index by email  
-- [`logMessage_(message, sheet, row)`] → Logs status message in sheet
-  
----
 
-#### getUserTimeZone_()
+- *function* [`createNewMemberCommunications(memberObj)`](#createnewmembercommunicationsmemberobj)
+- *function* [`createNewMemberLiteral_(memberObj)`](#createnewmemberliteralmemberobj)
+- *function* [`logPaymentStatus_(statusObj)`](#logpaymentstatusstatusobj)
+- *function* [`logEmailStatus_(message, row)`](#logemailstatusmessage-row)
 
-Returns the user's timezone from script settings.
+#### createNewMemberCommunications(memberObj)
 
-```js
-const tz = getUserTimeZone();
-```
+Workflow for when new member registers
 
-**Output:** String (timezone)
+Add new member's information to Literals sheet,
+create a pass, save pass information, and send welcome email
 
----
+Params:
 
-#### GET_LITERAL_SHEET()
+- `memberObj` (Object) - Object containing member informations
 
-Returns the "Literals" sheet, or opens by ID if not found.
+#### createNewMemberLiteral_(memberObj)
 
-```js
-const sheet = GET_LITERAL_SHEET();
-```
+Appends a member object as a new row in the sheet, mapping fields to correct columns.
 
-**Output:** Google Sheet object
+Params:
 
----
+- `memberData` (Object) - The member object (e.g., { email: '...', firstName : '...' })
+- `literalsSheet` (SpreadsheetApp.Sheet) - The Literals sheet object
 
-#### GET_PAYMENT_LOG_SHEET()
+Returns:
 
-Returns the "Payment Logs" sheet, or opens by ID if not found.
+- (number) - The row index of the newly appended row
 
-```js
-const sheet = GET_PAYMENT_LOG_SHEET();
-```
+#### logPaymentStatus_(statusObj)
 
-**Output:** Google Sheet object
+Appends a new log to the Payment Logs sheet
+
+Params:
+
+- `statusObj` (Object) - Object containing payment information
+                           Should include timestamp, email, feeStatus
+
+#### logEmailStatus_(message, row)
+
+Updates the Email Status column in the literals sheet with a new message
+
+Includes date and time of the message
+
+Params:
+
+- `message` (string) - Message to log
+- `row` (number) - Row to log email status for
+

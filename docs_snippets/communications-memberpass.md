@@ -1,31 +1,50 @@
 ### Member Pass.gs
 
-- [`createPassFile(passInfo)`](#createpassfilepassinfo) → Generates a digital membership pass using Google Slides
-- [`createNewPass(row)`] → Regenerates pass using sheet row data  
-- [`testRuntime()`] → Benchmarks pass generation runtime  
-- [`generateQrUrl_(memberID)`] → Generates QR code URL  
-- [`getImage_(url)`] → Fetches image from URL  
-- [`loadImageBytes_(id)`] → Loads Drive file as base64  
-- [`testQRGenerator_()`] → Tests QR code generation and storage
+- *function* [`createPassFile_(passInfo)`](#createpassfilepassinfo)
+- *function* [`createPassFromRow(row)`](#createpassfromrowrow)
+- *function* [`createQrCodeUrl_(memberID)`](#createqrcodeurlmemberid)
 
+#### createPassFile_(passInfo)
 
-#### createPassFile(passInfo)
+Creates new pass from given member information
 
-Generates a digital pass file for a member using a Google Slides template, fills in info, generates QR code, and returns the download link.
+Add name, date, member ID, and QR code to copy of pass template,
+saves in folder with other passes, and get share link
 
-```js
-const passUrl = createPassFile({
-  firstName: "Alice",
-  lastName: "Smith",
-  memberId: "MC1234",
-  // ...other fields
-});
-```
+Params:
 
-| Name     | Type   | Description                |
-|----------|--------|----------------------------|
-| passInfo | Object | Member data (name, ID, etc)|
+- `passInfo` (Object) - Member information to include in pass.
+                           Should include firstName, lastName, memberId
+Returns:
 
-**Output:** String (download link for pass PNG)
+- (string) - Link to created pass
 
-**Pitfalls:** Template and folder IDs must be correct and accessible.
+#### createPassFromRow(row = LITERAL_SHEET.getLastRow())
+
+Creates new pass from row in the Literals sheet
+
+Packages row values into an object and calls createPassFile_,
+then adds created pass link into Literals sheet
+
+Params:
+
+- `row` (integer) - Row to create pass for. Defaults to last row
+
+Returns:
+
+- (string) - Link to created pass
+
+#### createQrCodeUrl_(memberID)
+
+Creates URL for QR code from given member ID
+
+Uses quickchart.io
+
+Params:
+
+- `memberID` (string) - Member ID
+
+Returns:
+
+- (string) - URL for QR code
+

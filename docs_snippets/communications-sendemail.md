@@ -1,43 +1,88 @@
 ### Send Email.gs
-- [`sendWelcomeEmailInRow(row)`](#sendwelcomeemailinrowrow) → Sends a welcome email to the member in a row
-- [`sendWelcomeEmail(memberInformation)`](#sendwelcomeemailmemberinformation) → Sends a personalized welcome email using member info
-- [`sendUpdatedPass(member)`] → Sends an updated digital pass email  
-- [`quickPassUpdate(row)`] → Creates a new pass and sends updated pass email
 
----
+- *function* [`sendWelcomeEmailInRow(row)`](#sendwelcomeemailinrowrow)
+- *function* [`sendWelcomeEmail_(memberInformation)`](#sendwelcomeemailmemberinformation)
+- *function* [`sendUpdatedPass_(memberInformation)`](#sendupdatedpassmemberinformation)
+- *function* [`quickPassUpdate(row)`](#quickpassupdaterow)
+- *function* [`triggerUpdateAndSendPass(row)`](#triggerupdateandsendpassrow)
+- *function* [`updateAndSendPass_(statusObj, isLogged)`](#updateandsendpassstatusobj-islogged)
+- *function* [`sendEmail_(memberInformation, draftSubject)`](#sendemailmemberinformation-draftsubject)
 
 #### sendWelcomeEmailInRow(row)
 
-Sends a welcome email to the member in the specified row of the "Literals" sheet. Logs status.
+Sends email using member information in `row`.
+Logs email status in column `EMAIL_STATUS`
 
-```js
-sendWelcomeEmailInRow(14);
-```
+Params:
 
-| Name | Type    | Description                 |
-|------|---------|-----------------------------|
-| row  | Integer | Row to target (default: last row) |
+- `row` (integer) - Row to target for information
 
-**Output:** None (logs status in sheet)
+#### sendWelcomeEmail_(memberInformation)
 
-**Pitfalls:** Must be run as the club account.
+Sends welcome email to member using template and member info.
 
----
+Gets member information and image blobs stored in script properties,
+populates template, and sends email.
 
-#### sendWelcomeEmail(memberInformation)
+Params:
 
-Sends a personalized welcome email to a new member using their information and a template.
+- `memberInformation` (Object) - Object containing member information from Literals
 
-```js
-sendWelcomeEmail({
-  firstName: "Alice",
-  passUrl: "https://drive.google.com/...",
-  email: "alice@example.com"
-});
-```
+Returns:
 
-| Name              | Type   | Description                    |
-|-------------------|--------|--------------------------------|
-| memberInformation | Object | Includes firstName, passUrl, email, etc. |
+- (string) - "Successfully sent!" if email sent, otherwise error message
 
-**Output:** String (status message)
+#### sendUpdatedPass_(memberInformation)
+
+Sends updated pass email to member using template and member info.
+
+Gets member information and image blobs stored in script properties,
+populates template, sends email, and log to console if successful or not.
+
+Params:
+
+- `memberInformation` (Object) - Object containing member information from Literals
+
+#### quickPassUpdate(row = 15)
+
+Update pass using member information from given row in Literals sheet,
+and sends an email with the new pass.
+
+Params:
+
+- `row` (number) - Row of member to update pass for. Defaults to 15 (dunno why)
+
+#### triggerUpdateAndSendPass(row = 2)
+
+Sends new pass to member from given row in Payment Logs sheet.
+
+Params:
+
+- `row` (number) - Row of member to update pass for. Defaults to 2 (???)
+
+#### updateAndSendPass_(statusObj, isLogged = false)
+
+Sends pass given payment status object.
+
+Finds existing member data from literals sheet, deletes old pass
+and creates new one, and sends email to member
+
+Params:
+
+- `statusObj` (Object) - Payment status, including 'email' and 'fee status'
+- `isLogged` (boolean) - Whether the status has been added to Payment Logs sheet.
+                             Determines whether to add it or not. Default false.
+
+#### sendEmail_(memberInformation, draftSubject)
+
+Sends email from template in drafts using member information.
+
+Finds draft using subject and gets template from it, then fills
+in member information and creates a new email to send.
+Throws error and logs it in console if error occurs during sending. 
+
+Params:
+
+- `memberInformation` (Object) - Information to populate email draft
+- `draftSubject` (string) - Subject line of the email draft to use as template
+
