@@ -1,59 +1,16 @@
 ### View-Formatting.gs
-- **sortAttendanceForm()**: Sorts the master attendance sheet by timestamp (ascending).
-- **prettifySheet()**: Applies formatting to the master attendance sheet for improved readability.
-- **formatSpecificColumns_()**: Applies font, alignment, number format, and column width settings to key columns.
 
+- *function* [`sortMasterAttendance()`](#sortmasterattendance)
+- *function* [`formatMasterAttendance()`](#formatmasterattendance)
 
-<br>
-<!-- 
-    🔴 View-Formatting.gs
--->
+#### sortMasterAttendance()
 
-### # <big> View-Formatting.gs </big>
-- [`sortAttendanceForm()`](#sortattendanceform) → Sorts sheet by timestamp ascending
-- [`prettifySheet()`](#prettifysheet) → Calls column formatting function
-- [`formatSpecificColumns()`](#formatspecificcolumns) → Applies formatting to key columns
+Sorts the master attendance sheet by submission time (Timestamp column).
+This function sorts all rows (except the header) in ascending order based on the Timestamp column.
 
----
+#### formatMasterAttendance()
 
-#### ## <big> sortAttendanceForm() </big>
+Formats certain columns of the master attendance sheet for a consistent view.
+This function applies formatting such as font weight, font size, alignment, number formats,
+column widths, and checkboxes to specific columns for better readability and usability.
 
-Sorts all rows (except the header) by the Timestamp column in ascending order.
-
-```js
-sortAttendanceForm();
-```
-
-| Name | Type | Description |
-|------|------|-------------|
-| —    | —    | No parameters |
-
-**Output:** None (sorts in-place)
-
-**Pitfalls:** Assumes Timestamp is in COLUMN_MAP.TIMESTAMP.
-
----
-
-#### ## <big> prettifySheet() </big>
-
-Applies master formatting to the sheet for better readability.
-
-```js
-prettifySheet();
-```
-
-**Output:** None
-
----
-
-#### ## <big> formatSpecificColumns() </big>
-
-Applies font, size, bold, italics, number format, alignment, and checkboxes to specific columns.
-
-```js
-formatSpecificColumns();
-```
-
-**Output:** None
-
-**Pitfalls:** Hardcoded ranges; will fail if columns/names change.

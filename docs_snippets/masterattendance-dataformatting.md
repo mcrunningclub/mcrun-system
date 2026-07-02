@@ -1,51 +1,52 @@
 ### Data-Formatting.gs
-- **getLastSubmission_()**: Returns the last non-empty row index in the master attendance sheet.
-- **formatNamesInRow_(targetCols, startRow, numRow)**: Formats names in specified columns and rows, separating names by newlines.
-- **formatAllNamesInRow()**: Formats all relevant name columns (headrunners and attendees) in the last submission row.
+
+- *function* [`getLastSubmission_()`](#getlastsubmission_)
+- *function* [`formatNamesInRange_(cols, startRow, numRows)`](#formatnamesinrange_cols-startrow-numrows)
+- *function* [`formatNamesLastSubmission()`](#formatnameslastsubmission)
+
+#### getLastSubmission_()
+
+Finds the row index of the last non-empty submission in the master attendance sheet.
+This function iterates backwards through the TIMESTAMP column to find the last row
+with a non-empty value, avoiding issues with getLastRow() returning empty rows.
+
+Returns:
+
+- (number) - The 1-based index of the last non-empty row in the sheet.
 
 
+#### formatNamesInRange_(cols, startRow=getLastSubmission_(), numRows=1)
 
-<!-- 
-    🔴 Data-Formatting.gs
--->
+Formats headrunner names into uniform view, separated by newline.
 
-### # <big> Data-Formatting.gs </big>
-- [`getLastSubmission()`](#getlastsubmission) → Gets the last non-empty row in the sheet
-- [`formatNamesInRow(targetCols, startRow, numRow)`](#formatnamesinrowtargetcols-startrow-numrow) → Formats and normalizes names in specific columns/rows
+Params:
 
+- `cols` (Array<Integer>) - The column(s) with names to format.
+- `startRow` (integer) - The row to start formatting at. (1-indexed).
+                            Defaults to the last row in the sheet.
+- `numRows` (integer) - Number of rows to format from `startRow`. Defaults to 1.
 
-#### ## <big> getLastSubmission() </big>
+Examples:
 
-Finds the row index of the last non-empty submission (by timestamp) in the master attendance sheet.
-
-```js
-const idx = getLastSubmission();
+```javascript
+// Format names in last row for ATTENDEES.
+formatHeadRunnerInRow([ATTENDEES_COL]);
+```
+```javascript
+// Format names in row `7` in TIMESTAMP and ATTENDEES.
+const targetCols = [HEADRUNNER_COL, ATTENDEES_COL]
+const rowToFormat = 7;
+formatHeadRunnerInRow(targetCols, rowToFormat);
+```
+```javascript
+// Format names from row `3` to `9` in TIMESTAMP.
+const targetCols = [HEADRUNNER_COL]
+const startRow = 3;
+const numRow = 9 - startRow;
+formatHeadRunnerInRow(targetCols, startRow, numRow);
 ```
 
-| Name | Type | Description |
-|------|------|-------------|
-| —    | —    | No parameters |
+#### formatNamesLastSubmission()
 
-**Output:** Number (1-based index of last non-empty row)
-
-**Pitfalls:** If all rows are empty, may return 0 or error.
-
----
-
-#### ## <big> formatNamesInRow(targetCols, startRow, numRow) </big>
-
-Formats headrunner or attendee names in the specified columns for a given row or range, normalizing apostrophes and splitting by commas/newline.
-
-```js
-formatNamesInRow([2, 7], 7, 1);
-```
-
-| Name       | Type          | Description                                      |
-|------------|---------------|--------------------------------------------------|
-| targetCols | Array<Integer>| Columns to format                                |
-| startRow   | Integer       | Row to start formatting (default: last row)      |
-| numRow     | Integer       | Number of rows to format (default: 1)            |
-
-**Output:** None (in-place formatting in sheet)
-
-**Pitfalls:** Out-of-range columns/rows may cause errors.
+Formats all relevant name columns in the last submission row.
+Calls formatNamesInRange_ for HEADRUNNERS and ATTENDEES columns.
