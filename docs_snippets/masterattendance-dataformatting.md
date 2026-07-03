@@ -15,7 +15,7 @@ Returns:
 - (number) - The 1-based index of the last non-empty row in the sheet.
 
 
-#### formatNamesInRange_(cols, startRow=getLastSubmission_(), numRows=1)
+#### formatNamesInRange_(cols, startRow, numRows)
 
 Formats headrunner names into uniform view, separated by newline.
 
@@ -46,7 +46,7 @@ const numRow = 9 - startRow;
 formatHeadRunnerInRow(targetCols, startRow, numRow);
 ```
 
-#### formatNamesLastSubmission()
+#### formatNamesInLastSubmission()
 
 Formats all relevant name columns in the last submission row.
 Calls formatNamesInRange_ for HEADRUNNERS and ATTENDEES columns.

@@ -1,52 +1,59 @@
 ### Transfer.gs
-- **onChange(e)**: Triggered on sheet changes; handles new submissions, exports, and maintenance formatting.
-- **transferToSemesterSheet(row)**: Transfers the latest submission to the semester attendance sheet and marks it as exported.
-- **prepareAttendanceSubmission(values)**: Converts a row of attendance data into a JSON-formatted string for export.
+
+- *function* [`onChange(e)`](#onchangee)
+- *function* [`transferLastSubmissionToSemester(row)`](#transferlastsubmissiontosemesterrow)
+- *function* [`prepareAttendanceSubmission(values)`](#prepareattendancesubmissionvalues)
+
+#### onChange(e)
+
+Triggered when a change occurs in the spreadsheet.
+Handles edit events for the master attendance sheet. If the change is an edit on the correct sheet,
+it triggers the transfer of the latest submission to the semester attendance sheet and runs maintenance formatting functions.
+
+Params:
+
+- `e` (Events.SheetsOnChange) - The event object containing information about the change.
 
 
-<br>
-<!-- 
-    🔴 Transfer.gs
--->
+#### transferLastSubmissionToSemester(row)
 
-### # <big> Transfer.gs </big>
-- [`onChange(e)`](#onchangee) → Main trigger handler for sheet edits/changes
-- [`transferToSemesterSheet(row)`](#transfertosemestersheetrow) → Transfers the latest submission to the semester sheet
+Transfers the latest attendance submission to the semester attendance sheet.
+Attempts to use the connected library for transfer; if it fails, falls back to direct sheet access via URL.
+Marks the submission as exported upon success.
 
----
+Once exported, `importSheet` does not process the submission until it checks for missing attendance.
+The triggers for checking attendance are time-based.
 
-#### ## <big> onChange(e) </big>
+Previous attempt to trigger `onChange(e)` for `importSheet` did not work.
+This is due to GAS restrictions. See page below for more information.
 
-Handles all sheet onChange events. Transfers new submissions to the semester sheet and triggers formatting.
+https://developers.google.com/apps-script/guides/triggers/installable#google_apps_triggers
 
-```js
-function onChange(e) {
-  // Called automatically by trigger
-}
-```
+These are the functions that were used to try and externally trigger `onChange(e)`:
 
-| Name | Type   | Description                |
-|------|--------|----------------------------|
-| e    | Object | Sheets event object         |
+- sheet.setValues
+- sheet.appendRow
+- sheet.activate
+- sheet.insertRowAfter
+- sheet.hideRow + sheet.unhideRow
+- sheet.hideRows + sheet.showRows
+- sheet.deleteRow
+- ss.setActiveRange
+- ss.insertSheet + ss.deleteSheet
 
-**Output:** None (side effects: transfers data, runs formatting)
+Params:
 
-**Pitfalls:** Only processes EDIT events and correct sheet ID; errors logged.
+- `row` (number) - Row index in the master attendance sheet to transfer (1-based). Defaults to last row.
 
----
+#### prepareAttendanceSubmission(values)
 
-#### ## <big> transferToSemesterSheet(row) </big>
+Prepare the attendance values into JSON object to send to semester attendance spreadsheet.
 
-Transfers the latest submission (or specified row) to the semester attendance sheet, marking it as exported.
+Params:
 
-```js
-transferToSemesterSheet(5);
-```
+- `values` (string[]) - Run attendance information from master attendance.
 
-| Name | Type    | Description                                    |
-|------|---------|------------------------------------------------|
-| row  | Integer | Row to transfer (default: last submission)     |
+Returns:
 
-**Output:** None
+- (string) - JSON-formatted string.
 
-**Pitfalls:** Requires valid sheet IDs and permissions; falls back to direct access if library fails.
