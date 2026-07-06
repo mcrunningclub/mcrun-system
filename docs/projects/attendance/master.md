@@ -46,18 +46,13 @@ links:
 
 ## Triggers
 
-### onChange Trigger
+### Time-based
 
-- **Type:** `onChange`
-- **Function:** [`onChange(e)`](#onchangee)
-- **Purpose:** Runs automatically on any edit/change to the master attendance sheet.
-    - Transfers new submissions to the semester sheet.
-    - Runs formatting and maintenance functions.
-    - Ensures all data is up-to-date and formatted after every change.
+- **onChange** (not in use ??)
 
-### Manual/Custom Triggers
+### From spreadsheet
 
-- Functions like [`sortAttendanceForm()`](#sortattendanceform) and [`prettifySheet()`](#prettifysheet) can be run manually from the Apps Script UI for maintenance or troubleshooting.
+- **onChange** runs after any edit/change to the master attendance sheet
 
 ---
 
@@ -65,22 +60,22 @@ links:
 
 ### Format Names in Last Row
 ```javascript
-formatNamesInRow_([COLUMN_MAP.ATTENDEES]);
+formatNamesInRange_([MASTER_ATTENDANCE_COLS.ATTENDEES]);
 ```
 
 ### Format Names in Specific Row and Columns
 ```javascript
-formatNamesInRow_([COLUMN_MAP.HEADRUNNERS, COLUMN_MAP.ATTENDEES], 7);
+formatNamesInRange_([MASTER_ATTENDANCE_COLS.HEADRUNNERS, MASTER_ATTENDANCE_COLS.ATTENDEES], 7);
 ```
 
 ### Sort Attendance Sheet by Timestamp
 ```javascript
-sortAttendanceForm();
+sortMasterAttendance();
 ```
 
 ### Export Latest Submission to Semester Sheet
 ```javascript
-transferToSemesterSheet();
+transferLastSubmissionToSemester();
 ```
 
 ### Get Last Submission Row

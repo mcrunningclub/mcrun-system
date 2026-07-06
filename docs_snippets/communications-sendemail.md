@@ -43,7 +43,7 @@ Params:
 
 - `memberInformation` (Object) - Object containing member information from Literals
 
-#### quickPassUpdate(row = 15)
+#### quickPassUpdate(row)
 
 Update pass using member information from given row in Literals sheet,
 and sends an email with the new pass.
@@ -52,7 +52,7 @@ Params:
 
 - `row` (number) - Row of member to update pass for. Defaults to 15 (dunno why)
 
-#### triggerUpdateAndSendPass(row = 2)
+#### triggerUpdateAndSendPass(row)
 
 Sends new pass to member from given row in Payment Logs sheet.
 
@@ -60,7 +60,7 @@ Params:
 
 - `row` (number) - Row of member to update pass for. Defaults to 2 (???)
 
-#### updateAndSendPass_(statusObj, isLogged = false)
+#### updateAndSendPass_(statusObj, isLogged)
 
 Sends pass given payment status object.
 

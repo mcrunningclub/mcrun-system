@@ -19,7 +19,7 @@ Returns:
 
 - (string) - Link to created pass
 
-#### createPassFromRow(row = LITERAL_SHEET.getLastRow())
+#### createPassFromRow(row)
 
 Creates new pass from row in the Literals sheet
 
