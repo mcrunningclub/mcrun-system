@@ -18,6 +18,10 @@ links:
 - **Google Sheets:** [McRUN Head Run Attendance (Master)](https://docs.google.com/spreadsheets/d/1Abu4txni1zUDI79u5OtIjpffOOoYnea9_vNM9skq0Yg/edit?usp=sharing)
 - **Apps Script Project:** [Attendance Code (MASTER)](https://script.google.com/home/projects)
 
+### Libraries and Services
+
+- [Semester Attendance](./semester.md) library
+
 ### Permissions
 
 |OAuth Scope|URL|
@@ -32,15 +36,15 @@ links:
 
 ## Constants
 
---8<-- "masterattendance-constants.gs"
+--8<-- "masterattendance-constants.md"
 
 ---
 
 ## Functions
 
---8<-- "masterattendance-dataformatting.gs"
---8<-- "masterattendance-viewformatting.gs"
---8<-- "masterattendance-transfer.gs"
+--8<-- "masterattendance-dataformatting.md"
+--8<-- "masterattendance-viewformatting.md"
+--8<-- "masterattendance-transfer.md"
 
 ---
 
