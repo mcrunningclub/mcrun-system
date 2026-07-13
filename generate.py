@@ -170,7 +170,7 @@ def parse_docstring(file_path, output_file_path):
     documentation.append("\n")
     documentation.extend(newlines)
 
-    with open(output_file_path, "w") as f:
+    with open(output_file_path, "w", encoding="utf-8") as f:
         f.writelines(documentation)
 
 
