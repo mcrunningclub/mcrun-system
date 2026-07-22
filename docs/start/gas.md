@@ -1,6 +1,4 @@
-# Setup
-
-## Quick Start
+# Google Apps Scripts
 
 This guide is for contributors and club admins to get up and running with the McRUN Attendance scripts.
 

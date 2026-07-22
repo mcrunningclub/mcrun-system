@@ -36,15 +36,15 @@ links:
 
 ## Constants
 
---8<-- "masterattendance-constants.md"
+--8<-- "attendance/masterattendance-constants.md"
 
 ---
 
 ## Functions
 
---8<-- "masterattendance-dataformatting.md"
---8<-- "masterattendance-viewformatting.md"
---8<-- "masterattendance-transfer.md"
+--8<-- "attendance/masterattendance-dataformatting.md"
+--8<-- "attendance/masterattendance-viewformatting.md"
+--8<-- "attendance/masterattendance-transfer.md"
 
 ---
 

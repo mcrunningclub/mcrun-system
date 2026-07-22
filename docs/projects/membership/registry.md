@@ -45,21 +45,21 @@ You must have edit access to the membership spreadsheet (club email).
 
 ## Constants
 
---8<-- "registry-constants.md"
+--8<-- "membership/registry-constants.md"
 
 ---
 
 ## Functions
 
---8<-- "registry-formatting.md"
---8<-- "registry-masterscripts.md"
---8<-- "registry-memberfee.md"
---8<-- "registry-memberships.md"
---8<-- "registry-search.md"
---8<-- "registry-transfer.md"
---8<-- "registry-triggers.md"
---8<-- "registry-usermenu.md"
---8<-- "registry-utils.md"
+--8<-- "membership/registry-formatting.md"
+--8<-- "membership/registry-masterscripts.md"
+--8<-- "membership/registry-memberfee.md"
+--8<-- "membership/registry-memberships.md"
+--8<-- "membership/registry-search.md"
+--8<-- "membership/registry-transfer.md"
+--8<-- "membership/registry-triggers.md"
+--8<-- "membership/registry-usermenu.md"
+--8<-- "membership/registry-utils.md"
 
 ---
 

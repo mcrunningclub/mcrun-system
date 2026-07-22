@@ -9,18 +9,20 @@ copyright: Copyright &copy; 2026 McGill Student Running Club
 nav:
   - Home:
       - Home: index.md
-  - Getting Started:
-      - Setup: start/setup.md
-      - Contributing:
-          - mkdocs: start/getting-started.md
-          - Syntax: start/syntax.md
-          - Typography: start/typography.md
-          - Code Examples: start/code-examples.md
-          - Start Contributing: start/contributing.md
       - Changelog: start/changelog.md
+  - Getting Started:
+      - Overview: start/index.md
+      - Google Apps Scripts: start/gas.md
       - FAQ: start/faq.md
+  - User Guide:
+      - Overview: users/index.md
+  - Developer Guide:
+      - Overview: developers/index.md
+      - Contributing: developers/contributing-code.md
+      - Contributing to the documentation: developers/contributing-docs.md
+      - Formatting the documentation: developers/formatting.md
   - Projects:
-      - Overview: projects/projects.md
+      - Overview: projects/index.md
       - Membership Code:
           - Membership List: projects/membership/registry.md
           - New Member Communications: projects/membership/communications.md

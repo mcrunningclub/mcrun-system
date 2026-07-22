@@ -20,11 +20,11 @@ links:
 
 ## Constants
 
---8<-- "attendance-constants.md"
+--8<-- "attendance/attendance-constants.md"
 
 ## Functions
 
---8<-- "attendance-formatting.md"
+--8<-- "attendance/attendance-formatting.md"
 
 ## Triggers
 

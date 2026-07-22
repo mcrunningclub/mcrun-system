@@ -41,17 +41,17 @@ Scripts must be run from the club account.
 
 ## Constants
 
---8<-- "communications-constants.md"
+--8<-- "membership/communications-constants.md"
 
 ---
 
 ## Functions
 
---8<-- "communications-emailtemplate.md"
---8<-- "communications-memberinfo.md"
---8<-- "communications-memberpass.md"
---8<-- "communications-sendemail.md"
---8<-- "communications-utils.md"
+--8<-- "membership/communications-emailtemplate.md"
+--8<-- "membership/communications-memberinfo.md"
+--8<-- "membership/communications-memberpass.md"
+--8<-- "membership/communications-sendemail.md"
+--8<-- "membership/communications-utils.md"
 
 ---
 
