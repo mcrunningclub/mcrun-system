@@ -131,22 +131,3 @@ To visualize the detection results data while the frontend is revamped, you can 
 Make SURE TO DELETE THE DATABASE BEFORE TESTING THE TIMER. Otherwise, the timer will update the existing Participant records instead of creating new ones, which can mess up testing. You can delete the database by deleting `backend/instance/database.db` and restarting the backend.
 
 Right now the only way to differentiate between the two readers is to check the USB port they are plugged into. In Pyserial we can use port.position to check the address of the reader. So make sure to update the `mapping_readers` dictionnary in `ReaderQueue` by associating the correct port to each reader. For this run `identification_tags.ipynb`
-
-
-## Copyright
-
-```
-Copyright 2026 McRUN
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-```

@@ -2,7 +2,7 @@
 
 - *function* [`getLastSubmission_()`](#getlastsubmission_)
 - *function* [`formatNamesInRange_(cols, startRow, numRows)`](#formatnamesinrange_cols-startrow-numrows)
-- *function* [`formatNamesLastSubmission()`](#formatnameslastsubmission)
+- *function* [`formatNamesInLastSubmission()`](#formatnamesinlastsubmission)
 
 #### getLastSubmission_()
 

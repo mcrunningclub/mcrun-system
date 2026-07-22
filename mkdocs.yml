@@ -9,7 +9,7 @@ copyright: Copyright &copy; 2026 McGill Student Running Club
 nav:
   - Home:
       - Home: index.md
-      - Changelog: start/changelog.md
+      - Changelog: changelog.md
   - Getting Started:
       - Overview: start/index.md
       - Google Apps Scripts: start/gas.md
@@ -34,6 +34,7 @@ nav:
           - Points Email: projects/points/emails.md
       - McRace Code:
           - Registrations: projects/mcrace/registry.md
+          - Cross Referencing: projects/mcrace/crossref.md
           - Timing System: projects/mcrace/timing.md
 
 theme:

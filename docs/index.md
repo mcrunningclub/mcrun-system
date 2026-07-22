@@ -1,4 +1,4 @@
-# McGill Students Running Club (McRUN) System
+# Welcome
 
 The McRun system is used to add new members, keep track of existing ones, updating the points system, and more!
 
@@ -7,4 +7,4 @@ The McRun system is used to add new members, keep track of existing ones, updati
 
 Check the [Getting Started](./start/index.md) for more information on the different parts of the system (for both users and contributors).
 
-See the [User Guide](./users/index.md) if you need information about using the system and the [Developer Guide](./develoeprs/index.md) if you want to contribute to the code.
+See the [User Guide](./users/index.md) if you need information about using the system and the [Developer Guide](./developers/index.md) if you want to contribute to the code.
