@@ -25,8 +25,28 @@ links:
 ## Functions
 
 --8<-- "attendance/attendance-formatting.md"
+--8<-- "attendance/attendance-headrunattendance.md"
+--8<-- "attendance/attendance-headruninfo.md"
+--8<-- "attendance/attendance-import.md"
+--8<-- "attendance/attendance-pointsledger.md"
+--8<-- "attendance/attendance-triggers.md"
+--8<-- "attendance/attendance-unregistered.md"
+--8<-- "attendance/attendance-usermenu.md"
+--8<-- "attendance/attendance-utils.md"
 
 ## Triggers
+
+### Time-based
+
+- **updateWeeklyCalendarTriggers** runs every day(?) to update the triggers, and creates various time-based triggers which are later disabled 
+
+### From spreadsheet
+
+- **onOpen** runs when the spreadsheet is opened to create the usermenu
+
+### From Calendar
+
+- **updateCalendarTriggers** (now called cleanUpCalendarTriggersForToday) is supposed to run whenever the calendar is changed
 
 
 ## Example Usage

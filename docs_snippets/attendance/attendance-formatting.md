@@ -1,6 +1,7 @@
 ### Formatting.gs
 
 - *function* [`addMissingPlatform_(row)`](#addmissingplatform_row)
+- *function* [`bulkFormatRow_(row)`](#bulkformatrow_row)
 - *function* [`formatSemesterAttendance()`](#formatsemesterattendance)
 - *function* [`formatConfirmationInRow_(row)`](#formatconfirmationinrow_row)
 - *function* [`formatAllNames()`](#formatallnames)
@@ -9,7 +10,6 @@
 - *function* [`formatHeadrunnersInRow_(startRow, numRow)`](#formatheadrunnersinrow_startrow-numrow)
 - *function* [`formatHeadrunnerName_(name)`](#formatheadrunnername_name)
 - *function* [`formatHeadrunInRow_(startRow, numRow)`](#formatheadruninrow_startrow-numrow)
-- *function* [`runOnSheet_(functionName, functionName2)`](#runonsheet_functionname-functionname2)
 - *function* [`sortSemesterAttendance()`](#sortsemesterattendance)
 - *function* [`removePresenceChecks()`](#removepresencechecks)
 - *function* [`formatSpecificColumns_()`](#formatspecificcolumns_)
@@ -17,6 +17,18 @@
 #### addMissingPlatform_(row)
 
 Adds `Google Form` as source of attendance submission.
+
+Params:
+
+- `row` (number) - *Optional* The row index in the attendance sheet to add the platform to. Defaults to last row.
+
+#### bulkFormatRow_(row)
+
+Applies bulk formatting to specified row in the attendance sheet.
+
+Params:
+
+- `row` (number) - The row index in the attendance sheet to format.
 
 #### formatSemesterAttendance()
 
@@ -35,8 +47,7 @@ Formats confirmation bool in `row` into user-friendly string.
 
 Params:
 
-- `row=ATTENDANCE_SHEET.getLastRow()` (integer) - The row in the `ATTENDANCE_SHEET` sheet (1-indexed).
-                                                      Defaults to the last row in the sheet.
+- `row` (integer) - *Optional* The row in the `ATTENDANCE_SHEET` sheet (1-indexed). Defaults to the last row in the sheet.
 
 #### formatAllNames()
 
@@ -51,7 +62,7 @@ Formats headrunner and attendee names in target `row`.
 
 Params:
 
-- `row=ATTENDANCE_SHEET.getLastRow()` (integer) - The row in the `ATTENDANCE_SHEET` sheet (1-indexed).
+- `row` (integer) - *Optional* The row in the `ATTENDANCE_SHEET` sheet (1-indexed).
                                                       Defaults to the last row in the sheet.
 
 #### formatAttendeeNamesInRow_(row)
@@ -60,7 +71,7 @@ Formats attendee names from `row` into uniform view, sorted and separated by new
 
 Params:
 
-- `row=ATTENDANCE_SHEET.getLastRow()` (integer) - The row in the `ATTENDANCE_SHEET` sheet (1-indexed).
+- `row` (integer) - *Optional* The row in the `ATTENDANCE_SHEET` sheet (1-indexed).
                                                       Defaults to the last row in the sheet.
 
 Example:
@@ -78,9 +89,9 @@ Updated format is '`${firstName} ${lastNameLetter}.`'
 
 Params:
 
-- `row=ATTENDANCE_SHEET.getLastRow()` (integer) - The row in the `ATTENDANCE_SHEET` sheet (1-indexed).
+- `row` (integer) - *Optional* The row in the `ATTENDANCE_SHEET` sheet (1-indexed).
                                                       Defaults to the last row in the sheet.
-- `numRow` (integer) - Number of rows to format from `startRow`.
+- `numRow` (integer) - *Optional* Number of rows to format from `startRow`. Defaults to 1.
 
 Example:
 
@@ -109,23 +120,11 @@ Returns:
 #### formatHeadrunInRow_(startRow, numRow)
 
 Removes hyphen-space in headrun from `row` if applicable.
-                     The row in the `ATTENDANCE_SHEET` sheet (1-indexed).
-                     Defaults to the last row in the sheet.
 
 Params:
 
-- `numRow=1` (integer) - Number of rows to format from `startRow`
-
-#### runOnSheet_(functionName, functionName2)
-
-Boiler plate function `functionName` to execute on complete sheet.
-Also executes `functionName2` if non-empty.
-
-Params:
-
-- `functionName` (string) - Name of function to execute.
-- `functionName2=""` (string) - Name of function to execute.
-                                     Defaults to empty string.
+- `startrow` (integer) - The row in the `ATTENDANCE_SHEET` sheet (1-indexed). Defaults to the last row in the sheet.
+- `numRow` (integer) - *Optional* Number of rows to format from `startRow`. Defaults to 1.
 
 #### sortSemesterAttendance()
 
