@@ -32,6 +32,8 @@ run from this folder: `./node_modules/.bin/jsdoc -c jsdoc.conf [path to folders 
 
 html site is saved in jsdoc_site/
 
+tutorials should be put into a folder named jsdoc_tutorials/ in this folder
+
 **USING JSDOC-TO-MARKDOWN**
 
 quality not as good as jsdoc, but it can output markdown

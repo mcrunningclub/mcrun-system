@@ -9,7 +9,6 @@ copyright: Copyright &copy; 2026 McGill Student Running Club
 nav:
   - Home:
       - Home: index.md
-      - Changelog: changelog.md
   - Getting Started:
       - Overview: start/index.md
       - Google Apps Scripts: start/gas.md
@@ -27,11 +26,10 @@ nav:
           - Membership List: projects/membership/registry.md
           - New Member Communications: projects/membership/communications.md
       - Attendance Code:
-          - Master: projects/attendance/master.md
-          - Semester: projects/attendance/semester.md
+          - Master Attendance: projects/attendance/master.md
+          - Semester Attendance: projects/attendance/semester.md
       - Points System Code:
-          - Ledger: projects/points/ledger.md
-          - Points Email: projects/points/emails.md
+          - Points Ledger: projects/points/ledger.md
       - McRace Code:
           - Registrations: projects/mcrace/registry.md
           - Cross Referencing: projects/mcrace/crossref.md
