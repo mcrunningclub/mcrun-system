@@ -14,7 +14,7 @@ DOCSTRING_REGEX = re.compile(r"^ \* ([^@].+)\n$")
 PARAM_REGEX = re.compile(r"^ \* @param\s+{([^ ]+)}\s+([^ ]+) -?\s*(.+)\n$")
 RETURN_REGEX = re.compile(r"^ \* @returns? {([^ ]+)} -?\s*(.+)\n$")
 FUNC_DEF_REGEX = re.compile(r"^\s*function ([^\(]+\(.*\))\s*{")
-CONSTANT_REGEX = re.compile(r"^const (.+) = (.+)\n$")
+CONSTANT_REGEX = re.compile(r"^const (.+) =(.*)\n$")
 
 DOCSTRING_REPLACE = r"\1\n"
 PARAM_REPLACE = r"- `\2` (\1) - \3\n"
