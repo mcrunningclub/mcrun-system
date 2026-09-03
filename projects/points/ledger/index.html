@@ -1,0 +1,2845 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the McRUN System, including McRace Code and user guides.">
+      
+      
+        <meta name="author" content="McGill Student Running Club (Tech Team)">
+      
+      
+        <link rel="canonical" href="https://mcrunningclub.github.io/mcrun-system/projects/points/ledger/">
+      
+      
+        <link rel="prev" href="../../attendance/semester/">
+      
+      
+        <link rel="next" href="../../mcrace/registry/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/mcrun-favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Points Ledger - McRUN System Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Figtree:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Figtree";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mcrun-points-system" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="McRUN System Documentation" class="md-header__button md-logo" aria-label="McRUN System Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/mcrun-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            McRUN System Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Points Ledger
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mcrunningclub/mcrun-system" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mcrun-system
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../start/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../users/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../developers/" class="md-tabs__link">
+          
+  
+  
+  Developer Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="McRUN System Documentation" class="md-nav__button md-logo" aria-label="McRUN System Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/mcrun-logo.png" alt="logo">
+
+    </a>
+    McRUN System Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mcrunningclub/mcrun-system" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mcrun-system
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../start/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../users/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../developers/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Guide
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Membership Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Membership Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../membership/registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Membership List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../membership/communications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New Member Communications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attendance Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Attendance Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../attendance/master/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Attendance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../attendance/semester/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semester Attendance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Points System Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Points System Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Points Ledger
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Points Ledger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        About
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="About">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libraries-and-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Libraries and Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ledger-variablesgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ledger-Variables.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ledger-codegs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ledger-Code.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formattinggs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formatting.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strava-codegs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strava-Code.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strava-servicegs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strava-Service.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-generationgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map-Generation.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-emailgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Send-Email.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triggersgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Triggers.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html-extractiongs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTML-Extraction.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilsgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utils.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Triggers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Triggers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time-based
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting &amp; FAQ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    McRace Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    McRace Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcrace/registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Registrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcrace/crossref/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross Referencing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcrace/timing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timing System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        About
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="About">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libraries-and-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Libraries and Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permissions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ledger-variablesgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ledger-Variables.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ledger-codegs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ledger-Code.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formattinggs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formatting.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strava-codegs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strava-Code.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strava-servicegs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strava-Service.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-generationgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Map-Generation.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-emailgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Send-Email.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triggersgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Triggers.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html-extractiongs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTML-Extraction.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilsgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utils.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Triggers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Triggers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time-based
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting &amp; FAQ
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Projects
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Points System Code
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="mcrun-points-system">McRUN Points System<a class="headerlink" href="#mcrun-points-system" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="about">About<a class="headerlink" href="#about" title="Permanent link">&para;</a></h2>
+<h3 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Github Repo:</strong> <a href="https://github.com/mcrunningclub/points-system">points-system</a></li>
+<li><strong>Google Sheets:</strong> <a href="https://docs.google.com/spreadsheets/d/1sar-Pmfb_Nar0Lc9u8-rXyllLvQMqBFlSwolCoHX-_4/edit?gid=1311788414#gid=1311788414">Points Ledger - 2025/2026</a></li>
+<li><strong>Apps Script Project:</strong> <a href="https://script.google.com/u/0/home/projects/1S77DvcDMmE9Z9ScZKV4xIHnRZY6DCA74I-lcqMY-8Ts8cALDENK_nibF/edit">Points Ledger Code (McRUN)</a></li>
+</ul>
+<h3 id="libraries-and-services">Libraries and Services<a class="headerlink" href="#libraries-and-services" title="Permanent link">&para;</a></h3>
+<ul>
+<li>OAuth2 library</li>
+<li>Gmail service</li>
+</ul>
+<h3 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">&para;</a></h3>
+<p>You must have edit access to the points spreadsheet (club email).</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>See, edit, create, and delete all your Google Sheets spreadsheets</td>
+<td>https://www.googleapis.com/auth/spreadsheets</td>
+</tr>
+<tr>
+<td>Connect to an external service</td>
+<td>https://www.googleapis.com/auth/script.external_request</td>
+</tr>
+<tr>
+<td>See, edit, create, and delete all of your Google Drive files</td>
+<td>https://www.googleapis.com/auth/drive</td>
+</tr>
+<tr>
+<td>Send email as you</td>
+<td>https://www.googleapis.com/auth/script.send_mail</td>
+</tr>
+<tr>
+<td>Allow this application to run when you are not present</td>
+<td>https://www.googleapis.com/auth/script.scriptapp</td>
+</tr>
+<tr>
+<td>Read, compose, send, and permanently delete all your email from Gmail</td>
+<td>https://mail.google.com/</td>
+</tr>
+<tr>
+<td>See your primary Google Account email address</td>
+<td>https://www.googleapis.com/auth/userinfo.email</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permanent link">&para;</a></h2>
+<h3 id="ledger-variablesgs">Ledger-Variables.gs<a class="headerlink" href="#ledger-variablesgs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>constant</em> <a href="#ledger_ss"><code>LEDGER_SS</code></a></li>
+<li><em>constant</em> <a href="#ledger_ss_id"><code>LEDGER_SS_ID</code></a></li>
+<li><em>constant</em> <a href="#ledger_sheet_name"><code>LEDGER_SHEET_NAME</code></a></li>
+<li><em>constant</em> <a href="#ledger_sheet"><code>LEDGER_SHEET</code></a></li>
+<li><em>constant</em> <a href="#log_sheet_name"><code>LOG_SHEET_NAME</code></a></li>
+<li><em>constant</em> <a href="#log_sheet"><code>LOG_SHEET</code></a></li>
+<li><em>constant</em> <a href="#get_ledger"><code>GET_LEDGER</code></a></li>
+<li><em>constant</em> <a href="#get_log_sheet"><code>GET_LOG_SHEET</code></a></li>
+<li><em>constant</em> <a href="#get_ledger_sheet"><code>GET_LEDGER_SHEET</code></a></li>
+<li><em>constant</em> <a href="#timezone"><code>TIMEZONE</code></a></li>
+<li><em>constant</em> <a href="#mcrun_email"><code>MCRUN_EMAIL</code></a></li>
+<li><em>constant</em> <a href="#script_property_keys"><code>SCRIPT_PROPERTY_KEYS</code></a></li>
+<li><em>constant</em> <a href="#ledger_col"><code>LEDGER_COL</code></a></li>
+<li><em>constant</em> <a href="#ledger_col_count"><code>LEDGER_COL_COUNT</code></a></li>
+<li><em>constant</em> <a href="#log_col"><code>LOG_COL</code></a></li>
+<li><em>constant</em> <a href="#number_format_map"><code>NUMBER_FORMAT_MAP</code></a></li>
+<li><em>constant</em> <a href="#units_map"><code>UNITS_MAP</code></a></li>
+<li><em>constant</em> <a href="#log_targets"><code>LOG_TARGETS</code></a></li>
+<li><em>constant</em> <a href="#strava_base_url"><code>STRAVA_BASE_URL</code></a></li>
+<li><em>constant</em> <a href="#activities_endpoint"><code>ACTIVITIES_ENDPOINT</code></a></li>
+<li><em>constant</em> <a href="#maps_folder"><code>MAPS_FOLDER</code></a></li>
+<li><em>constant</em> <a href="#maps_base_url"><code>MAPS_BASE_URL</code></a></li>
+<li><em>constant</em> <a href="#base_upload_url"><code>BASE_UPLOAD_URL</code></a></li>
+<li><em>constant</em> <a href="#storage_bucket_name"><code>STORAGE_BUCKET_NAME</code></a></li>
+<li><em>constant</em> <a href="#email_sender_name"><code>EMAIL_SENDER_NAME</code></a></li>
+<li><em>constant</em> <a href="#post_run_template"><code>POST_RUN_TEMPLATE</code></a></li>
+<li><em>constant</em> <a href="#subject_line_arr"><code>SUBJECT_LINE_ARR</code></a></li>
+<li><em>constant</em> <a href="#points_email_subject_line"><code>POINTS_EMAIL_SUBJECT_LINE</code></a></li>
+<li><em>constant</em> <a href="#hidden_preheader_arr"><code>HIDDEN_PREHEADER_ARR</code></a></li>
+<li><em>constant</em> <a href="#winbackemail_subject"><code>WINBACKEMAIL_SUBJECT</code></a></li>
+<li><em>constant</em> <a href="#winbackemail_template"><code>WINBACKEMAIL_TEMPLATE</code></a></li>
+<li><em>constant</em> <a href="#email_ledger_targets"><code>EMAIL_LEDGER_TARGETS</code></a></li>
+<li><em>constant</em> <a href="#email_placeholder_labels"><code>EMAIL_PLACEHOLDER_LABELS</code></a></li>
+<li><em>constant</em> <a href="#trigger_base_id"><code>TRIGGER_BASE_ID</code></a></li>
+<li><em>constant</em> <a href="#max_strava_checks"><code>MAX_STRAVA_CHECKS</code></a></li>
+<li><em>constant</em> <a href="#trigger_frequency"><code>TRIGGER_FREQUENCY</code></a></li>
+</ul>
+<h4 id="ledger_ss">LEDGER_SS<a class="headerlink" href="#ledger_ss" title="Permanent link">&para;</a></h4>
+<p>Ledger spreadsheet (entire file) object</p>
+<h4 id="ledger_ss_id">LEDGER_SS_ID<a class="headerlink" href="#ledger_ss_id" title="Permanent link">&para;</a></h4>
+<p>ID for the ledger spreadsheet (entire file)</p>
+<h4 id="ledger_sheet_name">LEDGER_SHEET_NAME<a class="headerlink" href="#ledger_sheet_name" title="Permanent link">&para;</a></h4>
+<p>Name of the ledger sheet</p>
+<h4 id="ledger_sheet">LEDGER_SHEET<a class="headerlink" href="#ledger_sheet" title="Permanent link">&para;</a></h4>
+<p>Ledger sheet object</p>
+<h4 id="log_sheet_name">LOG_SHEET_NAME<a class="headerlink" href="#log_sheet_name" title="Permanent link">&para;</a></h4>
+<p>Name for event log sheet</p>
+<h4 id="log_sheet">LOG_SHEET<a class="headerlink" href="#log_sheet" title="Permanent link">&para;</a></h4>
+<p>Event log sheet object</p>
+<h4 id="get_ledger">GET_LEDGER<a class="headerlink" href="#get_ledger" title="Permanent link">&para;</a></h4>
+<p>Ledger spreadsheet (entire file)
+Gets contents of points ledger and stores it in the LEDGER_DATA constant</p>
+<h4 id="get_log_sheet">GET_LOG_SHEET<a class="headerlink" href="#get_log_sheet" title="Permanent link">&para;</a></h4>
+<p>Gets the log sheet by ID/name
+ALLOWS PROPER SHEET REF WHEN ACCESSING AS LIBRARY FROM EXTERNAL SCRIPT
+SpreadsheetApp.getActiveSpreadsheet() DOES NOT WORK IN EXTERNAL SCRIPT</p>
+<h4 id="get_ledger_sheet">GET_LEDGER_SHEET<a class="headerlink" href="#get_ledger_sheet" title="Permanent link">&para;</a></h4>
+<p>Gets the ledger sheet by ID/name
+ALLOWS PROPER SHEET REF WHEN ACCESSING AS LIBRARY FROM EXTERNAL SCRIPT
+SpreadsheetApp.getActiveSpreadsheet() DOES NOT WORK IN EXTERNAL SCRIPT</p>
+<h4 id="timezone">TIMEZONE<a class="headerlink" href="#timezone" title="Permanent link">&para;</a></h4>
+<p>Timezone of the script
+IMPORTANT FOR DATETIME FORMATTING AND SENDING EMAILS </p>
+<h4 id="mcrun_email">MCRUN_EMAIL<a class="headerlink" href="#mcrun_email" title="Permanent link">&para;</a></h4>
+<p>Official club email
+IMPORTANT FOR DATETIME FORMATTING AND SENDING EMAILS</p>
+<h4 id="script_property_keys">SCRIPT_PROPERTY_KEYS<a class="headerlink" href="#script_property_keys" title="Permanent link">&para;</a></h4>
+<p>Keys of properties in script properties (MAKE SURE NAMES MATCHES ACTUAL STORE) </p>
+<h4 id="ledger_col">LEDGER_COL<a class="headerlink" href="#ledger_col" title="Permanent link">&para;</a></h4>
+<p>Maps columns to column number in points ledger sheet
+Col 16+ store event-specific points</p>
+<h4 id="ledger_col_count">LEDGER_COL_COUNT<a class="headerlink" href="#ledger_col_count" title="Permanent link">&para;</a></h4>
+<p>LEDGER SHEET COL SIZE (WITHOUT EVENT-SPECIFIC POINTS COL)</p>
+<h4 id="log_col">LOG_COL<a class="headerlink" href="#log_col" title="Permanent link">&para;</a></h4>
+<p>Maps columns to column number in log sheet</p>
+<h4 id="number_format_map">NUMBER_FORMAT_MAP<a class="headerlink" href="#number_format_map" title="Permanent link">&para;</a></h4>
+<p>Maps Strava stats to their formatting functions</p>
+<h4 id="units_map">UNITS_MAP<a class="headerlink" href="#units_map" title="Permanent link">&para;</a></h4>
+<p>Maps Strava stats to unit conversion factors for metric and imperial system</p>
+<p>Distance -&gt; convert meters to km or mile. 
+Moving time -&gt; keep the same.
+Average speed -&gt; convert meters/sec to km/sec or mi/sec. 
+Max speed -&gt; convert meters/sec to km/h or mph. 
+Total elevation gain -&gt; convert meters to feet for imperial.</p>
+<h4 id="log_targets">LOG_TARGETS<a class="headerlink" href="#log_targets" title="Permanent link">&para;</a></h4>
+<p>Maps Strava stats to their target column in the event log sheet.</p>
+<h4 id="strava_base_url">STRAVA_BASE_URL<a class="headerlink" href="#strava_base_url" title="Permanent link">&para;</a></h4>
+<p>Base url for the Strava API</p>
+<h4 id="activities_endpoint">ACTIVITIES_ENDPOINT<a class="headerlink" href="#activities_endpoint" title="Permanent link">&para;</a></h4>
+<p>Endpoint for Strava activities for the Strava API</p>
+<h4 id="maps_folder">MAPS_FOLDER<a class="headerlink" href="#maps_folder" title="Permanent link">&para;</a></h4>
+<p>Google Drive folder to store maps in</p>
+<h4 id="maps_base_url">MAPS_BASE_URL<a class="headerlink" href="#maps_base_url" title="Permanent link">&para;</a></h4>
+<p>Base URL for Google Maps API</p>
+<h4 id="base_upload_url">BASE_UPLOAD_URL<a class="headerlink" href="#base_upload_url" title="Permanent link">&para;</a></h4>
+<p>Base URL of the Google Cloud Storage API</p>
+<h4 id="storage_bucket_name">STORAGE_BUCKET_NAME<a class="headerlink" href="#storage_bucket_name" title="Permanent link">&para;</a></h4>
+<p>Name of bucket in Google Cloud Storage</p>
+<h4 id="email_sender_name">EMAIL_SENDER_NAME<a class="headerlink" href="#email_sender_name" title="Permanent link">&para;</a></h4>
+<p>Name (of club) as it should appear on the email sender information</p>
+<h4 id="post_run_template">POST_RUN_TEMPLATE<a class="headerlink" href="#post_run_template" title="Permanent link">&para;</a></h4>
+<p>Name of the file containing template for post-run email (WITHOUT .html extension)</p>
+<h4 id="subject_line_arr">SUBJECT_LINE_ARR<a class="headerlink" href="#subject_line_arr" title="Permanent link">&para;</a></h4>
+<p>List of subject lines to choose from for post-run emails</p>
+<h4 id="points_email_subject_line">POINTS_EMAIL_SUBJECT_LINE<a class="headerlink" href="#points_email_subject_line" title="Permanent link">&para;</a></h4>
+<p>Randomly selected subject line at run-time</p>
+<h4 id="hidden_preheader_arr">HIDDEN_PREHEADER_ARR<a class="headerlink" href="#hidden_preheader_arr" title="Permanent link">&para;</a></h4>
+<p>Hidden text for post-run emails (to display in preview?)</p>
+<h4 id="winbackemail_subject">WINBACKEMAIL_SUBJECT<a class="headerlink" href="#winbackemail_subject" title="Permanent link">&para;</a></h4>
+<p>Subject line for win-back emails</p>
+<h4 id="winbackemail_template">WINBACKEMAIL_TEMPLATE<a class="headerlink" href="#winbackemail_template" title="Permanent link">&para;</a></h4>
+<p>Name of the file containing template for win-back email (WITHOUT .html extension)</p>
+<h4 id="email_ledger_targets">EMAIL_LEDGER_TARGETS<a class="headerlink" href="#email_ledger_targets" title="Permanent link">&para;</a></h4>
+<p>Mapping from certain email placeholder fields to the column in the ledger
+that contains data for that field</p>
+<h4 id="email_placeholder_labels">EMAIL_PLACEHOLDER_LABELS<a class="headerlink" href="#email_placeholder_labels" title="Permanent link">&para;</a></h4>
+<p>Mapping keys in the Strava activity object to the corresponding email placeholder fields</p>
+<h4 id="trigger_base_id">TRIGGER_BASE_ID<a class="headerlink" href="#trigger_base_id" title="Permanent link">&para;</a></h4>
+<p>String to put in the key of all script properties relating to a Strava trigger</p>
+<h4 id="max_strava_checks">MAX_STRAVA_CHECKS<a class="headerlink" href="#max_strava_checks" title="Permanent link">&para;</a></h4>
+<p>Maximum number of tries to find a Strava activity before triggers get deleted</p>
+<h4 id="trigger_frequency">TRIGGER_FREQUENCY<a class="headerlink" href="#trigger_frequency" title="Permanent link">&para;</a></h4>
+<p>Strava trigger frequency in minutes</p>
+<hr />
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<h3 id="ledger-codegs">Ledger-Code.gs<a class="headerlink" href="#ledger-codegs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>function</em> <a href="#getlatesttimestamp_"><code>getLatestTimestamp_()</code></a></li>
+<li><em>function</em> <a href="#gettimestampinrow_row"><code>getTimestampInRow_(row)</code></a></li>
+<li><em>function</em> <a href="#getlatestlog_"><code>getLatestLog_()</code></a></li>
+<li><em>function</em> <a href="#getloginrow_row"><code>getLogInRow_(row)</code></a></li>
+<li><em>function</em> <a href="#getattendeesinrow_row"><code>getAttendeesInRow_(row)</code></a></li>
+<li><em>function</em> <a href="#getdateandlevelinrow_row"><code>getDateAndLevelInRow_(row)</code></a></li>
+<li><em>function</em> <a href="#getmapurlinrow_row"><code>getMapUrlInRow_(row)</code></a></li>
+<li><em>function</em> <a href="#geteventpointsinrow_row"><code>getEventPointsInRow_(row)</code></a></li>
+<li><em>function</em> <a href="#getheadrunnersinrow_row"><code>getHeadrunnersInRow_(row)</code></a></li>
+<li><em>function</em> <a href="#getlogcell_row-column"><code>getLogCell_(row, column)</code></a></li>
+<li><em>function</em> <a href="#getledgerdata_numcols"><code>getLedgerData_(numCols)</code></a></li>
+<li><em>function</em> <a href="#getledgerentry_email-ledgerdata"><code>getLedgerEntry_(email, ledgerData)</code></a></li>
+<li><em>function</em> <a href="#findmemberinledger_email-ledger"><code>findMemberInLedger_(email, ledger)</code></a></li>
+<li><em>function</em> <a href="#storeimportfromattendancesheetimportarr"><code>storeImportFromAttendanceSheet(importArr)</code></a></li>
+</ul>
+<h4 id="getlatesttimestamp_">getLatestTimestamp_()<a class="headerlink" href="#getlatesttimestamp_" title="Permanent link">&para;</a></h4>
+<p>Return latest head run submission timestamp in <code>LOG_SHEET</code>.</p>
+<p>Returns:</p>
+<ul>
+<li>(Date) - Headrun submission timestamp as Date object.</li>
+</ul>
+<h4 id="gettimestampinrow_row">getTimestampInRow_(row)<a class="headerlink" href="#gettimestampinrow_row" title="Permanent link">&para;</a></h4>
+<p>Return timestamp for a specified row in LOG_SHEET.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (integer) - Row number.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Date) - Timestamp as Date object.</li>
+</ul>
+<h4 id="getlatestlog_">getLatestLog_()<a class="headerlink" href="#getlatestlog_" title="Permanent link">&para;</a></h4>
+<p>Return content of latest row in log sheet.</p>
+<p>Returns:</p>
+<ul>
+<li>(Array) - Values of each column in the last row.</li>
+</ul>
+<h4 id="getloginrow_row">getLogInRow_(row)<a class="headerlink" href="#getloginrow_row" title="Permanent link">&para;</a></h4>
+<p>Return content of specified row in log sheet.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (integer) - Row number.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Array) - Values of each column in the specified row.</li>
+</ul>
+<h4 id="getattendeesinrow_row">getAttendeesInRow_(row)<a class="headerlink" href="#getattendeesinrow_row" title="Permanent link">&para;</a></h4>
+<p>Return list of attendees in specified row of log sheet.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (integer) - Row number.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - Attendees, separated by newline.</li>
+</ul>
+<h4 id="getdateandlevelinrow_row">getDateAndLevelInRow_(row)<a class="headerlink" href="#getdateandlevelinrow_row" title="Permanent link">&para;</a></h4>
+<p>Return date and level (of headruns) in specified row of log sheet.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (integer) - Row number.</li>
+</ul>
+<h4 id="getmapurlinrow_row">getMapUrlInRow_(row)<a class="headerlink" href="#getmapurlinrow_row" title="Permanent link">&para;</a></h4>
+<p>Return map URL in specified row of log sheet.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (integer) - Row number.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - Map URL, or emtpy string if not found.</li>
+</ul>
+<h4 id="geteventpointsinrow_row">getEventPointsInRow_(row)<a class="headerlink" href="#geteventpointsinrow_row" title="Permanent link">&para;</a></h4>
+<p>Return points for the event in specified row of log sheet.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (integer) - Row number.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(number) - Number of points, or 0 if not found.</li>
+</ul>
+<h4 id="getheadrunnersinrow_row">getHeadrunnersInRow_(row)<a class="headerlink" href="#getheadrunnersinrow_row" title="Permanent link">&para;</a></h4>
+<p>Return list of headrunners in specified row of log sheet.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (integer) - Row number.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - Headrunners, separated by newline.</li>
+</ul>
+<h4 id="getlogcell_row-column">getLogCell_(row, column)<a class="headerlink" href="#getlogcell_row-column" title="Permanent link">&para;</a></h4>
+<p>Returns value of specified cell in the log sheet.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (number) - Row number of cell.</li>
+<li><code>column</code> (number) - Column number of cell.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(*) - Cell value.</li>
+</ul>
+<h4 id="getledgerdata_numcols">getLedgerData_(numCols)<a class="headerlink" href="#getledgerdata_numcols" title="Permanent link">&para;</a></h4>
+<p>Get ledger data from <code>LEDGER_SHEET</code> to send emails.</p>
+<p>Params:</p>
+<ul>
+<li><code>numCols</code> (number) - <em>Optional</em> The number of rows to get starting from email col. 
+                                              Defaults to last col before events (<code>LEDGER_COL_COUNT</code>).</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Object[][]) - Ledger data of col size <code>numCols</code>.</li>
+</ul>
+<h4 id="getledgerentry_email-ledgerdata">getLedgerEntry_(email, ledgerData)<a class="headerlink" href="#getledgerentry_email-ledgerdata" title="Permanent link">&para;</a></h4>
+<p>Get ledger data of member using their email.</p>
+<p>Params:</p>
+<ul>
+<li><code>email</code> (string) - Member email address.</li>
+<li><code>ledgerData</code> (Object[][]) - Ledger data object, from GET_LEDGER_()</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Array) - Values of the row corresponding to specified member, or empty array if not found.</li>
+</ul>
+<h4 id="findmemberinledger_email-ledger">findMemberInLedger_(email, ledger)<a class="headerlink" href="#findmemberinledger_email-ledger" title="Permanent link">&para;</a></h4>
+<p>Recursive function to search for entry by email in <code>sheet</code> using binary search.
+Returns row index of <code>email</code> in GSheet (1-indexed), or null if not found.</p>
+<p>Params:</p>
+<ul>
+<li><code>email</code> (string) - The email address to search for in <code>sheet</code>.</li>
+<li><code>ledger</code> (Object[][]) - Array of rows in the ledger sheet.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(number|null) - Returns the 1-indexed row number where the email is found, 
+                       or <code>null</code> if the email is not found.</li>
+</ul>
+<h4 id="storeimportfromattendancesheetimportarr">storeImportFromAttendanceSheet(importArr)<a class="headerlink" href="#storeimportfromattendancesheetimportarr" title="Permanent link">&para;</a></h4>
+<p>Handles the transfered submission from Attendance Code and adds new row to log sheet.
+Called from the Attendance Code script.</p>
+<p>Params:</p>
+<ul>
+<li><code>importArr</code> (Array[][]) - Submission array with non-empty run levels.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(integer) - The newly added row number in Log sheet</li>
+</ul>
+<h3 id="formattinggs">Formatting.gs<a class="headerlink" href="#formattinggs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>function</em> <a href="#sortlogsbytimestamp"><code>sortLogsByTimestamp()</code></a></li>
+<li><em>function</em> <a href="#totitlecase_inputstring"><code>toTitleCase_(inputString)</code></a></li>
+<li><em>function</em> <a href="#convertandformatstats_activity"><code>convertAndFormatStats_(activity)</code></a></li>
+<li><em>function</em> <a href="#tofixedtruncate_num-digits"><code>toFixedTruncate_(num, digits)</code></a></li>
+<li><em>function</em> <a href="#tominuteseconds_t"><code>toMinuteSeconds_(t)</code></a></li>
+</ul>
+<h4 id="sortlogsbytimestamp">sortLogsByTimestamp()<a class="headerlink" href="#sortlogsbytimestamp" title="Permanent link">&para;</a></h4>
+<p>Sorts log sheet by event timestamp ascending.</p>
+<h4 id="totitlecase_inputstring">toTitleCase_(inputString)<a class="headerlink" href="#totitlecase_inputstring" title="Permanent link">&para;</a></h4>
+<p>Formats string to Title Case.</p>
+<p>Params:</p>
+<ul>
+<li><code>inputString</code> (string) - String to format.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - String in title case.</li>
+</ul>
+<h4 id="convertandformatstats_activity">convertAndFormatStats_(activity)<a class="headerlink" href="#convertandformatstats_activity" title="Permanent link">&para;</a></h4>
+<p>Change the units in Strava activity to user-friendly values and format them.</p>
+<p>Params:</p>
+<ul>
+<li><code>activity</code> (Object) - Strava activity.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Object) - Converted Strava activity in metric and US imperial values.</li>
+</ul>
+<h4 id="tofixedtruncate_num-digits">toFixedTruncate_(num, digits)<a class="headerlink" href="#tofixedtruncate_num-digits" title="Permanent link">&para;</a></h4>
+<p>Truncate decimal number to given number of digits (for Strava stats).</p>
+<p>Replaced .toFixed() to improve accuracy, e.g. 5.9989 -&gt; 5.99 instead of 6.00</p>
+<p>Params:</p>
+<ul>
+<li><code>num</code> (float) - The number to truncate</li>
+<li><code>digits</code> (integer) - Number of decimal places to keep</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(float) - Truncated number</li>
+</ul>
+<h4 id="tominuteseconds_t">toMinuteSeconds_(t)<a class="headerlink" href="#tominuteseconds_t" title="Permanent link">&para;</a></h4>
+<p>Format duration as 'mm:ss' (for Strava stats).</p>
+<p>Params:</p>
+<ul>
+<li><code>t</code> (number) - Duration in seconds</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - Duration in format mm:ss</li>
+</ul>
+<h3 id="strava-codegs">Strava-Code.gs<a class="headerlink" href="#strava-codegs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>function</em> <a href="#findandstorestravaactivityrow"><code>findAndStoreStravaActivity(row)</code></a></li>
+<li><em>function</em> <a href="#getexistingstravaactivity_row"><code>getExistingStravaActivity_(row)</code></a></li>
+<li><em>function</em> <a href="#getrowlevel_row"><code>getRowLevel_(row)</code></a></li>
+<li><em>function</em> <a href="#getstravastats_submissiontimestamp-totimestamp"><code>getStravaStats_(submissionTimestamp, toTimestamp)</code></a></li>
+<li><em>function</em> <a href="#getmatchingstravaactivity_level-activities"><code>getMatchingStravaActivity_(level, activities)</code></a></li>
+<li><em>function</em> <a href="#removeactivityfromextra_activityid"><code>removeActivityFromExtra_(activityId)</code></a></li>
+<li><em>function</em> <a href="#getmatchingactivityfromextra_level"><code>getMatchingActivityFromExtra_(level)</code></a></li>
+<li><em>function</em> <a href="#setstravastats_row-activity"><code>setStravaStats_(row, activity)</code></a></li>
+<li><em>function</em> <a href="#extractrunstats_activity-statsmap-offset"><code>extractRunStats_(activity, statsMap, offset)</code></a></li>
+</ul>
+<h4 id="findandstorestravaactivityrow">findAndStoreStravaActivity(row)<a class="headerlink" href="#findandstorestravaactivityrow" title="Permanent link">&para;</a></h4>
+<p>Return Strava activity in <code>row</code>. If Strava activity not found in <code>LOG_SHEET</code>,
+call Strava API using <code>timestamp</code> as searching target.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (integer) - <em>Optional</em> Target row. Defaults to last valid row in <code>LOG_SHEET</code>.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Object) - Strava activity.</li>
+</ul>
+<h4 id="getexistingstravaactivity_row">getExistingStravaActivity_(row)<a class="headerlink" href="#getexistingstravaactivity_row" title="Permanent link">&para;</a></h4>
+<p>Verify if Strava activity already stored in log.</p>
+<p>Prevents redundant Strava API call.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (integer) - <em>Optional</em> Target row. Defaults to last valid row in <code>LOG_SHEET</code>.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Object) - Previously stored Strava activity.</li>
+</ul>
+<h4 id="getrowlevel_row">getRowLevel_(row)<a class="headerlink" href="#getrowlevel_row" title="Permanent link">&para;</a></h4>
+<p>Gets the headrun level for a given row in the log sheet.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (integer) - Row of the activity.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string|null) - Level as string, e.g. "beginner". Null if not found.</li>
+</ul>
+<h4 id="getstravastats_submissiontimestamp-totimestamp">getStravaStats_(submissionTimestamp, toTimestamp)<a class="headerlink" href="#getstravastats_submissiontimestamp-totimestamp" title="Permanent link">&para;</a></h4>
+<p>Get Strava activity of most recent head run submission.</p>
+<p>Params:</p>
+<ul>
+<li><code>submissionTimestamp</code> (Date) - Date representation of headrun timestamp.</li>
+<li><code>toTimestamp</code> (integer) - Max timestamp for map search in seconds.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Object) - Strava activity with appended mapUrl</li>
+</ul>
+<h4 id="getmatchingstravaactivity_level-activities">getMatchingStravaActivity_(level, activities)<a class="headerlink" href="#getmatchingstravaactivity_level-activities" title="Permanent link">&para;</a></h4>
+<p>Get Strava activity by level for multiple activities recorded at similar datetimes.
+Try matching name of activity with level, or by distance otherwise.</p>
+<p>This helps sending the correct post-run email stats to attendee's level.</p>
+<p>Params:</p>
+<ul>
+<li><code>level</code> (string) - Level of headrun (e.g. 'easy', 'intermediate').</li>
+<li><code>activities</code> (Object[]) - Array of Strava activities occurring at similar times.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Object|null) - Best-matching Strava activity, or null if none.</li>
+</ul>
+<p>Example:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">activities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">'Headrun Easy'</span><span class="p">,</span><span class="w"> </span><span class="nx">distance</span><span class="o">:</span><span class="w"> </span><span class="mf">7</span><span class="nx">km</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">'Morning run - Intermediate'</span><span class="p">,</span><span class="w"> </span><span class="nx">distance</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="nx">km</span><span class="p">}];</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getActivityByLevel</span><span class="p">(</span><span class="s1">'Easy'</span><span class="p">,</span><span class="w"> </span><span class="nx">activities</span><span class="p">))</span><span class="w">   </span><span class="c1">// {name: 'Headrun Easy', distance: 7km}</span>
+</span></code></pre></div>
+<h4 id="removeactivityfromextra_activityid">removeActivityFromExtra_(activityId)<a class="headerlink" href="#removeactivityfromextra_activityid" title="Permanent link">&para;</a></h4>
+<p>Remove a specific Strava activity from the extra activities stored for a level.</p>
+<p>Params:</p>
+<ul>
+<li><code>activityId</code> (number) - The Strava activity ID to remove.</li>
+</ul>
+<h4 id="getmatchingactivityfromextra_level">getMatchingActivityFromExtra_(level)<a class="headerlink" href="#getmatchingactivityfromextra_level" title="Permanent link">&para;</a></h4>
+<p>Retrieve extra Strava activities saved from previous API call.</p>
+<p>Params:</p>
+<ul>
+<li><code>level</code> (string) - Level of headrun (e.g. 'easy', 'intermediate').</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Object[]) - Extra Strava activities, or empty array if none found.</li>
+</ul>
+<h4 id="setstravastats_row-activity">setStravaStats_(row, activity)<a class="headerlink" href="#setstravastats_row-activity" title="Permanent link">&para;</a></h4>
+<p>Puts stats from specified Strava activity into the log sheet.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (number) - Row to save the activity in.</li>
+<li><code>activity</code> (Object) - Strava activity to save stats from.</li>
+</ul>
+<h4 id="extractrunstats_activity-statsmap-offset">extractRunStats_(activity, statsMap, offset)<a class="headerlink" href="#extractrunstats_activity-statsmap-offset" title="Permanent link">&para;</a></h4>
+<p>Extract target run stats from Strava activity.</p>
+<p>Params:</p>
+<ul>
+<li><code>activity</code> (object) - A Strava object <code>SummaryActivity</code> or <code>ClubActivity</code>.</li>
+<li><code>offset</code> (number) - <em>Optional</em> The amount to subtract from the column number. Default to 0.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(object) - Extracted stats from <code>activity</code>.</li>
+</ul>
+<h3 id="strava-servicegs">Strava-Service.gs<a class="headerlink" href="#strava-servicegs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>function</em> <a href="#reset_"><code>reset_()</code></a></li>
+<li><em>function</em> <a href="#safereset"><code>safeReset()</code></a></li>
+<li><em>function</em> <a href="#getstravaactivity_fromtimestamp-totimestamp"><code>getStravaActivity_(fromTimestamp, toTimestamp)</code></a></li>
+<li><em>function</em> <a href="#getstravaservice_"><code>getStravaService_()</code></a></li>
+<li><em>function</em> <a href="#authcallback_request"><code>authCallback_(request)</code></a></li>
+<li><em>function</em> <a href="#callstravaapi_query_object"><code>callStravaAPI_(query_object)</code></a></li>
+<li><em>function</em> <a href="#queryobjtostring_query_object"><code>queryObjToString_(query_object)</code></a></li>
+</ul>
+<h4 id="reset_">reset_()<a class="headerlink" href="#reset_" title="Permanent link">&para;</a></h4>
+<p>Reset the authorization state, so that it can be re-tested.</p>
+<h4 id="safereset">safeReset()<a class="headerlink" href="#safereset" title="Permanent link">&para;</a></h4>
+<p>Run <code>reset</code> safely using script property flag <code>IS_RESET_ALLOWED</code>.</p>
+<p>Must manually change value before running. Once allowed, flag toggles back to false.</p>
+<h4 id="getstravaactivity_fromtimestamp-totimestamp">getStravaActivity_(fromTimestamp, toTimestamp)<a class="headerlink" href="#getstravaactivity_fromtimestamp-totimestamp" title="Permanent link">&para;</a></h4>
+<p>Get Strava activities within the given time frame</p>
+<p>Params:</p>
+<ul>
+<li><code>fromTimestamp</code> (integer?) - Start of time frame, in Unix epoch time</li>
+<li><code>toTimestamp</code> (integer?) - End of time frame, in Unix epoch time</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Object[]) - Returns array of Strava activities</li>
+</ul>
+<h4 id="getstravaservice_">getStravaService_()<a class="headerlink" href="#getstravaservice_" title="Permanent link">&para;</a></h4>
+<p>Configures the Strava service using the OAuth2 library.</p>
+<p>Three required and optional parameters are not specified
+because the library creates the authorization URL with them
+automatically: <code>redirect_url</code>, <code>response_type</code>, and <code>state</code>.</p>
+<p><em>APPENDED COMMENTS BY USER</em></p>
+<p>Client ID and Secret stored in script properties. <em>(Mar 23, 2025)</em></p>
+<h4 id="authcallback_request">authCallback_(request)<a class="headerlink" href="#authcallback_request" title="Permanent link">&para;</a></h4>
+<p>Handles the OAuth callback.</p>
+<p><em>APPENDED COMMENTS BY USER</em></p>
+<p>Must have global scope in project <em>(Mar 23, 2025)</em></p>
+<h4 id="callstravaapi_query_object">callStravaAPI_(query_object)<a class="headerlink" href="#callstravaapi_query_object" title="Permanent link">&para;</a></h4>
+<p>Makes an API request to the given endpoint with the given query.</p>
+<p>Inspired by original function <code>run</code> in <code>apps-script-oauth2/samples/Strava.gs</code></p>
+<p>Params:</p>
+<ul>
+<li><code>endpoint</code> (string) - Strava API endpoint.</li>
+</ul>
+<p>Params:</p>
+<ul>
+<li><code>query_object</code> (object) - <em>Optional</em> Param-value pair. Defaults to empty object.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - Response of API call.</li>
+</ul>
+<p>Example:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">endpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'clubs/693906/activities'</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">queryObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">"param1"</span><span class="o">:</span><span class="w"> </span><span class="nx">val1</span><span class="p">,</span><span class="w"> </span><span class="s2">"param2"</span><span class="o">:</span><span class="w"> </span><span class="nx">val2</span><span class="p">};</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">callStravaAPI</span><span class="p">(</span><span class="nx">endpoint</span><span class="p">,</span><span class="w"> </span><span class="nx">queryObj</span><span class="p">);</span>
+</span></code></pre></div>
+<h4 id="queryobjtostring_query_object">queryObjToString_(query_object)<a class="headerlink" href="#queryobjtostring_query_object" title="Permanent link">&para;</a></h4>
+<p>Maps an Object containing param-value pairs to a query string.</p>
+<p>Params:</p>
+<ul>
+<li><code>query_object</code> (object) - Param-value pair.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - String value of query object.</li>
+</ul>
+<p>Example:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">queryObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">"param1"</span><span class="o">:</span><span class="w"> </span><span class="nx">val1</span><span class="p">,</span><span class="w"> </span><span class="s2">"param2"</span><span class="o">:</span><span class="w"> </span><span class="nx">val2</span><span class="p">};</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">queryObjToString</span><span class="p">(</span><span class="nx">queryObj</span><span class="p">);</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ret</span><span class="p">)</span><span class="w">  </span><span class="c1">// "?param1=val1&amp;param2=val2"</span>
+</span></code></pre></div>
+<h3 id="map-generationgs">Map-Generation.gs<a class="headerlink" href="#map-generationgs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>function</em> <a href="#createmapforrowrow"><code>createMapForRow(row)</code></a></li>
+<li><em>function</em> <a href="#createmapforactivity_activity-timestamp"><code>createMapForActivity_(activity, timestamp)</code></a></li>
+<li><em>function</em> <a href="#convertpolylinetomap_polyline-name-imgsize"><code>convertPolylineToMap_(polyline, name, imgSize)</code></a></li>
+<li><em>function</em> <a href="#uploadimagetocloudstoragebucket_imageblob-imagename"><code>uploadImageToCloudStorageBucket_(imageBlob, imageName)</code></a></li>
+<li><em>function</em> <a href="#getserviceaccountaccesstoken_key"><code>getServiceAccountAccessToken_(key)</code></a></li>
+</ul>
+<h4 id="createmapforrowrow">createMapForRow(row)<a class="headerlink" href="#createmapforrowrow" title="Permanent link">&para;</a></h4>
+<p>Create the PNG image of the run route from Strava activity from its polyline
+data and saves the public image URL in the row.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (number) - <em>Optional</em> GSheet row to target. Defaults to last row.</li>
+</ul>
+<h4 id="createmapforactivity_activity-timestamp">createMapForActivity_(activity, timestamp)<a class="headerlink" href="#createmapforactivity_activity-timestamp" title="Permanent link">&para;</a></h4>
+<p>Gets the polyline data from given activity and calls helper function to create a
+PNG image for it, then adds the image URL to the activity.</p>
+<p>Previous iterations of map creation include <code>MAP.newStaticMap()</code>, embedding GDrive download url
+in email (access restricted after some time), and adding map as inline image (email becomes too heavy).</p>
+<p>Params:</p>
+<ul>
+<li><code>activity</code> (Object) - Strava activity with "map" key containing polyline data</li>
+<li><code>timestamp</code> (Date) - Recorded timestamp of event.</li>
+<li><code>fileName</code> (string) - Name to save map with</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Object) - Strava activity with appended map url under the "mapUrl" key (or '' if unsuccessful)</li>
+</ul>
+<h4 id="convertpolylinetomap_polyline-name-imgsize">convertPolylineToMap_(polyline, name, imgSize)<a class="headerlink" href="#convertpolylinetomap_polyline-name-imgsize" title="Permanent link">&para;</a></h4>
+<p>Save polyline as image using Google Static Map API and Make.com automation.</p>
+<p>Params:</p>
+<ul>
+<li><code>polyline</code> (string) - Encoded Google Map polyline string.</li>
+<li><code>name</code> (string) - Name for map.</li>
+<li><code>imgSize</code> (string) - Size of map image, e.g "400x300"</li>
+</ul>
+<h4 id="uploadimagetocloudstoragebucket_imageblob-imagename">uploadImageToCloudStorageBucket_(imageBlob, imageName)<a class="headerlink" href="#uploadimagetocloudstoragebucket_imageblob-imagename" title="Permanent link">&para;</a></h4>
+<p>Uploads given image blob to cloud storage under the provided name,
+and returns the resulting URL.</p>
+<p>Params:</p>
+<ul>
+<li><code>imageBlob</code> (string) - Image data as a blob.</li>
+<li><code>imageName</code> (string) - Name to save the image under.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string|null) - URL of the image in cloud storage, or null if error occurred.</li>
+</ul>
+<h4 id="getserviceaccountaccesstoken_key">getServiceAccountAccessToken_(key)<a class="headerlink" href="#getserviceaccountaccesstoken_key" title="Permanent link">&para;</a></h4>
+<p>Helper function to get an access token using the service account key</p>
+<p>Params:</p>
+<ul>
+<li><code>Key</code> (Object) - for service account for Google Cloud.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - Access token to cloud storage.</li>
+</ul>
+<h3 id="send-emailgs">Send-Email.gs<a class="headerlink" href="#send-emailgs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>function</em> <a href="#logstatus_messages-logsheet-row"><code>logStatus_(messages, logSheet, row)</code></a></li>
+<li><em>function</em> <a href="#isemailsendingallowed_"><code>isEmailSendingAllowed_()</code></a></li>
+<li><em>function</em> <a href="#checkandsendpostrunemaillogsheet-row"><code>checkAndSendPostRunEmail(logSheet, row)</code></a></li>
+<li><em>function</em> <a href="#sendpostrunemailsforactivity_recipients-activity"><code>sendPostRunEmailsForActivity_(recipients, activity)</code></a></li>
+<li><em>function</em> <a href="#sendpostrunemail_email-memberstats"><code>sendPostRunEmail_(email, memberStats)</code></a></li>
+<li><em>function</em> <a href="#checkandsendwinbackemail"><code>checkAndSendWinBackEmail()</code></a></li>
+<li><em>function</em> <a href="#sendwinbackemail_email-name"><code>sendWinBackEmail_(email, name)</code></a></li>
+</ul>
+<h4 id="logstatus_messages-logsheet-row">logStatus_(messages, logSheet, row)<a class="headerlink" href="#logstatus_messages-logsheet-row" title="Permanent link">&para;</a></h4>
+<p>Puts given messages (status of sending email) into the log sheet in the Email Status column</p>
+<p>Params:</p>
+<ul>
+<li><code>messages</code> (string[]) - Array of messages to log</li>
+<li><code>logSheet</code> (SpreadsheetApp.Sheet) - Log sheet object</li>
+<li><code>row</code> (integer) - Row to log messages in</li>
+</ul>
+<h4 id="isemailsendingallowed_">isEmailSendingAllowed_()<a class="headerlink" href="#isemailsendingallowed_" title="Permanent link">&para;</a></h4>
+<p>Checks if email sending is allowed according to script properties and throws error if not.</p>
+<h4 id="checkandsendpostrunemaillogsheet-row">checkAndSendPostRunEmail(logSheet, row)<a class="headerlink" href="#checkandsendpostrunemaillogsheet-row" title="Permanent link">&para;</a></h4>
+<p>Function to send email to each member updating them on their points</p>
+<p>Params:</p>
+<ul>
+<li><code>logSheet</code> (Spreadsheet.sheet) - <em>Optional</em> Log sheet object</li>
+<li><code>row</code> (integer) - <em>Optional</em> Row with the activity to send email for</li>
+</ul>
+<h4 id="sendpostrunemailsforactivity_recipients-activity">sendPostRunEmailsForActivity_(recipients, activity)<a class="headerlink" href="#sendpostrunemailsforactivity_recipients-activity" title="Permanent link">&para;</a></h4>
+<p>Sends post run email to all recipients for the specified activity</p>
+<p>Params:</p>
+<ul>
+<li><code>recipients</code> (string[]) - Email addresses to send email to</li>
+<li><code>activity</code> (Object) - Activity stats</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string[]) - List of status messages indicating whether each email was sent successfully</li>
+</ul>
+<h4 id="sendpostrunemail_email-memberstats">sendPostRunEmail_(email, memberStats)<a class="headerlink" href="#sendpostrunemail_email-memberstats" title="Permanent link">&para;</a></h4>
+<p>Creates post run email from member stats and template,
+sends it to given email address</p>
+<p>Params:</p>
+<ul>
+<li><code>email</code> (string) - Email address of member</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - Confirmation message</li>
+</ul>
+<h4 id="checkandsendwinbackemail">checkAndSendWinBackEmail()<a class="headerlink" href="#checkandsendwinbackemail" title="Permanent link">&para;</a></h4>
+<p>Automatically triggered to send win back email to members whose
+"last run" date is over 2 weeks ago</p>
+<h4 id="sendwinbackemail_email-name">sendWinBackEmail_(email, name)<a class="headerlink" href="#sendwinbackemail_email-name" title="Permanent link">&para;</a></h4>
+<p>Creates win back email from member name and template,
+sends it to given address</p>
+<p>Params:</p>
+<ul>
+<li><code>name</code> (String) - Member's first name</li>
+<li><code>email</code> (String) - Member's email address</li>
+</ul>
+<h3 id="triggersgs">Triggers.gs<a class="headerlink" href="#triggersgs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>function</em> <a href="#dogete"><code>doGet(e)</code></a></li>
+<li><em>function</em> <a href="#createstravatrigger_row"><code>createStravaTrigger_(row)</code></a></li>
+<li><em>function</em> <a href="#checkforstravaactivities"><code>checkForStravaActivities()</code></a></li>
+<li><em>function</em> <a href="#cleanuptriggerpropertykey"><code>cleanUpTrigger(propertyKey)</code></a></li>
+<li><em>function</em> <a href="#deletetriggerbyid_id"><code>deleteTriggerById_(id)</code></a></li>
+<li><em>function</em> <a href="#deleteallstravatriggers"><code>deleteAllStravaTriggers()</code></a></li>
+<li><em>function</em> <a href="#alerttriggernotfound_triggerdata"><code>alertTriggerNotFound_(triggerData)</code></a></li>
+<li><em>function</em> <a href="#alertstravaactivitynotfound_rownumber-tries"><code>alertStravaActivityNotFound_(rowNumber, tries)</code></a></li>
+</ul>
+<h4 id="dogete">doGet(e)<a class="headerlink" href="#dogete" title="Permanent link">&para;</a></h4>
+<p>Handler for GET events sent to web app deployment of this script</p>
+<p>Checks for authorization, then sets trigger to check for Strava activity
+for the row specified in the request.</p>
+<p>Params:</p>
+<ul>
+<li><code>e</code> (Object) - GET request object, should contain keys 'key' and 'rowNum</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(TextOutput) - Message indicating status of request</li>
+</ul>
+<h4 id="createstravatrigger_row">createStravaTrigger_(row)<a class="headerlink" href="#createstravatrigger_row" title="Permanent link">&para;</a></h4>
+<p>Creates a trigger to check for Strava activity for a given row, and stores its information
+in script properties. The property key includes the row number and its values contains the 
+number of tries, trigger ID, and row number.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (integer) - <em>Optional</em> Row to check for activity for. Defaults to last row</li>
+</ul>
+<h4 id="checkforstravaactivities">checkForStravaActivities()<a class="headerlink" href="#checkforstravaactivities" title="Permanent link">&para;</a></h4>
+<p>Function called by Strava triggers. Checks for Strava activity for all the rows that currently
+have active triggers according to script properties, and increments the number of runs for 
+each one. If max number of tries reached, deletes the trigger.</p>
+<h4 id="cleanuptriggerpropertykey">cleanUpTrigger(propertyKey)<a class="headerlink" href="#cleanuptriggerpropertykey" title="Permanent link">&para;</a></h4>
+<p>Remove trigger and its property in script properties </p>
+<p>Params:</p>
+<ul>
+<li><code>propertyKey</code> (string) - Key of the script property corresponding to the trigger to delete</li>
+</ul>
+<h4 id="deletetriggerbyid_id">deleteTriggerById_(id)<a class="headerlink" href="#deletetriggerbyid_id" title="Permanent link">&para;</a></h4>
+<p>Delete a trigger given its ID </p>
+<p>Params:</p>
+<ul>
+<li><code>id</code> (string) - ID of the trigger to delete</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(boolean) - True if successfully deleted, otherwise false</li>
+</ul>
+<h4 id="deleteallstravatriggers">deleteAllStravaTriggers()<a class="headerlink" href="#deleteallstravatriggers" title="Permanent link">&para;</a></h4>
+<p>Removes all Strava triggers in ScriptApp.</p>
+<h4 id="alerttriggernotfound_triggerdata">alertTriggerNotFound_(triggerData)<a class="headerlink" href="#alerttriggernotfound_triggerdata" title="Permanent link">&para;</a></h4>
+<p>Sends email to club account saying that a (Strava) trigger was not found and
+so could not be deleted.</p>
+<p>Params:</p>
+<ul>
+<li><code>triggerData</code> (Object) - Script property value corresponding to the trigger</li>
+</ul>
+<h4 id="alertstravaactivitynotfound_rownumber-tries">alertStravaActivityNotFound_(rowNumber, tries)<a class="headerlink" href="#alertstravaactivitynotfound_rownumber-tries" title="Permanent link">&para;</a></h4>
+<p>Sends email to club account saying that a Strava activity could not be found.</p>
+<p>Params:</p>
+<ul>
+<li><code>rowNumber</code> (integer) - Row that the activity was supposed to be added to</li>
+<li><code>tries</code> (integer) - Number of attempts that the script made to find the activity</li>
+</ul>
+<h3 id="html-extractiongs">HTML-Extraction.gs<a class="headerlink" href="#html-extractiongs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>function</em> <a href="#extracttagsfromprojectfile"><code>extractTagsFromProjectFile()</code></a></li>
+<li><em>function</em> <a href="#savedraftashtml"><code>saveDraftAsHtml()</code></a></li>
+<li><em>function</em> <a href="#generatehtmlfromdraft_subjectline"><code>generateHtmlFromDraft_(subjectLine)</code></a></li>
+<li><em>function</em> <a href="#getemailtemplatefromdrafts_subjectline"><code>getEmailTemplateFromDrafts_(subjectLine)</code></a></li>
+<li><em>function</em> <a href="#subjectfilter_subjectline"><code>subjectFilter_(subjectLine)</code></a></li>
+<li><em>function</em> <a href="#fillinemailtemplate_template-data"><code>fillInEmailTemplate_(template, data)</code></a></li>
+</ul>
+<h4 id="extracttagsfromprojectfile">extractTagsFromProjectFile()<a class="headerlink" href="#extracttagsfromprojectfile" title="Permanent link">&para;</a></h4>
+<p>Extracts all literal tags from HTML file using regex.</p>
+<p>Used to debug HTML file. Must change file name variable inside function before running.</p>
+<h4 id="savedraftashtml">saveDraftAsHtml()<a class="headerlink" href="#savedraftashtml" title="Permanent link">&para;</a></h4>
+<p>Generate html version of email found in draft using its subject line.</p>
+<p>Must updated subject line as needed.</p>
+<h4 id="generatehtmlfromdraft_subjectline">generateHtmlFromDraft_(subjectLine)<a class="headerlink" href="#generatehtmlfromdraft_subjectline" title="Permanent link">&para;</a></h4>
+<p>Generate html version of email found in draft using its subject line.</p>
+<p>Saves html under {draft subject}-{datetime}-html in Google Drive.</p>
+<p>Params:</p>
+<ul>
+<li><code>subjectLine</code> (string) - Subject line of target draft.</li>
+</ul>
+<h4 id="getemailtemplatefromdrafts_subjectline">getEmailTemplateFromDrafts_(subjectLine)<a class="headerlink" href="#getemailtemplatefromdrafts_subjectline" title="Permanent link">&para;</a></h4>
+<p>Get a Gmail draft message by matching the subject line.</p>
+<p>Params:</p>
+<ul>
+<li><code>subjectLine</code> (string) - to search for draft message</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(object) - containing the subject, plain and html message body and attachments</li>
+</ul>
+<h4 id="subjectfilter_subjectline">subjectFilter_(subjectLine)<a class="headerlink" href="#subjectfilter_subjectline" title="Permanent link">&para;</a></h4>
+<p>Filter draft objects with the matching subject line message by matching the subject line.</p>
+<p>Params:</p>
+<ul>
+<li><code>subjectLine</code> (string) - to search for draft message</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(object) - GmailDraft object</li>
+</ul>
+<h4 id="fillinemailtemplate_template-data">fillInEmailTemplate_(template, data)<a class="headerlink" href="#fillinemailtemplate_template-data" title="Permanent link">&para;</a></h4>
+<p>Fill template string with data object and add current year.</p>
+<p>Params:</p>
+<ul>
+<li><code>template</code> (string) - string containing {{}} markers which are replaced with data</li>
+<li><code>data</code> (object) - object used to replace {{}} markers</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(object) - JSON-formatted message replaced with data</li>
+</ul>
+<h3 id="utilsgs">Utils.gs<a class="headerlink" href="#utilsgs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>function</em> <a href="#getusertimezone_"><code>getUserTimeZone_()</code></a></li>
+<li><em>function</em> <a href="#getcurrentuseremail_"><code>getCurrentUserEmail_()</code></a></li>
+<li><em>function</em> <a href="#getfilebyname_name"><code>getFileByName_(name)</code></a></li>
+<li><em>function</em> <a href="#getfilebyid_id"><code>getFileById_(id)</code></a></li>
+<li><em>function</em> <a href="#logaspl_msg-funcname-uselogger"><code>logAsPL_(msg, funcName, useLogger)</code></a></li>
+<li><em>function</em> <a href="#getvalidlastrow_sheet"><code>getValidLastRow_(sheet)</code></a></li>
+<li><em>function</em> <a href="#escapedata_str"><code>escapeData_(str)</code></a></li>
+<li><em>function</em> <a href="#fillintemplatefromobject_template-data"><code>fillInTemplateFromObject_(template, data)</code></a></li>
+<li><em>constant</em> <a href="#prettylog_"><code>prettyLog_</code></a></li>
+<li><em>function</em> <a href="#getunixepochtimestamp_timestamp"><code>getUnixEpochTimestamp_(timestamp)</code></a></li>
+</ul>
+<h4 id="getusertimezone_">getUserTimeZone_()<a class="headerlink" href="#getusertimezone_" title="Permanent link">&para;</a></h4>
+<p>Gets the timezone of the script</p>
+<p>Returns:</p>
+<ul>
+<li>(string) - Time zone</li>
+</ul>
+<h4 id="getcurrentuseremail_">getCurrentUserEmail_()<a class="headerlink" href="#getcurrentuseremail_" title="Permanent link">&para;</a></h4>
+<p>Gets the email of the user accessing the script</p>
+<p>Returns:</p>
+<ul>
+<li>(string) - Email address</li>
+</ul>
+<h4 id="getfilebyname_name">getFileByName_(name)<a class="headerlink" href="#getfilebyname_name" title="Permanent link">&para;</a></h4>
+<p>Tries to find a file in Google Drive by its name</p>
+<p>May have an error if there are no results?</p>
+<p>Params:</p>
+<ul>
+<li><code>name</code> (string) - Name of the file to find</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(File) - The first result of the search</li>
+</ul>
+<h4 id="getfilebyid_id">getFileById_(id)<a class="headerlink" href="#getfilebyid_id" title="Permanent link">&para;</a></h4>
+<p>Tries to find a file in Google Drive by its ID</p>
+<p>May have an error if there are no results?</p>
+<p>Params:</p>
+<ul>
+<li><code>id</code> (string) - ID of the file to find</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(File) - The first result of the search</li>
+</ul>
+<h4 id="logaspl_msg-funcname-uselogger">logAsPL_(msg, funcName, useLogger)<a class="headerlink" href="#logaspl_msg-funcname-uselogger" title="Permanent link">&para;</a></h4>
+<p>Creates log in the console with specific formatting</p>
+<p>Params:</p>
+<ul>
+<li><code>msg</code> (string) - The message to log</li>
+<li><code>funcName</code> (string) - <em>Optional</em> Name of the function returning the message, if applicable. Defaults to ""</li>
+<li><code>useLogger</code> (boolean) - <em>Optional</em> Whether to use the logger (true) or console.log (false). Defaults to true.</li>
+</ul>
+<h4 id="getvalidlastrow_sheet">getValidLastRow_(sheet)<a class="headerlink" href="#getvalidlastrow_sheet" title="Permanent link">&para;</a></h4>
+<p>Find row index of last entry, starting from bottom using while-loop.</p>
+<p>Used to prevent native <code>sheet.getLastRow()</code> from returning empty row.</p>
+<p>Params:</p>
+<ul>
+<li><code>sheet</code> (SpreadsheetApp.Sheet) - Target sheet.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(integer) - Returns 1-index of last row in <code>sheet</code>.</li>
+</ul>
+<h4 id="escapedata_str">escapeData_(str)<a class="headerlink" href="#escapedata_str" title="Permanent link">&para;</a></h4>
+<p>Escape cell data to make JSON safe</p>
+<p>Params:</p>
+<ul>
+<li><code>str</code> (string) - to escape JSON special characters from</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - escaped string</li>
+</ul>
+<h4 id="fillintemplatefromobject_template-data">fillInTemplateFromObject_(template, data)<a class="headerlink" href="#fillintemplatefromobject_template-data" title="Permanent link">&para;</a></h4>
+<p>Fill template string with data object</p>
+<p>Params:</p>
+<ul>
+<li><code>template</code> (string) - string containing {{}} markers which are replaced with data</li>
+<li><code>data</code> (object) - object used to replace {{}} markers</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(object) - message replaced with data</li>
+</ul>
+<h4 id="prettylog_">prettyLog_<a class="headerlink" href="#prettylog_" title="Permanent link">&para;</a></h4>
+<p>Simple logging of multi-line message. Improves readability in code.</p>
+<p>Params:</p>
+<ul>
+<li><code>msg</code> (string) - The message(s) to log</li>
+</ul>
+<h4 id="getunixepochtimestamp_timestamp">getUnixEpochTimestamp_(timestamp)<a class="headerlink" href="#getunixepochtimestamp_timestamp" title="Permanent link">&para;</a></h4>
+<p>Convert a Date timestamp to a Unix Epoch timestamp.</p>
+<p>Params:</p>
+<ul>
+<li><code>timestamp</code> (Date) - Timestamp to convert.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(integer) - Number of seconds elapsed since January 1, 1970.</li>
+</ul>
+<hr />
+<h2 id="triggers">Triggers<a class="headerlink" href="#triggers" title="Permanent link">&para;</a></h2>
+<h3 id="time-based">Time-based<a class="headerlink" href="#time-based" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Created and deleted by the script for checking Strava activities, sending emails, etc.</li>
+</ul>
+<h3 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The <code>doGet(e)</code> function is used as a web app endpoint for remote automation.</li>
+</ul>
+<hr />
+<h2 id="troubleshooting-faq">Troubleshooting &amp; FAQ<a class="headerlink" href="#troubleshooting-faq" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Issue/Error</th>
+<th>Cause</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Unauthorized! Please verify key."</td>
+<td>Wrong API key</td>
+<td>Set correct key in script properties and request</td>
+</tr>
+<tr>
+<td>"No permission"</td>
+<td>Missing OAuth scopes</td>
+<td>Ensure all required Apps Script scopes are granted</td>
+</tr>
+<tr>
+<td>"Cannot read property 'getRange' of null"</td>
+<td>Missing or renamed sheet/range</td>
+<td>Double-check all sheet names and constants</td>
+</tr>
+<tr>
+<td>"Rate limit exceeded"</td>
+<td>Strava API throttling</td>
+<td>Wait and retry, ensure efficient API use</td>
+</tr>
+<tr>
+<td>"OAuth error"</td>
+<td>Strava authorization failed</td>
+<td>Use <code>reset()</code> or <code>safeReset()</code> to reauthorize</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>How do I update Strava credentials?</strong><br />
+  Update <code>CLIENT_ID</code> and <code>CLIENT_SECRET</code> in Apps Script &gt; Project Properties.</p>
+</li>
+<li>
+<p><strong>How do I add a new event type?</strong><br />
+  Update constants in <code>Ledger-Variables.gs</code> and related logic in points calculation.</p>
+</li>
+<li>
+<p><strong>How do I test a function?</strong><br />
+  Use the Apps Script IDE's “Run” feature; check the logs/output in Execution Log.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 McGill Student Running Club
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<mcrunningclub@ssmu.ca>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/mcrunningclub" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/mcrun.mcgill" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M224.3 141a115 115 0 1 0-.6 230 115 115 0 1 0 .6-230m-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1-.6-149.2m93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1-53.6 0m129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8M399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.code.select", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.sections", "navigation.path", "navigation.prune", "navigation.top", "toc.follow", "header.autohide"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

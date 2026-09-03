@@ -1,0 +1,3094 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the McRUN System, including McRace Code and user guides.">
+      
+      
+        <meta name="author" content="McGill Student Running Club (Tech Team)">
+      
+      
+        <link rel="canonical" href="https://mcrunningclub.github.io/mcrun-system/projects/attendance/semester/">
+      
+      
+        <link rel="prev" href="../master/">
+      
+      
+        <link rel="next" href="../../points/ledger/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/mcrun-favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Semester Attendance - McRUN System Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Figtree:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Figtree";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mcrun-attendance" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="McRUN System Documentation" class="md-header__button md-logo" aria-label="McRUN System Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/mcrun-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            McRUN System Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Semester Attendance
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mcrunningclub/mcrun-system" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mcrun-system
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../start/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../users/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../developers/" class="md-tabs__link">
+          
+  
+  
+  Developer Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="McRUN System Documentation" class="md-nav__button md-logo" aria-label="McRUN System Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/mcrun-logo.png" alt="logo">
+
+    </a>
+    McRUN System Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mcrunningclub/mcrun-system" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mcrun-system
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../.." class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../start/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../users/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../developers/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Guide
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Membership Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Membership Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../membership/registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Membership List
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../membership/communications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New Member Communications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attendance Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Attendance Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../master/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Attendance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semester Attendance
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semester Attendance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        About
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="About">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attendance-variablesgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attendance-Variables.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formattinggs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formatting.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headrun-attendancegs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headrun-Attendance.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headrun-infogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headrun-Info.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#points-ledgergs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Points-Ledger.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triggersgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Triggers.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unregisteredgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unregistered.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-menugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User-Menu.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilsgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utils.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Triggers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Triggers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time-based
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-spreadsheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From spreadsheet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-calendar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Calendar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automating-attendance-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automating Attendance Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatting-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formatting Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sending-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sending Notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing Triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Points System Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Points System Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../points/ledger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Points Ledger
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    McRace Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    McRace Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcrace/registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Registrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcrace/crossref/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross Referencing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcrace/timing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timing System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#about" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        About
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="About">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constants
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constants">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attendance-variablesgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attendance-Variables.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formattinggs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formatting.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headrun-attendancegs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headrun-Attendance.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headrun-infogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Headrun-Info.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Import.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#points-ledgergs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Points-Ledger.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#triggersgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Triggers.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unregisteredgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unregistered.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-menugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User-Menu.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utilsgs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utils.gs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Triggers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Triggers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#time-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time-based
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-spreadsheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From spreadsheet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-calendar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Calendar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#automating-attendance-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automating Attendance Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatting-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formatting Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sending-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sending Notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managing-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing Triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Projects
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../master/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Attendance Code
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="mcrun-attendance">McRUN Attendance<a class="headerlink" href="#mcrun-attendance" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="about">About<a class="headerlink" href="#about" title="Permanent link">&para;</a></h2>
+<h3 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Github Repo:</strong> <a href="https://github.com/mcrunningclub/mcrun-attendance">mcrun-attendance</a></li>
+<li><strong>Google Sheets:</strong> <a href="https://docs.google.com/spreadsheets/d/1kUevgOCN1wCdbNiVY412-7ejnlSjtIyKNHFVLV9KK1Q/edit?gid=1289953364">Head Run Attendance - 2025/26</a></li>
+<li><strong>Apps Script Project:</strong> <a href="https://script.google.com/home/projects/1Vu_Atd-PFXXXFbUL3qb8gH4ncFfAsAkWNsr4Adnavjk-JnqtvAa8v5u5/edit">Attendance Code 2025/2026</a></li>
+</ul>
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permanent link">&para;</a></h2>
+<h3 id="attendance-variablesgs">Attendance-Variables.gs<a class="headerlink" href="#attendance-variablesgs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>constant</em> <a href="#attendance_sheet_name"><code>ATTENDANCE_SHEET_NAME</code></a></li>
+<li><em>constant</em> <a href="#semester_name"><code>SEMESTER_NAME</code></a></li>
+<li><em>constant</em> <a href="#attendance_sheet_id"><code>ATTENDANCE_SHEET_ID</code></a></li>
+<li><em>constant</em> <a href="#attendance_sheet"><code>ATTENDANCE_SHEET</code></a></li>
+<li><em>constant</em> <a href="#get_attendance_sheet_"><code>GET_ATTENDANCE_SHEET_</code></a></li>
+<li><em>constant</em> <a href="#col"><code>COL</code></a></li>
+<li><em>constant</em> <a href="#sem_attendance_cols"><code>SEM_ATTENDANCE_COLS</code></a></li>
+<li><em>constant</em> <a href="#timezone"><code>TIMEZONE</code></a></li>
+<li><em>constant</em> <a href="#attendee_map"><code>ATTENDEE_MAP</code></a></li>
+<li><em>constant</em> <a href="#num_levels"><code>NUM_LEVELS</code></a></li>
+<li><em>constant</em> <a href="#empty_attendee_flag"><code>EMPTY_ATTENDEE_FLAG</code></a></li>
+<li><em>constant</em> <a href="#membership_sheet_name"><code>MEMBERSHIP_SHEET_NAME</code></a></li>
+<li><em>constant</em> <a href="#membership_url"><code>MEMBERSHIP_URL</code></a></li>
+<li><em>constant</em> <a href="#member_email_col"><code>MEMBER_EMAIL_COL</code></a></li>
+<li><em>constant</em> <a href="#member_search_key_col"><code>MEMBER_SEARCH_KEY_COL</code></a></li>
+<li><em>constant</em> <a href="#log_sheet_name"><code>LOG_SHEET_NAME</code></a></li>
+<li><em>constant</em> <a href="#points_ledger_url"><code>POINTS_LEDGER_URL</code></a></li>
+<li><em>constant</em> <a href="#headrun_sheet_id"><code>HEADRUN_SHEET_ID</code></a></li>
+<li><em>constant</em> <a href="#compiled_sheet_name"><code>COMPILED_SHEET_NAME</code></a></li>
+<li><em>constant</em> <a href="#get_compiled_sheet_"><code>GET_COMPILED_SHEET_</code></a></li>
+<li><em>constant</em> <a href="#headrunner_sheet_name"><code>HEADRUNNER_SHEET_NAME</code></a></li>
+<li><em>constant</em> <a href="#get_headrunner_sheet_"><code>GET_HEADRUNNER_SHEET_</code></a></li>
+<li><em>constant</em> <a href="#script_property"><code>SCRIPT_PROPERTY</code></a></li>
+<li><em>constant</em> <a href="#get_prop_store_"><code>GET_PROP_STORE_</code></a></li>
+<li><em>constant</em> <a href="#copy_email_template"><code>COPY_EMAIL_TEMPLATE</code></a></li>
+<li><em>constant</em> <a href="#reminder_email_template"><code>REMINDER_EMAIL_TEMPLATE</code></a></li>
+<li><em>constant</em> <a href="#get_attendance_form_link_"><code>GET_ATTENDANCE_FORM_LINK_</code></a></li>
+<li><em>constant</em> <a href="#president_email"><code>PRESIDENT_EMAIL</code></a></li>
+<li><em>constant</em> <a href="#vp_internal_email"><code>VP_INTERNAL_EMAIL</code></a></li>
+<li><em>constant</em> <a href="#club_email"><code>CLUB_EMAIL</code></a></li>
+<li><em>constant</em> <a href="#app_email"><code>APP_EMAIL</code></a></li>
+<li><em>constant</em> <a href="#headrunner_store_name"><code>HEADRUNNER_STORE_NAME</code></a></li>
+<li><em>constant</em> <a href="#headrun_store_name"><code>HEADRUN_STORE_NAME</code></a></li>
+<li><em>constant</em> <a href="#import_sheet_id"><code>IMPORT_SHEET_ID</code></a></li>
+<li><em>constant</em> <a href="#import_sheet"><code>IMPORT_SHEET</code></a></li>
+<li><em>constant</em> <a href="#get_import_sheet_"><code>GET_IMPORT_SHEET_</code></a></li>
+<li><em>constant</em> <a href="#import_map"><code>IMPORT_MAP</code></a></li>
+<li><em>constant</em> <a href="#perm_user_"><code>PERM_USER_</code></a></li>
+</ul>
+<h4 id="attendance_sheet_name">ATTENDANCE_SHEET_NAME<a class="headerlink" href="#attendance_sheet_name" title="Permanent link">&para;</a></h4>
+<p>Name of attendance sheet for the current semester
+TO UPDATE EACH SEMESTER </p>
+<h4 id="semester_name">SEMESTER_NAME<a class="headerlink" href="#semester_name" title="Permanent link">&para;</a></h4>
+<p>Name of semester
+TO UPDATE EACH SEMESTER </p>
+<h4 id="attendance_sheet_id">ATTENDANCE_SHEET_ID<a class="headerlink" href="#attendance_sheet_id" title="Permanent link">&para;</a></h4>
+<p>ID of attendance sheet for the current semester
+TO UPDATE EACH SEMESTER </p>
+<h4 id="attendance_sheet">ATTENDANCE_SHEET<a class="headerlink" href="#attendance_sheet" title="Permanent link">&para;</a></h4>
+<p>Attendance sheet object for the current semester
+TO UPDATE EACH SEMESTER </p>
+<h4 id="get_attendance_sheet_">GET_ATTENDANCE_SHEET_<a class="headerlink" href="#get_attendance_sheet_" title="Permanent link">&para;</a></h4>
+<p>Retrieves the attendance sheet for the current semester.
+Ensures proper sheet reference when accessing as a library from an external script.</p>
+<p>Returns:</p>
+<ul>
+<li>(GoogleAppsScript.Spreadsheet.Sheet) - The attendance sheet object.</li>
+</ul>
+<h4 id="col">COL<a class="headerlink" href="#col" title="Permanent link">&para;</a></h4>
+<p>Mapping of column letters to numbers</p>
+<h4 id="sem_attendance_cols">SEM_ATTENDANCE_COLS<a class="headerlink" href="#sem_attendance_cols" title="Permanent link">&para;</a></h4>
+<p>Mapping of columns in semester attendance sheet to column number (1-indexed)</p>
+<h4 id="timezone">TIMEZONE<a class="headerlink" href="#timezone" title="Permanent link">&para;</a></h4>
+<p>Timezone of the script</p>
+<h4 id="attendee_map">ATTENDEE_MAP<a class="headerlink" href="#attendee_map" title="Permanent link">&para;</a></h4>
+<p>Maps run levels to column with attendees for that level</p>
+<h4 id="num_levels">NUM_LEVELS<a class="headerlink" href="#num_levels" title="Permanent link">&para;</a></h4>
+<p>Number of run levels</p>
+<h4 id="empty_attendee_flag">EMPTY_ATTENDEE_FLAG<a class="headerlink" href="#empty_attendee_flag" title="Permanent link">&para;</a></h4>
+<p>String indicating that there are no attendees for a run level</p>
+<h4 id="membership_sheet_name">MEMBERSHIP_SHEET_NAME<a class="headerlink" href="#membership_sheet_name" title="Permanent link">&para;</a></h4>
+<p>Name of sheet (in membership spreadsheet) with master registry</p>
+<h4 id="membership_url">MEMBERSHIP_URL<a class="headerlink" href="#membership_url" title="Permanent link">&para;</a></h4>
+<p>URL of membership spreadsheet</p>
+<h4 id="member_email_col">MEMBER_EMAIL_COL<a class="headerlink" href="#member_email_col" title="Permanent link">&para;</a></h4>
+<p>Column in membership list with member email</p>
+<h4 id="member_search_key_col">MEMBER_SEARCH_KEY_COL<a class="headerlink" href="#member_search_key_col" title="Permanent link">&para;</a></h4>
+<p>Column in membership list with member key (ID?)</p>
+<h4 id="log_sheet_name">LOG_SHEET_NAME<a class="headerlink" href="#log_sheet_name" title="Permanent link">&para;</a></h4>
+<p>Name of sheet with events log in points ledger spreadsheet</p>
+<h4 id="points_ledger_url">POINTS_LEDGER_URL<a class="headerlink" href="#points_ledger_url" title="Permanent link">&para;</a></h4>
+<p>URL of points ledger spreadsheet</p>
+<h4 id="headrun_sheet_id">HEADRUN_SHEET_ID<a class="headerlink" href="#headrun_sheet_id" title="Permanent link">&para;</a></h4>
+<p>ID of spreadsheet with head run schedule and list of head runners</p>
+<h4 id="compiled_sheet_name">COMPILED_SHEET_NAME<a class="headerlink" href="#compiled_sheet_name" title="Permanent link">&para;</a></h4>
+<p>Name of sheet with compiled head runs and head runners</p>
+<h4 id="get_compiled_sheet_">GET_COMPILED_SHEET_<a class="headerlink" href="#get_compiled_sheet_" title="Permanent link">&para;</a></h4>
+<p>Sheet object with compiled head runs and head runners</p>
+<h4 id="headrunner_sheet_name">HEADRUNNER_SHEET_NAME<a class="headerlink" href="#headrunner_sheet_name" title="Permanent link">&para;</a></h4>
+<p>Name of sheet with list of head runners and their info</p>
+<h4 id="get_headrunner_sheet_">GET_HEADRUNNER_SHEET_<a class="headerlink" href="#get_headrunner_sheet_" title="Permanent link">&para;</a></h4>
+<p>Sheet object with list of head runners and their info</p>
+<h4 id="script_property">SCRIPT_PROPERTY<a class="headerlink" href="#script_property" title="Permanent link">&para;</a></h4>
+<p>Maps information to script property name with that information</p>
+<h4 id="get_prop_store_">GET_PROP_STORE_<a class="headerlink" href="#get_prop_store_" title="Permanent link">&para;</a></h4>
+<p>Script properties
+Get property store or create if not found</p>
+<h4 id="copy_email_template">COPY_EMAIL_TEMPLATE<a class="headerlink" href="#copy_email_template" title="Permanent link">&para;</a></h4>
+<p>Name of email template used to send attendance copy (without '.html')</p>
+<h4 id="reminder_email_template">REMINDER_EMAIL_TEMPLATE<a class="headerlink" href="#reminder_email_template" title="Permanent link">&para;</a></h4>
+<p>Name of email template used to send reminder (without '.html')</p>
+<h4 id="get_attendance_form_link_">GET_ATTENDANCE_FORM_LINK_<a class="headerlink" href="#get_attendance_form_link_" title="Permanent link">&para;</a></h4>
+<p>Gets link of Google Form connected to attendance sheet</p>
+<p>Returns:</p>
+<ul>
+<li>(string) - Link to attendance form</li>
+</ul>
+<h4 id="president_email">PRESIDENT_EMAIL<a class="headerlink" href="#president_email" title="Permanent link">&para;</a></h4>
+<p>Email of club president</p>
+<h4 id="vp_internal_email">VP_INTERNAL_EMAIL<a class="headerlink" href="#vp_internal_email" title="Permanent link">&para;</a></h4>
+<p>Email of club VP Internal (VP Headruns)</p>
+<h4 id="club_email">CLUB_EMAIL<a class="headerlink" href="#club_email" title="Permanent link">&para;</a></h4>
+<p>Club email address</p>
+<h4 id="app_email">APP_EMAIL<a class="headerlink" href="#app_email" title="Permanent link">&para;</a></h4>
+<p>Email address used to access the attendance app</p>
+<h4 id="headrunner_store_name">HEADRUNNER_STORE_NAME<a class="headerlink" href="#headrunner_store_name" title="Permanent link">&para;</a></h4>
+<p>Name of script property that has headrunner info</p>
+<h4 id="headrun_store_name">HEADRUN_STORE_NAME<a class="headerlink" href="#headrun_store_name" title="Permanent link">&para;</a></h4>
+<p>Name of script property that has headrun info/schedule</p>
+<h4 id="import_sheet_id">IMPORT_SHEET_ID<a class="headerlink" href="#import_sheet_id" title="Permanent link">&para;</a></h4>
+<p>ID of sheet with app imports</p>
+<h4 id="import_sheet">IMPORT_SHEET<a class="headerlink" href="#import_sheet" title="Permanent link">&para;</a></h4>
+<p>Sheet object with app imports</p>
+<h4 id="get_import_sheet_">GET_IMPORT_SHEET_<a class="headerlink" href="#get_import_sheet_" title="Permanent link">&para;</a></h4>
+<p>ALLOWS PROPER SHEET REF WHEN ACCESSING AS LIBRARY FROM EXTERNAL SCRIPT
+SpreadsheetApp.getActiveSpreadsheet() DOES NOT WORK IN EXTERNAL SCRIPT</p>
+<h4 id="import_map">IMPORT_MAP<a class="headerlink" href="#import_map" title="Permanent link">&para;</a></h4>
+<p>MAPPING FROM MASTER ATTENDANCE SHEET TO SEMESTER SHEET</p>
+<h4 id="perm_user_">PERM_USER_<a class="headerlink" href="#perm_user_" title="Permanent link">&para;</a></h4>
+<p>Users authorized to use the McRUN menu.
+Prevents unwanted data overwrite in Gsheet.</p>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<h3 id="formattinggs">Formatting.gs<a class="headerlink" href="#formattinggs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>function</em> <a href="#addmissingplatform_row"><code>addMissingPlatform_(row)</code></a></li>
+<li><em>function</em> <a href="#bulkformatrow_row"><code>bulkFormatRow_(row)</code></a></li>
+<li><em>function</em> <a href="#formatsemesterattendance"><code>formatSemesterAttendance()</code></a></li>
+<li><em>function</em> <a href="#formatconfirmationinrow_row"><code>formatConfirmationInRow_(row)</code></a></li>
+<li><em>function</em> <a href="#formatallnames"><code>formatAllNames()</code></a></li>
+<li><em>function</em> <a href="#formatnamesinrow_row"><code>formatNamesInRow_(row)</code></a></li>
+<li><em>function</em> <a href="#formatattendeenamesinrow_row"><code>formatAttendeeNamesInRow_(row)</code></a></li>
+<li><em>function</em> <a href="#formatheadrunnersinrow_startrow-numrow"><code>formatHeadrunnersInRow_(startRow, numRow)</code></a></li>
+<li><em>function</em> <a href="#formatheadrunnername_name"><code>formatHeadrunnerName_(name)</code></a></li>
+<li><em>function</em> <a href="#formatheadruninrow_startrow-numrow"><code>formatHeadrunInRow_(startRow, numRow)</code></a></li>
+<li><em>function</em> <a href="#sortsemesterattendance"><code>sortSemesterAttendance()</code></a></li>
+<li><em>function</em> <a href="#removepresencechecks"><code>removePresenceChecks()</code></a></li>
+<li><em>function</em> <a href="#formatspecificcolumns_"><code>formatSpecificColumns_()</code></a></li>
+</ul>
+<h4 id="addmissingplatform_row">addMissingPlatform_(row)<a class="headerlink" href="#addmissingplatform_row" title="Permanent link">&para;</a></h4>
+<p>Adds <code>Google Form</code> as source of attendance submission.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (number) - <em>Optional</em> The row index in the attendance sheet to add the platform to. Defaults to last row.</li>
+</ul>
+<h4 id="bulkformatrow_row">bulkFormatRow_(row)<a class="headerlink" href="#bulkformatrow_row" title="Permanent link">&para;</a></h4>
+<p>Applies bulk formatting to specified row in the attendance sheet.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (number) - The row index in the attendance sheet to format.</li>
+</ul>
+<h4 id="formatsemesterattendance">formatSemesterAttendance()<a class="headerlink" href="#formatsemesterattendance" title="Permanent link">&para;</a></h4>
+<p>Global wrapper function that runs the following on the sheet:</p>
+<ul>
+<li>formats head run column for each row</li>
+<li>formats headrunner names for each row</li>
+<li>formats attendees' names for each row</li>
+<li>formats confirmations in each row</li>
+</ul>
+<p>Row number is 1-indexed in GSheet. Header row skipped. Top-to-bottom execution.</p>
+<h4 id="formatconfirmationinrow_row">formatConfirmationInRow_(row)<a class="headerlink" href="#formatconfirmationinrow_row" title="Permanent link">&para;</a></h4>
+<p>Formats confirmation bool in <code>row</code> into user-friendly string.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (integer) - <em>Optional</em> The row in the <code>ATTENDANCE_SHEET</code> sheet (1-indexed). Defaults to the last row in the sheet.</li>
+</ul>
+<h4 id="formatallnames">formatAllNames()<a class="headerlink" href="#formatallnames" title="Permanent link">&para;</a></h4>
+<p>Wrapper function for <code>formatAttendeeNamesInRow</code> and <code>formatHeadRunnerInRow</code>
+for <strong>ALL</strong> submissions in GSheet.
+Row number is 1-indexed in GSheet. Header row skipped. Top-to-bottom execution.</p>
+<h4 id="formatnamesinrow_row">formatNamesInRow_(row)<a class="headerlink" href="#formatnamesinrow_row" title="Permanent link">&para;</a></h4>
+<p>Wrapper function for <code>formatAttendeeNamesInRow</code> and <code>formatHeadRunnerInRow</code>.
+Formats headrunner and attendee names in target <code>row</code>.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (integer) - <em>Optional</em> The row in the <code>ATTENDANCE_SHEET</code> sheet (1-indexed).
+                                                      Defaults to the last row in the sheet.</li>
+</ul>
+<h4 id="formatattendeenamesinrow_row">formatAttendeeNamesInRow_(row)<a class="headerlink" href="#formatattendeenamesinrow_row" title="Permanent link">&para;</a></h4>
+<p>Formats attendee names from <code>row</code> into uniform view, sorted and separated by newline.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (integer) - <em>Optional</em> The row in the <code>ATTENDANCE_SHEET</code> sheet (1-indexed).
+                                                      Defaults to the last row in the sheet.</li>
+</ul>
+<p>Example:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Sample Script ➜ Format names in row `13`.</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">rowToFormat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">13</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nx">formatNamesInRow</span><span class="p">(</span><span class="nx">rowToFormat</span><span class="p">);</span>
+</span></code></pre></div>
+<h4 id="formatheadrunnersinrow_startrow-numrow">formatHeadrunnersInRow_(startRow, numRow)<a class="headerlink" href="#formatheadrunnersinrow_startrow-numrow" title="Permanent link">&para;</a></h4>
+<p>Formats headrunner names from <code>row</code> into uniform view, separated by newline.
+Updated format is '<code>${firstName} ${lastNameLetter}.</code>'</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (integer) - <em>Optional</em> The row in the <code>ATTENDANCE_SHEET</code> sheet (1-indexed).
+                                                      Defaults to the last row in the sheet.</li>
+<li><code>numRow</code> (integer) - <em>Optional</em> Number of rows to format from <code>startRow</code>. Defaults to 1.</li>
+</ul>
+<p>Example:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Sample Script ➜ Format names in row `7`.</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">rowToFormat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nx">formatHeadrunnerInRow</span><span class="p">(</span><span class="nx">rowToFormat</span><span class="p">);</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1">// Sample Script ➜ Format names from row `3` to `9`.</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kd">const</span><span class="w"> </span><span class="nx">startRow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="p">;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="kd">const</span><span class="w"> </span><span class="nx">numRow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">9</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">startRow</span><span class="p">;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nx">formatHeadrunnerInRow</span><span class="p">(</span><span class="nx">startRow</span><span class="p">,</span><span class="w"> </span><span class="nx">numRow</span><span class="p">);</span>
+</span></code></pre></div>
+<h4 id="formatheadrunnername_name">formatHeadrunnerName_(name)<a class="headerlink" href="#formatheadrunnername_name" title="Permanent link">&para;</a></h4>
+<p>Callback function to clean and format a single headrunner name</p>
+<p>Params:</p>
+<ul>
+<li><code>name</code> (string) - Original string</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - Formatted string</li>
+</ul>
+<h4 id="formatheadruninrow_startrow-numrow">formatHeadrunInRow_(startRow, numRow)<a class="headerlink" href="#formatheadruninrow_startrow-numrow" title="Permanent link">&para;</a></h4>
+<p>Removes hyphen-space in headrun from <code>row</code> if applicable.</p>
+<p>Params:</p>
+<ul>
+<li><code>startrow</code> (integer) - The row in the <code>ATTENDANCE_SHEET</code> sheet (1-indexed). Defaults to the last row in the sheet.</li>
+<li><code>numRow</code> (integer) - <em>Optional</em> Number of rows to format from <code>startRow</code>. Defaults to 1.</li>
+</ul>
+<h4 id="sortsemesterattendance">sortSemesterAttendance()<a class="headerlink" href="#sortsemesterattendance" title="Permanent link">&para;</a></h4>
+<p>Sorts the <code>ATTENDANCE_SHEET</code> by submission time.
+Excludes the header row from sorting.</p>
+<h4 id="removepresencechecks">removePresenceChecks()<a class="headerlink" href="#removepresencechecks" title="Permanent link">&para;</a></h4>
+<p>Changes the attendance status of all members to "not present."
+Helper function for <code>consolidateMemberData()</code>.</p>
+<h4 id="formatspecificcolumns_">formatSpecificColumns_()<a class="headerlink" href="#formatspecificcolumns_" title="Permanent link">&para;</a></h4>
+<p>Formats specific columns of the <code>HR Attendance</code> sheet for better readability.
+Includes freezing panes, bold formatting, text wrapping, alignment, and column resizing.</p>
+<h3 id="headrun-attendancegs">Headrun-Attendance.gs<a class="headerlink" href="#headrun-attendancegs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>function</em> <a href="#onformsubmission"><code>onFormSubmission()</code></a></li>
+<li><em>function</em> <a href="#processrow_row"><code>processRow_(row)</code></a></li>
+<li><em>function</em> <a href="#onappsubmissionrow"><code>onAppSubmission(row)</code></a></li>
+<li><em>function</em> <a href="#packageandemailattendance_row"><code>packageAndEmailAttendance_(row)</code></a></li>
+<li><em>function</em> <a href="#toggleattendancecheck_"><code>toggleAttendanceCheck_()</code></a></li>
+<li><em>function</em> <a href="#getheadruntitle_submission"><code>getHeadrunTitle_(submission)</code></a></li>
+<li><em>function</em> <a href="#checkmissingattendancetoday-headruntitle-level"><code>checkMissingAttendance(today, headrunTitle, level)</code></a></li>
+<li><em>function</em> <a href="#sendbotemail_subject-recipient-htmlbody"><code>sendBotEmail_(subject, recipient, htmlBody)</code></a></li>
+<li><em>function</em> <a href="#createattendanceemail_emaildetails"><code>createAttendanceEmail_(emailDetails)</code></a></li>
+<li><em>function</em> <a href="#sendattendancecopy_"><code>sendAttendanceCopy_({ headrunTitle, headrunnerEmails }, submission)</code></a></li>
+<li><em>function</em> <a href="#sendattendancereminder_"><code>sendAttendanceReminder_({ emailsByLevel, headrunTitle })</code></a></li>
+</ul>
+<h4 id="onformsubmission">onFormSubmission()<a class="headerlink" href="#onformsubmission" title="Permanent link">&para;</a></h4>
+<p>Functions to execute after form submission.</p>
+<p>Sort &amp; format attendance and process last row (newest).
+To use as a trigger function, it cannot have parameters.
+Otherwise, a runtime exception is raised for new form submission.</p>
+<h4 id="processrow_row">processRow_(row)<a class="headerlink" href="#processrow_row" title="Permanent link">&para;</a></h4>
+<p>Sets platform to "Google Form", formats, and extracts unregistered
+members for the given row.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (number) - The row index in the attendance sheet to process.</li>
+</ul>
+<h4 id="onappsubmissionrow">onAppSubmission(row)<a class="headerlink" href="#onappsubmissionrow" title="Permanent link">&para;</a></h4>
+<p>Functions to execute after McRUN app submission.</p>
+<p>Format new entry, transfer to Points Ledger, sort &amp; format attendance.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (number) - <em>Optional</em> The row index in the attendance sheet to process.
+                                            Defaults to the last row.</li>
+</ul>
+<h4 id="packageandemailattendance_row">packageAndEmailAttendance_(row)<a class="headerlink" href="#packageandemailattendance_row" title="Permanent link">&para;</a></h4>
+<p>Get headrunner emails from the submission and send them a copy of the submitted
+attendance.</p>
+<p>Cannot be called using Attendance Code library (i.e. from AC-M)</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (number) - Row number of submission</li>
+</ul>
+<h4 id="toggleattendancecheck_">toggleAttendanceCheck_()<a class="headerlink" href="#toggleattendancecheck_" title="Permanent link">&para;</a></h4>
+<p>Toggles the flag to run <code>checkAttendance()</code> by updating the value in the <code>ScriptProperties</code> bank.</p>
+<p>Returns:</p>
+<ul>
+<li>(string) - The new state of the attendance checker ("true" or "false").</li>
+</ul>
+<h4 id="getheadruntitle_submission">getHeadrunTitle_(submission)<a class="headerlink" href="#getheadruntitle_submission" title="Permanent link">&para;</a></h4>
+<p>Gets the headrun title (weekday + AM/PM) from attendance submission.
+If no submission, uses current date.</p>
+<p>Params:</p>
+<ul>
+<li><code>submission</code> (list) - Values from row in attendance sheet</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - e.g. Tuesday AM</li>
+</ul>
+<h4 id="checkmissingattendancetoday-headruntitle-level">checkMissingAttendance(today, headrunTitle, level)<a class="headerlink" href="#checkmissingattendancetoday-headruntitle-level" title="Permanent link">&para;</a></h4>
+<p>Checks for missing submissions after a scheduled headrun.</p>
+<p>The service property IS_CHECKING_ATTENDANCE must be set to true.</p>
+<p>Params:</p>
+<ul>
+<li><code>today</code> (Date) - <em>Optional</em> Date to check. Defaults to current day.</li>
+<li><code>headrunTitle</code> (string) - Title of the headrun</li>
+<li><code>level</code> (string?) - Level of the headrun</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(boolean) - True if attendance is missing?</li>
+</ul>
+<h4 id="sendbotemail_subject-recipient-htmlbody">sendBotEmail_(subject, recipient, htmlBody)<a class="headerlink" href="#sendbotemail_subject-recipient-htmlbody" title="Permanent link">&para;</a></h4>
+<p>Sends an email using the McRUN bot.</p>
+<p>Params:</p>
+<ul>
+<li><code>subject</code> (string) - The subject of the email.</li>
+<li><code>recipient</code> (string) - The recipient's email address.</li>
+<li><code>htmlBody</code> (string) - The HTML content of the email.</li>
+</ul>
+<h4 id="createattendanceemail_emaildetails">createAttendanceEmail_(emailDetails)<a class="headerlink" href="#createattendanceemail_emaildetails" title="Permanent link">&para;</a></h4>
+<p>Create email using details from input `emailDetails' for internal use</p>
+<p>Params:</p>
+<ul>
+<li><code>emailDetails</code> (Map<string>) - Information needed to populate email body.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - HTML code for email.</li>
+</ul>
+<p>Example:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// Sample Script ➜ Create email using info.</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">emailDetails</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">   </span><span class="nx">title</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">'Monday - 6pm'</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">   </span><span class="nx">distance</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">'5km'</span><span class="p">,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">   </span><span class="nx">attendees</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="sb">`['- Beginner: Bob Burger', '- Easy: Marge Simpson, Mabel Pines']`</span><span class="p">,</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">   </span><span class="nx">confirmation</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">No</span><span class="p">,</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">   </span><span class="nx">comments</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">'Bob will pay fee next time.'</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">};</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="kd">const</span><span class="w"> </span><span class="nx">emailHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">createEmailCopy</span><span class="p">(</span><span class="nx">emailDetails</span><span class="p">);</span>
+</span></code></pre></div>
+<h4 id="sendattendancecopy_">sendAttendanceCopy_({ headrunTitle, headrunnerEmails }, submission)<a class="headerlink" href="#sendattendancecopy_" title="Permanent link">&para;</a></h4>
+<p>Send a copy of attendance submission to headrunners, President &amp; VP Internal.
+Attendees are separated by level.</p>
+<p>Params:</p>
+<ul>
+<li><code>emailObj</code> (Object) - Contains email details.</li>
+<li><code>emailObj.headrunTitle</code> (string) - The title of the headrun.</li>
+<li><code>emailObj.headrunnerEmails</code> (Object) - Emails of headrunners grouped by levels.</li>
+<li><code>submission</code> (Array) - The attendance submission data.</li>
+</ul>
+<h4 id="sendattendancereminder_">sendAttendanceReminder_({ emailsByLevel, headrunTitle })<a class="headerlink" href="#sendattendancereminder_" title="Permanent link">&para;</a></h4>
+<p>Send a reminder email to headrunners when attendance for a respective headrun not found.</p>
+<p>Params:</p>
+<ul>
+<li><code>emailObj</code> (Object) - Contains email details.</li>
+<li><code>emailObj.emailsByLevel</code> (Object) - Emails of headrunners grouped by levels.</li>
+<li><code>emailObj.headrunTitle</code> (string) - The title of the headrun.</li>
+</ul>
+<h3 id="headrun-infogs">Headrun-Info.gs<a class="headerlink" href="#headrun-infogs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>function</em> <a href="#storeproperty_key-obj"><code>storeProperty_(key, obj)</code></a></li>
+<li><em>function</em> <a href="#getallheadruns_"><code>getAllHeadruns_()</code></a></li>
+<li><em>function</em> <a href="#getallheadrunners_"><code>getAllHeadrunners_()</code></a></li>
+<li><em>function</em> <a href="#getweekdayasstring_index"><code>getWeekdayAsString_(index)</code></a></li>
+<li><em>function</em> <a href="#getschedulefromstore_weekday"><code>getScheduleFromStore_(weekday)</code></a></li>
+<li><em>function</em> <a href="#getmatchedtimekey_submissiondate-runschedule-offsethours"><code>getMatchedTimeKey_(submissionDate, runSchedule, offsetHours)</code></a></li>
+<li><em>function</em> <a href="#getheadrunneremailsfromschedule_runlevels"><code>getHeadrunnerEmailsFromSchedule_(runLevels)</code></a></li>
+<li><em>function</em> <a href="#getheadrunneremailsfromnames_names"><code>getHeadrunnerEmailsFromNames_(names)</code></a></li>
+<li><em>function</em> <a href="#appendheadrunneremail_namesstr-delimiter"><code>appendHeadrunnerEmail_(namesStr, delimiter)</code></a></li>
+<li><em>function</em> <a href="#prettyprintrundata"><code>prettyPrintRunData()</code></a></li>
+<li><em>function</em> <a href="#readandstorerundata"><code>readAndStoreRunData()</code></a></li>
+<li><em>function</em> <a href="#appendheadruninfo_levelsstr-thisheadrunner-headrunobj"><code>appendHeadrunInfo_(levelsStr, thisHeadrunner, headrunObj)</code></a></li>
+</ul>
+<h4 id="storeproperty_key-obj">storeProperty_(key, obj)<a class="headerlink" href="#storeproperty_key-obj" title="Permanent link">&para;</a></h4>
+<p>Stores an object in the document properties store.</p>
+<p>Params:</p>
+<ul>
+<li><code>key</code> (string) - The key under which the object will be stored.</li>
+<li><code>obj</code> (Object) - The object to store.</li>
+</ul>
+<h4 id="getallheadruns_">getAllHeadruns_()<a class="headerlink" href="#getallheadruns_" title="Permanent link">&para;</a></h4>
+<p>Retrieves all headruns from the properties store.</p>
+<p>Returns:</p>
+<ul>
+<li>(Object) - An object containing all headruns.</li>
+</ul>
+<h4 id="getallheadrunners_">getAllHeadrunners_()<a class="headerlink" href="#getallheadrunners_" title="Permanent link">&para;</a></h4>
+<p>Retrieves headrunners from the properties store</p>
+<p>Returns:</p>
+<ul>
+<li>(Object) - An object containing all headrunners</li>
+</ul>
+<h4 id="getweekdayasstring_index">getWeekdayAsString_(index)<a class="headerlink" href="#getweekdayasstring_index" title="Permanent link">&para;</a></h4>
+<p>Returns day of week (starting on Sunday) given index of the day</p>
+<p>Params:</p>
+<ul>
+<li><code>index</code> (number) - Index of weekday to get, eg. 1</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - Name of weekday, eg. "Monday"</li>
+</ul>
+<h4 id="getschedulefromstore_weekday">getScheduleFromStore_(weekday)<a class="headerlink" href="#getschedulefromstore_weekday" title="Permanent link">&para;</a></h4>
+<p>Return headrun schedule for given day of week.</p>
+<p>Params:</p>
+<ul>
+<li><code>weekday</code> (string|number) - Day of week to get schedule for. Can be string representation or js equivalent (1 = 'monday').</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Object) - JSON of run schedule for the given weekday. null if getAllHeadruns_ doesn't return anything</li>
+</ul>
+<h4 id="getmatchedtimekey_submissiondate-runschedule-offsethours">getMatchedTimeKey_(submissionDate, runSchedule, offsetHours)<a class="headerlink" href="#getmatchedtimekey_submissiondate-runschedule-offsethours" title="Permanent link">&para;</a></h4>
+<p>Finds timekey in runSchedule within [submissionDate - offsetHours, submissionDate + offsetHours].</p>
+<p>Params:</p>
+<ul>
+<li><code>submissionDate</code> (Date) - Date object of submission time.</li>
+<li><code>runSchedule</code> (Object) - Run schedule to search.</li>
+<li><code>offsetHours</code> (integer) - <em>Optional</em> Offset time to search for submission.
+                                  Defaults to 2 (hours).</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - Matched time key. e.g. <code>'6pm'</code></li>
+</ul>
+<h4 id="getheadrunneremailsfromschedule_runlevels">getHeadrunnerEmailsFromSchedule_(runLevels)<a class="headerlink" href="#getheadrunneremailsfromschedule_runlevels" title="Permanent link">&para;</a></h4>
+<p>Returns email address of headrunners for a run, divided by levels.</p>
+<p>Replaced initial <code>getHeadRunnerEmail()</code>, which was hard-coded and required updating.</p>
+<p>Params:</p>
+<ul>
+<li><code>runLevels</code> (string[]) - Headrun levels to get headrunner emails for.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Object) - Given run levels as keys and list of emails as values.</li>
+</ul>
+<p>Example:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">runs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getScheduleFromStore_</span><span class="p">(</span><span class="s1">'monday'</span><span class="p">);</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">emails</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getHeadrunnerEmailsFromSchedule_</span><span class="p">(</span><span class="nx">runs</span><span class="p">[</span><span class="s1">'8am'</span><span class="p">]);</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">emails</span><span class="p">)</span><span class="w">   </span><span class="c1">// { beginner : ['bob@mail.com'], advanced : ['jane@mail.com'] };</span>
+</span></code></pre></div>
+<h4 id="getheadrunneremailsfromnames_names">getHeadrunnerEmailsFromNames_(names)<a class="headerlink" href="#getheadrunneremailsfromnames_names" title="Permanent link">&para;</a></h4>
+<p>Iterates array of headrunner names and returns array of email address if found.
+Names are formatted as <code>firstName [middleName] initialLastName.</code></p>
+<p>Params:</p>
+<ul>
+<li><code>names</code> (string[]) - Names of headrunners to get emails for.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string[]) - List of emails found. If no emails found, return empty list.</li>
+</ul>
+<p>Example:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">headrunners</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'Bob B.'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Jane D.'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Bart S.'</span><span class="p">];</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">emails</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getHeadrunnerEmailFromName_</span><span class="p">(</span><span class="nx">headrunners</span><span class="p">);</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">emails</span><span class="p">)</span><span class="w">   </span><span class="c1">// ['bob@mail.com', 'bart@mail.com'] };</span>
+</span></code></pre></div>
+<h4 id="appendheadrunneremail_namesstr-delimiter">appendHeadrunnerEmail_(namesStr, delimiter)<a class="headerlink" href="#appendheadrunneremail_namesstr-delimiter" title="Permanent link">&para;</a></h4>
+<p>Adds emails to string with headrunner names.</p>
+<p>Params:</p>
+<ul>
+<li><code>names</code> (string) - Headrunner names delimited by newlines</li>
+<li><code>delimiter</code> (string) - <em>Optional</em>  Delimiter used to separate headrunners, default \n. </li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - Headrunner info as <code>name:email</code> delimited by newlines.</li>
+</ul>
+<p>Example:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">headrunners</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Bob B.\nJane D.\nBart S."</span><span class="p">;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">nameEmails</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">appendHeadrunnerEmail_</span><span class="p">(</span><span class="nx">headrunners</span><span class="p">);</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">nameEmails</span><span class="p">)</span><span class="w">   </span><span class="c1">// "Bob B.:bob@mail.com\nJane D.\nBart S.:bart@mail.com";</span>
+</span></code></pre></div>
+<h4 id="prettyprintrundata">prettyPrintRunData()<a class="headerlink" href="#prettyprintrundata" title="Permanent link">&para;</a></h4>
+<p>Display all headrun and headrunner data in user-friendly log</p>
+<h4 id="readandstorerundata">readAndStoreRunData()<a class="headerlink" href="#readandstorerundata" title="Permanent link">&para;</a></h4>
+<p>Parses headrunner information in Headrunner sheet and stores it in Properties store.</p>
+<p>Sample data structures:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span><span class="w"> </span><span class="nx">sunday</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">   </span><span class="s1">'10:00am'</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">'easy'</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">'Bob B.'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Jane D.'</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">   </span><span class="s1">'2:15pm'</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">'intermediate'</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">'Jane D.'</span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">}}</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">{</span><span class="w"> </span><span class="s1">'Bob B.'</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">'bob.burger@mail.com'</span><span class="p">,</span><span class="w"> </span><span class="nx">strava</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">'123456789'</span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="appendheadruninfo_levelsstr-thisheadrunner-headrunobj">appendHeadrunInfo_(levelsStr, thisHeadrunner, headrunObj)<a class="headerlink" href="#appendheadruninfo_levelsstr-thisheadrunner-headrunobj" title="Permanent link">&para;</a></h4>
+<p>Appends a headrunner to a nested schedule object.</p>
+<p>Helper function for <code>readAndStoreRunData</code>.</p>
+<p>Params:</p>
+<ul>
+<li><code>levelsStr</code> (string) - Headrun schedule string delimited by <code>;</code>.</li>
+<li><code>thisHeadrunner</code> (string) - The name of the headrunner to add.</li>
+<li><code>headrunObj</code> (Object) - Stores all headrun information (day, time, level, headrunners).</li>
+</ul>
+<p>Example:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// Sample Script ➜ Stores headrunner schedule with name.</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kd">var</span><span class="w"> </span><span class="nx">headrunnerSchedule</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Wednesday 6pm (Beginner); Sunday 8am (Intermediate); Sunday 6pm (Beginner)'</span><span class="p">;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nx">appendHeadrunInfo</span><span class="p">(</span><span class="nx">headrunnerSchedule</span><span class="p">,</span><span class="w"> </span><span class="s1">'Bob'</span><span class="p">);</span><span class="w">   </span><span class="c1">// Appends to `headrunObj`</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">headrunObj</span><span class="p">);</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1">// { 'wednesday' : { '6pm' : { 'beginner' : ['Bob'] } },</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1">//   'sunday' : { '8am' : { 'intermediate' : ['Bob'] }, '6pm' : { 'beginner' : ['Bob'] }  }</span>
+</span></code></pre></div>
+<h3 id="importgs">Import.gs<a class="headerlink" href="#importgs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>function</em> <a href="#processimportfromappimportobj"><code>processImportFromApp(importObj)</code></a></li>
+<li><em>function</em> <a href="#transferlastimporttosemester"><code>transferLastImportToSemester()</code></a></li>
+<li><em>function</em> <a href="#transferimporttosemester_row"><code>transferImportToSemester_(row)</code></a></li>
+<li><em>function</em> <a href="#toggleisimported_row-colindex"><code>toggleIsImported_(row, colIndex)</code></a></li>
+<li><em>function</em> <a href="#timestampexistsinsemester_timestamptocompare-numofrow"><code>timestampExistsInSemester_(timestampToCompare, numOfRow)</code></a></li>
+<li><em>function</em> <a href="#copyobjtosemestersheet_attendancejson-row"><code>copyObjToSemesterSheet_(attendanceJSON, row)</code></a></li>
+<li><em>function</em> <a href="#packageattendance_keyarr-valarr"><code>packageAttendance_(keyArr, valArr)</code></a></li>
+</ul>
+<h4 id="processimportfromappimportobj">processImportFromApp(importObj)<a class="headerlink" href="#processimportfromappimportobj" title="Permanent link">&para;</a></h4>
+<p>Process latest imported attendance submission via McRUN app.</p>
+<p>Params:</p>
+<ul>
+<li><code>importObj</code> (Object) - Data to process (as JSON-formatted string?)</li>
+</ul>
+<h4 id="transferlastimporttosemester">transferLastImportToSemester()<a class="headerlink" href="#transferlastimporttosemester" title="Permanent link">&para;</a></h4>
+<p>Transfers the last imported attendance submission to the semester sheet.</p>
+<h4 id="transferimporttosemester_row">transferImportToSemester_(row)<a class="headerlink" href="#transferimporttosemester_row" title="Permanent link">&para;</a></h4>
+<p>Copies row from import sheet to semester attendance sheet if it doesn't already exist.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (number) - Number of the row to transfer</li>
+</ul>
+<h4 id="toggleisimported_row-colindex">toggleIsImported_(row, colIndex)<a class="headerlink" href="#toggleisimported_row-colindex" title="Permanent link">&para;</a></h4>
+<p>Changes value of isImported column in import sheet to True.
+If column number is not provided, finds it using sheet header row.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (number) - Number of row to change.</li>
+<li><code>colIndex</code> (number) - <em>(Optional)</em> Number of column corresponding to isImported column. Defaults to 5</li>
+</ul>
+<h4 id="timestampexistsinsemester_timestamptocompare-numofrow">timestampExistsInSemester_(timestampToCompare, numOfRow)<a class="headerlink" href="#timestampexistsinsemester_timestamptocompare-numofrow" title="Permanent link">&para;</a></h4>
+<p>Check is submission already added by comparing timestamps.</p>
+<p>Params:</p>
+<ul>
+<li><code>timestampToCompare</code> (string) - Input timestamp</li>
+<li><code>numOfRow</code> (integer) - <em>Optional</em> Number of rows to check from the bottom.
+                                 Defaults to 5.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Boolean) - Returns true if found in attendance sheet.</li>
+</ul>
+<h4 id="copyobjtosemestersheet_attendancejson-row">copyObjToSemesterSheet_(attendanceJSON, row)<a class="headerlink" href="#copyobjtosemestersheet_attendancejson-row" title="Permanent link">&para;</a></h4>
+<p>Transfer new attendance submission from <code>Import</code> to semester sheet.</p>
+<p>Params:</p>
+<ul>
+<li><code>attendanceJSON</code> (Object<JSON>) - Attendance information as JSON object.</li>
+<li><code>row</code> (integer) - <em>Optional</em> Target row in <code>Attendance_Sheet</code>. Defaults to last row.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(integer) - Latest row in <code>Attendance_Sheet</code>.</li>
+</ul>
+<h4 id="packageattendance_keyarr-valarr">packageAttendance_(keyArr, valArr)<a class="headerlink" href="#packageattendance_keyarr-valarr" title="Permanent link">&para;</a></h4>
+<p>Create JSON-formatted string of key-value pairs for attendance submission.</p>
+<p>Params:</p>
+<ul>
+<li><code>keyArr</code> (string[]) - Array of keys storing header row values.</li>
+<li><code>valArr</code> (string[]) - Values of attendance submission to map.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - A JSON string of attendance submission as key-value pairs.</li>
+</ul>
+<h3 id="points-ledgergs">Points-Ledger.gs<a class="headerlink" href="#points-ledgergs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>function</em> <a href="#appendattendeeemails_row-registered-unregistered"><code>appendAttendeeEmails_(row, registered, unregistered)</code></a></li>
+<li><em>function</em> <a href="#transfersubmissiontoledgerrow"><code>transferSubmissionToLedger(row)</code></a></li>
+<li><em>function</em> <a href="#packagesubmissionforledger_row"><code>packageSubmissionForLedger_(row)</code></a></li>
+<li><em>function</em> <a href="#sendnewsubmission_submissionarr"><code>sendNewSubmission_(submissionArr)</code></a></li>
+<li><em>function</em> <a href="#setnewstravatrigger_ledgerrow"><code>setNewStravaTrigger_(ledgerRow)</code></a></li>
+<li><em>function</em> <a href="#executepointsledgerfunction_funcname-args"><code>executePointsLedgerFunction_(funcName, args)</code></a></li>
+</ul>
+<h4 id="appendattendeeemails_row-registered-unregistered">appendAttendeeEmails_(row, registered, unregistered)<a class="headerlink" href="#appendattendeeemails_row-registered-unregistered" title="Permanent link">&para;</a></h4>
+<p>Appends attendee emails to names for each run level in specified
+row of attendance (if found). </p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (integer) - Row in <code>ATTENDANCE_SHEET</code> to append email.</li>
+<li><code>registered</code> (string[][]) - All search keys of registered members (sorted) and emails.</li>
+<li><code>unregistered</code> (string[][]) - All unregistered attendees grouped by levels.</li>
+</ul>
+<h4 id="transfersubmissiontoledgerrow">transferSubmissionToLedger(row)<a class="headerlink" href="#transfersubmissiontoledgerrow" title="Permanent link">&para;</a></h4>
+<p>Transfers a submission from the attendance sheet to the Points Ledger.
+Packages all non-empty submission levels into a 2D array and sends it to the ledger.
+If the transfer fails, it retries using <code>openByUrl</code>. Also sets a trigger to search for
+the Strava activity.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (integer) - <em>Optional</em> The row in the attendance sheet to transfer. Defaults to last row.</li>
+</ul>
+<h4 id="packagesubmissionforledger_row">packageSubmissionForLedger_(row)<a class="headerlink" href="#packagesubmissionforledger_row" title="Permanent link">&para;</a></h4>
+<p>Packages a row from the attendance sheet for transfer to the Points Ledger.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (integer) - The row in the attendance sheet to package.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Array<Array\<string>>) - A 2D array of packaged event data.</li>
+</ul>
+<h4 id="sendnewsubmission_submissionarr">sendNewSubmission_(submissionArr)<a class="headerlink" href="#sendnewsubmission_submissionarr" title="Permanent link">&para;</a></h4>
+<p>Sends a new submission to the Points Ledger using the library function.</p>
+<p>Params:</p>
+<ul>
+<li><code>submissionArr</code> (Array<Array\<string>>) - The submission data to send.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(integer) - The row index in the Points Ledger where the submission was logged.</li>
+</ul>
+<h4 id="setnewstravatrigger_ledgerrow">setNewStravaTrigger_(ledgerRow)<a class="headerlink" href="#setnewstravatrigger_ledgerrow" title="Permanent link">&para;</a></h4>
+<p>Sets a new trigger to find and store Strava activity for a row in the Points Ledger.</p>
+<p>Params:</p>
+<ul>
+<li><code>ledgerRow</code> (integer) - The row index in the Points Ledger to set the trigger for.</li>
+</ul>
+<h4 id="executepointsledgerfunction_funcname-args">executePointsLedgerFunction_(funcName, args)<a class="headerlink" href="#executepointsledgerfunction_funcname-args" title="Permanent link">&para;</a></h4>
+<p>Executes a function from the Points Ledger library with the given arguments.</p>
+<p>Params:</p>
+<ul>
+<li><code>funcName</code> (string) - The name of the function to execute.</li>
+<li><code>args</code> (Array) - The arguments to pass to the function.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(*) - The return value of the executed function.</li>
+</ul>
+<h3 id="triggersgs">Triggers.gs<a class="headerlink" href="#triggersgs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>function</em> <a href="#updateweeklycalendartriggers"><code>updateWeeklyCalendarTriggers()</code></a></li>
+<li><em>function</em> <a href="#createcalendartriggersforweek_"><code>createCalendarTriggersForWeek_()</code></a></li>
+<li><em>function</em> <a href="#cleanupcalendartriggersfortoday"><code>cleanUpCalendarTriggersForToday()</code></a></li>
+<li><em>function</em> <a href="#createcalendartriggersfortoday"><code>createCalendarTriggersForToday()</code></a></li>
+<li><em>function</em> <a href="#createcalendartrigger_event"><code>createCalendarTrigger_(event)</code></a></li>
+<li><em>function</em> <a href="#runsubmissionchecker"><code>runSubmissionChecker()</code></a></li>
+<li><em>function</em> <a href="#deletetrigger_id-key"><code>deleteTrigger_(id, key)</code></a></li>
+<li><em>function</em> <a href="#deleteexpiredcalendartriggers_"><code>deleteExpiredCalendarTriggers_()</code></a></li>
+</ul>
+<h4 id="updateweeklycalendartriggers">updateWeeklyCalendarTriggers()<a class="headerlink" href="#updateweeklycalendartriggers" title="Permanent link">&para;</a></h4>
+<p>Adds new events as time-based triggers and removed expired ones</p>
+<h4 id="createcalendartriggersforweek_">createCalendarTriggersForWeek_()<a class="headerlink" href="#createcalendartriggersforweek_" title="Permanent link">&para;</a></h4>
+<p>Get events for current week from calendar and create time-based triggers.</p>
+<h4 id="cleanupcalendartriggersfortoday">cleanUpCalendarTriggersForToday()<a class="headerlink" href="#cleanupcalendartriggersfortoday" title="Permanent link">&para;</a></h4>
+<p>Get cancelled events for today from calendar and remove their triggers.</p>
+<h4 id="createcalendartriggersfortoday">createCalendarTriggersForToday()<a class="headerlink" href="#createcalendartriggersfortoday" title="Permanent link">&para;</a></h4>
+<p>Add new McRUN event(s) from calendar to Apps Script trigger for today.</p>
+<h4 id="createcalendartrigger_event">createCalendarTrigger_(event)<a class="headerlink" href="#createcalendartrigger_event" title="Permanent link">&para;</a></h4>
+<p>Add time-based trigger using event information from Calendar.</p>
+<p>Params:</p>
+<ul>
+<li><code>event</code> (CalendarEvent) - Scheduled event as trigger target</li>
+</ul>
+<h4 id="runsubmissionchecker">runSubmissionChecker()<a class="headerlink" href="#runsubmissionchecker" title="Permanent link">&para;</a></h4>
+<p>Check if attendance has been submitted and send reminder email if not.</p>
+<h4 id="deletetrigger_id-key">deleteTrigger_(id, key)<a class="headerlink" href="#deletetrigger_id-key" title="Permanent link">&para;</a></h4>
+<p>Deletes a trigger by its unique ID and removes its data from script properties if needed.
+This function iterates through all project triggers to find and delete the one
+with the specified unique ID. If the trigger is not found, it throws an error.</p>
+<p>Params:</p>
+<ul>
+<li><code>id</code> (string) - The unique ID of the trigger to delete.</li>
+<li><code>key</code> (string) - <em>Optional</em> The key of trigger's associated script property. Default to null.</li>
+</ul>
+<h4 id="deleteexpiredcalendartriggers_">deleteExpiredCalendarTriggers_()<a class="headerlink" href="#deleteexpiredcalendartriggers_" title="Permanent link">&para;</a></h4>
+<p>Removes expired calendar triggers and updates store in Properties.</p>
+<h3 id="unregisteredgs">Unregistered.gs<a class="headerlink" href="#unregisteredgs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>function</em> <a href="#getallunregisteredmembers_"><code>getAllUnregisteredMembers_()</code></a></li>
+<li><em>function</em> <a href="#getunregisteredmembersinrow_row"><code>getUnregisteredMembersInRow_(row)</code></a></li>
+<li><em>function</em> <a href="#getunregisteredfromlist_attendees-membermap"><code>getUnregisteredFromList_(attendees, memberMap)</code></a></li>
+<li><em>function</em> <a href="#formatname_name"><code>formatName_(name)</code></a></li>
+<li><em>function</em> <a href="#reversename_name"><code>reverseName_(name)</code></a></li>
+<li><em>function</em> <a href="#formatandsortmembermap_membermap-searchkeyindex-emailindex"><code>formatAndSortMemberMap_(memberMap, searchKeyIndex, emailIndex)</code></a></li>
+<li><em>function</em> <a href="#swapandformatnames_names"><code>swapAndFormatNames_(names)</code></a></li>
+<li><em>function</em> <a href="#getmembermap_"><code>getMemberMap_()</code></a></li>
+</ul>
+<h4 id="getallunregisteredmembers_">getAllUnregisteredMembers_()<a class="headerlink" href="#getallunregisteredmembers_" title="Permanent link">&para;</a></h4>
+<p>Finds attendees who are unregistered members for all rows in the attendance sheet.</p>
+<h4 id="getunregisteredmembersinrow_row">getUnregisteredMembersInRow_(row)<a class="headerlink" href="#getunregisteredmembersinrow_row" title="Permanent link">&para;</a></h4>
+<p>Find attendees in a specific row of the attendance sheet who are unregistered members.
+Sets unregistered members in the "Not Found" column. List of members found in <code>Members</code> sheet.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (number) - <em>Optional</em> The row number in the attendance sheet (1-indexed).
+                               Defaults to the last row in the sheet.</li>
+</ul>
+<h4 id="getunregisteredfromlist_attendees-membermap">getUnregisteredFromList_(attendees, memberMap)<a class="headerlink" href="#getunregisteredfromlist_attendees-membermap" title="Permanent link">&para;</a></h4>
+<p>Finds unregistered attendees in the given list by comparing against the member map.</p>
+<p>Params:</p>
+<ul>
+<li><code>attendees</code> (string[]) - All attendees of the head run (sorted).</li>
+<li><code>memberMap</code> (string[][]) - All search keys of registered members (sorted) and emails.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li registered:="registered:" string_="string[]" unregistered:="unregistered:">(Object) - An object containing registered and unregistered attendees.</li>
+</ul>
+<h4 id="formatname_name">formatName_(name)<a class="headerlink" href="#formatname_name" title="Permanent link">&para;</a></h4>
+<p>Formats a name by removing whitespace, stripping accents, and capitalizing names.</p>
+<p>Params:</p>
+<ul>
+<li><code>name</code> (string) - The name to format.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - The formatted name.</li>
+</ul>
+<h4 id="reversename_name">reverseName_(name)<a class="headerlink" href="#reversename_name" title="Permanent link">&para;</a></h4>
+<p>Reverses the order of a name to <code>LastName, FirstName</code> format.</p>
+<p>Params:</p>
+<ul>
+<li><code>name</code> (string) - The name to reverse.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - The reversed name.</li>
+</ul>
+<h4 id="formatandsortmembermap_membermap-searchkeyindex-emailindex">formatAndSortMemberMap_(memberMap, searchKeyIndex, emailIndex)<a class="headerlink" href="#formatandsortmembermap_membermap-searchkeyindex-emailindex" title="Permanent link">&para;</a></h4>
+<p>Formats and sorts all entries in the member map by search key.
+Removes whitespace, hyphens, and accents, and capitalizes names.</p>
+<p>Params:</p>
+<ul>
+<li><code>memberMap</code> (string[][]) - Array of search keys and their emails.</li>
+<li><code>searchKeyIndex</code> (number) - The index of the search key in the member map.</li>
+<li><code>emailIndex</code> (number) - The index of the email in the member map.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string[][]) - A sorted array of formatted names and emails.</li>
+</ul>
+<p>Example:</p>
+<div class="language-js highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">// Sample Script ➜ Format, then sort names.</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">rawData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[[</span><span class="s2">"Francine de-Blé"</span><span class="p">,</span><span class="w"> </span><span class="s2">"francine.de-ble@mail.com"</span><span class="p">],</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">                 </span><span class="p">[</span><span class="s2">"BOb-Burger belChEr "</span><span class="p">,</span><span class="w"> </span><span class="s2">"bob.belcher@mail.com"</span><span class="p">]];</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">formatAndSortMemberMap_</span><span class="p">(</span><span class="nx">rawData</span><span class="p">);</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span><span class="w">  </span><span class="c1">// [["Bob Burger Belcher", "bob.belcher@mail.com"],</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">                        </span><span class="p">[</span><span class="w"> </span><span class="s2">"Francine De ble"</span><span class="p">,</span><span class="w"> </span><span class="s2">"francine.de-ble@mail.com"</span><span class="p">]]</span>
+</span></code></pre></div>
+<h4 id="swapandformatnames_names">swapAndFormatNames_(names)<a class="headerlink" href="#swapandformatnames_names" title="Permanent link">&para;</a></h4>
+<p>Formats and sorts an array of names, swapping last and first names.
+Removes whitespace, apostrophes, and accents, and capitalizes names.</p>
+<p>Params:</p>
+<ul>
+<li><code>names</code> (string[]) - Array of names to format.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string[]) - A sorted array of formatted names.</li>
+</ul>
+<p>Example:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">// Sample Script ➜ Format, swap first and last name, then sort.</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">rawNames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">"BOb-Burger bulChEr "</span><span class="p">,</span><span class="w"> </span><span class="s2">"Francine de-Blé"</span><span class="p">];</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">swapAndFormatName_</span><span class="p">(</span><span class="nx">rawNames</span><span class="p">);</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span><span class="w">  </span><span class="c1">// ["Bulcher, Bob Burger", "De ble, Francine"]</span>
+</span></code></pre></div>
+<h4 id="getmembermap_">getMemberMap_()<a class="headerlink" href="#getmembermap_" title="Permanent link">&para;</a></h4>
+<p>Retrieves the member map from the <code>Members</code> sheet.
+Combines member search keys and emails, filtering out empty rows.</p>
+<p>Returns:</p>
+<ul>
+<li>(string[][]) - An array of member search keys and emails.</li>
+</ul>
+<h3 id="user-menugs">User-Menu.gs<a class="headerlink" href="#user-menugs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>function</em> <a href="#logmenuattempt_email"><code>logMenuAttempt_(email)</code></a></li>
+<li><em>function</em> <a href="#onopen"><code>onOpen()</code></a></li>
+<li><em>function</em> <a href="#helpui_"><code>helpUI_()</code></a></li>
+<li><em>function</em> <a href="#confirmandrunuserchoice_functionname-additionalmsg-funcarg"><code>confirmAndRunUserChoice_(functionName, additionalMsg, funcArg)</code></a></li>
+<li><em>function</em> <a href="#sortbytimestampui_"><code>sortByTimestampUI_()</code></a></li>
+<li><em>function</em> <a href="#cleansheetdataui_"><code>cleanSheetDataUI_()</code></a></li>
+<li><em>function</em> <a href="#prettifysheetui_"><code>prettifySheetUI_()</code></a></li>
+<li><em>function</em> <a href="#formatallnamesui_"><code>formatAllNamesUI_()</code></a></li>
+<li><em>function</em> <a href="#formatnamesinrowui_"><code>formatNamesInRowUI_()</code></a></li>
+<li><em>function</em> <a href="#removepresencecheckui_"><code>removePresenceCheckUI_()</code></a></li>
+<li><em>function</em> <a href="#checkmissingattendanceui_"><code>checkMissingAttendanceUI_()</code></a></li>
+<li><em>function</em> <a href="#toggleattendancecheckui_"><code>toggleAttendanceCheckUI_()</code></a></li>
+<li><em>function</em> <a href="#findunregisteredattendeesui_"><code>findUnregisteredAttendeesUI_()</code></a></li>
+<li><em>function</em> <a href="#onformsubmitui_"><code>onFormSubmitUI_()</code></a></li>
+<li><em>function</em> <a href="#onappsubmitui_"><code>onAppSubmitUI_()</code></a></li>
+<li><em>function</em> <a href="#exporttopointsledgerui_"><code>exportToPointsLedgerUI_()</code></a></li>
+<li><em>function</em> <a href="#importapprecordui_"><code>importAppRecordUI_()</code></a></li>
+<li><em>function</em> <a href="#requestrowinput_"><code>requestRowInput_()</code></a></li>
+<li><em>function</em> <a href="#processrowinput_userresponse-ui"><code>processRowInput_(userResponse, ui)</code></a></li>
+</ul>
+<h4 id="logmenuattempt_email">logMenuAttempt_(email)<a class="headerlink" href="#logmenuattempt_email" title="Permanent link">&para;</a></h4>
+<p>Logs the user attempting to use the custom McRUN menu.
+If the input is empty, the email is extracted using <code>getCurrentUserEmail_()</code>.</p>
+<p>Params:</p>
+<ul>
+<li><code>email</code> (string) - <em>Optional</em> Email of the active user. Defaults to an empty string.</li>
+</ul>
+<h4 id="onopen">onOpen()<a class="headerlink" href="#onopen" title="Permanent link">&para;</a></h4>
+<p>Creates a custom menu to run frequently used scripts in Google App Script.
+Extracts function names using the <code>name</code> property to allow for refactoring.
+Note: Authorization checks cannot be performed here, as unauthorized users
+would not see the menu due to Google Apps Script limitations.</p>
+<h4 id="helpui_">helpUI_()<a class="headerlink" href="#helpui_" title="Permanent link">&para;</a></h4>
+<p>Displays a help message for the custom McRUN menu.
+Accessible to all users.</p>
+<h4 id="confirmandrunuserchoice_functionname-additionalmsg-funcarg">confirmAndRunUserChoice_(functionName, additionalMsg, funcArg)<a class="headerlink" href="#confirmandrunuserchoice_functionname-additionalmsg-funcarg" title="Permanent link">&para;</a></h4>
+<p>Displays a confirmation dialog and executes a function if the user is authorized.</p>
+<p>Params:</p>
+<ul>
+<li><code>functionName</code> (string) - Name of the function to execute.</li>
+<li><code>additionalMsg</code> (string) - <em>Optional</em> Custom message to display during execution. Defaults to an empty string.</li>
+<li><code>funcArg</code> (string) - <em>Optional</em> Argument to pass to the function. Defaults to an empty string.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - Return value of the executed function.</li>
+</ul>
+<h4 id="sortbytimestampui_">sortByTimestampUI_()<a class="headerlink" href="#sortbytimestampui_" title="Permanent link">&para;</a></h4>
+<p>Scripts for formatting: Sort semester attendance sheet by timestamp</p>
+<h4 id="cleansheetdataui_">cleanSheetDataUI_()<a class="headerlink" href="#cleansheetdataui_" title="Permanent link">&para;</a></h4>
+<p>Scripts for formatting: Clean data in semester attendance sheet</p>
+<h4 id="prettifysheetui_">prettifySheetUI_()<a class="headerlink" href="#prettifysheetui_" title="Permanent link">&para;</a></h4>
+<p>Scripts for formatting: Format semester attendance sheet</p>
+<h4 id="formatallnamesui_">formatAllNamesUI_()<a class="headerlink" href="#formatallnamesui_" title="Permanent link">&para;</a></h4>
+<p>Scripts for formatting: Format names for all rows in semester attendance sheet</p>
+<h4 id="formatnamesinrowui_">formatNamesInRowUI_()<a class="headerlink" href="#formatnamesinrowui_" title="Permanent link">&para;</a></h4>
+<p>Scripts for formatting: Format names for a given row in semester attendance sheet.
+This UI function can target a specific row, or the last row if input is omitted.</p>
+<h4 id="removepresencecheckui_">removePresenceCheckUI_()<a class="headerlink" href="#removepresencecheckui_" title="Permanent link">&para;</a></h4>
+<p>Scripts for attendance: Remove prescence checkmarks</p>
+<h4 id="checkmissingattendanceui_">checkMissingAttendanceUI_()<a class="headerlink" href="#checkmissingattendanceui_" title="Permanent link">&para;</a></h4>
+<p>Scripts for attendance: Check for missing attendance</p>
+<h4 id="toggleattendancecheckui_">toggleAttendanceCheckUI_()<a class="headerlink" href="#toggleattendancecheckui_" title="Permanent link">&para;</a></h4>
+<p>Scripts for attendance: Allow/Disallow automatic check for missing attendance</p>
+<h4 id="findunregisteredattendeesui_">findUnregisteredAttendeesUI_()<a class="headerlink" href="#findunregisteredattendeesui_" title="Permanent link">&para;</a></h4>
+<p>Scripts for attendance: Find unregistered attendees.
+This UI function can target a specific row, or the last row if input is omitted.</p>
+<h4 id="onformsubmitui_">onFormSubmitUI_()<a class="headerlink" href="#onformsubmitui_" title="Permanent link">&para;</a></h4>
+<p>Scripts for triggers: Process new attendance submission (for google form).</p>
+<h4 id="onappsubmitui_">onAppSubmitUI_()<a class="headerlink" href="#onappsubmitui_" title="Permanent link">&para;</a></h4>
+<p>Scripts for triggers: Process new attendance submission (for app).</p>
+<h4 id="exporttopointsledgerui_">exportToPointsLedgerUI_()<a class="headerlink" href="#exporttopointsledgerui_" title="Permanent link">&para;</a></h4>
+<p>Scripts for transferring: Export attendance to points ledger.</p>
+<h4 id="importapprecordui_">importAppRecordUI_()<a class="headerlink" href="#importapprecordui_" title="Permanent link">&para;</a></h4>
+<p>Scripts for transferring: Import attendance recorded from app.</p>
+<h4 id="requestrowinput_">requestRowInput_()<a class="headerlink" href="#requestrowinput_" title="Permanent link">&para;</a></h4>
+<p>Creates popup that asks user to input a row number.</p>
+<h4 id="processrowinput_userresponse-ui">processRowInput_(userResponse, ui)<a class="headerlink" href="#processrowinput_userresponse-ui" title="Permanent link">&para;</a></h4>
+<p>Returns result of reponse processing for row input.
+Helper function for UI functions for McRUN menu.</p>
+<p>Params:</p>
+<ul>
+<li><code>userResponse</code> (string) - User response text from <code>SpreadsheetApp.getUi().prompt</code></li>
+<li><code>ui</code> (GoogleAppsScript.Base.Ui) - User interface in Google Sheets
+                   parsed integer value of <code>userResponse</code> and msg is the custom 
+                   message to display to the user.</li>
+</ul>
+<h3 id="utilsgs">Utils.gs<a class="headerlink" href="#utilsgs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>function</em> <a href="#getusertimezone_"><code>getUserTimeZone_()</code></a></li>
+<li><em>function</em> <a href="#getstartofday_date"><code>getStartOfDay_(date)</code></a></li>
+<li><em>function</em> <a href="#getendofday_date"><code>getEndOfDay_(date)</code></a></li>
+<li><em>function</em> <a href="#getcurrentuseremail_"><code>getCurrentUserEmail_()</code></a></li>
+<li><em>function</em> <a href="#logasac_msg-funcname-uselogger"><code>logAsAC_(msg, funcName, useLogger)</code></a></li>
+<li><em>function</em> <a href="#totitlecase_inputstring"><code>toTitleCase_(inputString)</code></a></li>
+<li><em>function</em> <a href="#getlastrow_sheet"><code>getLastRow_(sheet)</code></a></li>
+<li><em>function</em> <a href="#runonsheet_functionname-functionname2"><code>runOnSheet_(functionName, functionName2)</code></a></li>
+<li><em>function</em> <a href="#formattimestamp_raw"><code>formatTimestamp_(raw)</code></a></li>
+<li><em>function</em> <a href="#issametimestamp_timestamp1-timestamp2"><code>isSameTimestamp_(timestamp1, timestamp2)</code></a></li>
+<li><em>function</em> <a href="#isvalidrow_row"><code>isValidRow_(row)</code></a></li>
+<li><em>function</em> <a href="#checkvalidscriptproperties"><code>checkValidScriptProperties()</code></a></li>
+</ul>
+<h4 id="getusertimezone_">getUserTimeZone_()<a class="headerlink" href="#getusertimezone_" title="Permanent link">&para;</a></h4>
+<p>Returns timezone for currently running script.
+Prevents incorrect time formatting during time changes like Daylight Savings Time.</p>
+<p>Returns:</p>
+<ul>
+<li>(string) - Timezone as a geographical location (e.g., <code>'America/Montreal'</code>).</li>
+</ul>
+<h4 id="getstartofday_date">getStartOfDay_(date)<a class="headerlink" href="#getstartofday_date" title="Permanent link">&para;</a></h4>
+<p>Gets the start of the day for a given date.</p>
+<p>Params:</p>
+<ul>
+<li><code>date</code> (Date) - The date for which to get the start of the day.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Date) - A new Date object set to the start of the given day.</li>
+</ul>
+<h4 id="getendofday_date">getEndOfDay_(date)<a class="headerlink" href="#getendofday_date" title="Permanent link">&para;</a></h4>
+<p>Gets the end of the day for a given date.</p>
+<p>Params:</p>
+<ul>
+<li><code>date</code> (Date) - The date for which to get the end of the day.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Date) - A new Date object set to the end of the given day.</li>
+</ul>
+<h4 id="getcurrentuseremail_">getCurrentUserEmail_()<a class="headerlink" href="#getcurrentuseremail_" title="Permanent link">&para;</a></h4>
+<p>Returns the email of the current user executing Google Apps Script functions.
+Useful for ensuring the correct account is executing Google automations.</p>
+<p>Returns:</p>
+<ul>
+<li>(string) - Email of the current user.</li>
+</ul>
+<h4 id="logasac_msg-funcname-uselogger">logAsAC_(msg, funcName, useLogger)<a class="headerlink" href="#logasac_msg-funcname-uselogger" title="Permanent link">&para;</a></h4>
+<p>Logs message in a standard and comprehensible format.</p>
+<p>Params:</p>
+<ul>
+<li><code>msg</code> (string) - Message to log</li>
+<li><code>funcName</code> (string) - <em>Optional</em> Name of the function to log if applicable. Defaults to "".</li>
+<li><code>useLogger</code> (boolean) - <em>Optional</em> If true, use the Logger class, otherwise use console. Defaults to true.</li>
+</ul>
+<h4 id="totitlecase_inputstring">toTitleCase_(inputString)<a class="headerlink" href="#totitlecase_inputstring" title="Permanent link">&para;</a></h4>
+<p>Converts a string to title case.</p>
+<p>Params:</p>
+<ul>
+<li><code>inputString</code> (string) - The string to be converted to title case.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(string) - The title-cased string.</li>
+</ul>
+<h4 id="getlastrow_sheet">getLastRow_(sheet)<a class="headerlink" href="#getlastrow_sheet" title="Permanent link">&para;</a></h4>
+<p>Find row index of last submission in reverse using while-loop.</p>
+<p>Used to prevent native <code>sheet.getLastRow()</code> from returning empty row.</p>
+<p>Params:</p>
+<ul>
+<li><code>sheet</code> (Spreadsheet.sheet) - <em>Optional</em>  Target sheet. Defaults to attendance sheet.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(integer) - Returns 1-index of last row in GSheet.</li>
+</ul>
+<h4 id="runonsheet_functionname-functionname2">runOnSheet_(functionName, functionName2)<a class="headerlink" href="#runonsheet_functionname-functionname2" title="Permanent link">&para;</a></h4>
+<p>Boiler plate function <code>functionName</code> to execute on complete sheet.
+Also executes <code>functionName2</code> if non-empty.</p>
+<p>Params:</p>
+<ul>
+<li><code>functionName</code> (string) - Name of function to execute.</li>
+<li><code>functionName2</code> (string) - <em>Optional</em> Name of function to execute.
+                                     Defaults to empty string.</li>
+</ul>
+<h4 id="formattimestamp_raw">formatTimestamp_(raw)<a class="headerlink" href="#formattimestamp_raw" title="Permanent link">&para;</a></h4>
+<p>Format timestamp to format as <code>yyyy-MM-dd hh:mm:ss</code>.</p>
+<p>Raw format cannot be understood by GSheet.</p>
+<p>Params:</p>
+<ul>
+<li><code>raw</code> (string) - Datetime value to be formatted.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Date) - A Date object with correct format.</li>
+</ul>
+<h4 id="issametimestamp_timestamp1-timestamp2">isSameTimestamp_(timestamp1, timestamp2)<a class="headerlink" href="#issametimestamp_timestamp1-timestamp2" title="Permanent link">&para;</a></h4>
+<p>Compare the input timestamps.</p>
+<p>Params:</p>
+<ul>
+<li><code>timestamp1</code> (string) - Timestamp 1</li>
+<li><code>timestamp2</code> (string) - Timestamp 2</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(Boolean) - Returns result of comparaison.</li>
+</ul>
+<h4 id="isvalidrow_row">isValidRow_(row)<a class="headerlink" href="#isvalidrow_row" title="Permanent link">&para;</a></h4>
+<p>Returns true if row is int and found in <code>ATTENDANCE_SHEET</code>.
+Helper function for UI functions for McRUN menu.</p>
+<p>Params:</p>
+<ul>
+<li><code>row</code> (number) - The row number in <code>ATTENDANCE_SHEET</code> 1-indexed.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>(boolean) - Returns true if valid row in sheet.</li>
+</ul>
+<h4 id="checkvalidscriptproperties">checkValidScriptProperties()<a class="headerlink" href="#checkvalidscriptproperties" title="Permanent link">&para;</a></h4>
+<p>Verifies that <code>SCRIPT_PROPERTY</code> bank matches script properties in 'Project Settings'.</p>
+<h2 id="triggers">Triggers<a class="headerlink" href="#triggers" title="Permanent link">&para;</a></h2>
+<h3 id="time-based">Time-based<a class="headerlink" href="#time-based" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>updateWeeklyCalendarTriggers</strong> runs every day(?) to update the triggers, and creates various time-based triggers which are later disabled </li>
+</ul>
+<h3 id="from-spreadsheet">From spreadsheet<a class="headerlink" href="#from-spreadsheet" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>onOpen</strong> runs when the spreadsheet is opened to create the usermenu</li>
+</ul>
+<h3 id="from-calendar">From Calendar<a class="headerlink" href="#from-calendar" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>updateCalendarTriggers</strong> (now called cleanUpCalendarTriggersForToday) is supposed to run whenever the calendar is changed</li>
+</ul>
+<h2 id="example-usage">Example Usage<a class="headerlink" href="#example-usage" title="Permanent link">&para;</a></h2>
+<h3 id="automating-attendance-processing">Automating Attendance Processing<a class="headerlink" href="#automating-attendance-processing" title="Permanent link">&para;</a></h3>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nx">onFormSubmission</span><span class="p">();</span><span class="w"> </span><span class="c1">// Automatically processes a new Google Form submission.</span>
+</span></code></pre></div>
+<h3 id="formatting-data">Formatting Data<a class="headerlink" href="#formatting-data" title="Permanent link">&para;</a></h3>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nx">cleanSheetData</span><span class="p">();</span><span class="w"> </span><span class="c1">// Formats all rows in the attendance sheet.</span>
+</span></code></pre></div>
+<h3 id="sending-notifications">Sending Notifications<a class="headerlink" href="#sending-notifications" title="Permanent link">&para;</a></h3>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nx">sendEmailReminder_</span><span class="p">({</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nx">emailsByLevel</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">beginner</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"headrunner@mail.com"</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nx">headrunTitle</span><span class="o">:</span><span class="w"> </span><span class="s2">"Monday 6pm"</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">});</span>
+</span></code></pre></div>
+<h3 id="managing-triggers">Managing Triggers<a class="headerlink" href="#managing-triggers" title="Permanent link">&para;</a></h3>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nx">updateWeeklyCalendarTriggers</span><span class="p">();</span><span class="w"> </span><span class="c1">// Updates triggers for the upcoming week.</span>
+</span></code></pre></div>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Issue/Error</th>
+<th>Cause</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Exception: No permission"</td>
+<td>Not authorized</td>
+<td>Ensure proper account and OAuth scopes</td>
+</tr>
+<tr>
+<td>"Cannot read property 'getRange' of null"</td>
+<td>Sheet name or ID is wrong</td>
+<td>Double-check constants in Attendance-Variables.gs</td>
+</tr>
+<tr>
+<td>"Trigger not firing"</td>
+<td>Trigger not set up</td>
+<td>Manually add the trigger in Apps Script UI</td>
+</tr>
+<tr>
+<td>"Malformed JSON"</td>
+<td>Import data is not valid JSON</td>
+<td>Validate data before import</td>
+</tr>
+</tbody>
+</table>
+<h3 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h3>
+<p><strong>Q:</strong> How do I add a new admin?<br />
+<strong>A:</strong> Add their email to <code>PERM_USER_</code> in <code>User-Menu.gs</code>.</p>
+<p><strong>Q:</strong> How do I change the active semester?<br />
+<strong>A:</strong> Update <code>ATTENDANCE_SHEET_NAME</code> and related constants in <code>Attendance-Variables.gs</code>.</p>
+<p><strong>Q:</strong> Where are attendance logs stored?<br />
+<strong>A:</strong> In the Points Ledger Google Sheet (see constants).</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 McGill Student Running Club
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:<mcrunningclub@ssmu.ca>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9l-112.4 94.3c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/mcrunningclub" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/mcrun.mcgill" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M224.3 141a115 115 0 1 0-.6 230 115 115 0 1 0 .6-230m-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1-.6-149.2m93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1-53.6 0m129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8M399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "content.code.select", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.expand", "navigation.sections", "navigation.path", "navigation.prune", "navigation.top", "toc.follow", "header.autohide"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
