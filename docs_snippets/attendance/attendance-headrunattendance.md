@@ -9,8 +9,8 @@
 - *function* [`checkMissingAttendance(today, headrunTitle, level)`](#checkmissingattendancetoday-headruntitle-level)
 - *function* [`sendBotEmail_(subject, recipient, htmlBody)`](#sendbotemail_subject-recipient-htmlbody)
 - *function* [`createAttendanceEmail_(emailDetails)`](#createattendanceemail_emaildetails)
-- *function* [`sendAttendanceCopy_({ headrunTitle, headrunnerEmails }, submission)`](#sendattendancecopy_-headruntitle-headrunneremails--submission)
-- *function* [`sendAttendanceReminder_({ emailsByLevel, headrunTitle })`](#sendattendancereminder_-emailsbylevel-headruntitle-)
+- *function* [`sendAttendanceCopy_({ headrunTitle, headrunnerEmails }, submission)`](#sendattendancecopy_)
+- *function* [`sendAttendanceReminder_({ emailsByLevel, headrunTitle })`](#sendattendancereminder_)
 
 #### onFormSubmission()
 
@@ -126,7 +126,7 @@ const emailDetails = {
 const emailHTML = createEmailCopy(emailDetails);
 ```
 
-#### sendAttendanceCopy_({ headrunTitle, headrunnerEmails }, submission)
+#### sendAttendanceCopy_(\{ headrunTitle, headrunnerEmails \}, submission) {#sendattendancecopy_}
 
 Send a copy of attendance submission to headrunners, President & VP Internal.
 Attendees are separated by level.
@@ -134,17 +134,17 @@ Attendees are separated by level.
 Params:
 
 - `emailObj` (Object) - Contains email details.
-- `emailObj.headrunTitle` (string) - The title of the headrun.
-- `emailObj.headrunnerEmails` (Object) - Emails of headrunners grouped by levels.
+   - `emailObj.headrunTitle` (string) - The title of the headrun.
+   - `emailObj.headrunnerEmails` (Object) - Emails of headrunners grouped by levels.
 - `submission` (Array) - The attendance submission data.
 
-#### sendAttendanceReminder_({ emailsByLevel, headrunTitle })
+#### sendAttendanceReminder_(\{ emailsByLevel, headrunTitle \}) {#sendattendancereminder_}
 
 Send a reminder email to headrunners when attendance for a respective headrun not found.
 
 Params:
 
 - `emailObj` (Object) - Contains email details.
-- `emailObj.emailsByLevel` (Object) - Emails of headrunners grouped by levels.
-- `emailObj.headrunTitle` (string) - The title of the headrun.
+   - `emailObj.emailsByLevel` (Object) - Emails of headrunners grouped by levels.
+   - `emailObj.headrunTitle` (string) - The title of the headrun.
 

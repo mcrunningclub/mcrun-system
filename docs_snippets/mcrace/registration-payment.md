@@ -6,7 +6,7 @@
 - *constant* [`INTERAC_EMAIL`](#interac_email)
 - *constant* [`STRIPE_EMAIL`](#stripe_email)
 - *function* [`checkAndSetPayment(row, feeDetails)`](#checkandsetpaymentrow-feedetails)
-- *function* [`checkPayment_({ fName, lName, email, paymentMethod })`](#checkpayment_-fname-lname-email-paymentmethod-)
+- *function* [`checkPayment_({ fName, lName, email, paymentMethod })`](#checkpayment_)
 - *function* [`checkOnlinePayment_(member)`](#checkonlinepayment_member)
 - *function* [`checkInteracPayment_(member)`](#checkinteracpayment_member)
 - *function* [`setFeePaid_(row)`](#setfeepaid_row)
@@ -49,7 +49,7 @@ Returns:
 - (boolean) - True if the payment is found, otherwise false.
 
 
-#### checkPayment_({ fName, lName, email, paymentMethod })
+#### checkPayment_(\{ fName, lName, email, paymentMethod \}) {#checkpayment_}
 
 Checks the payment status for a member based on their payment method.
 

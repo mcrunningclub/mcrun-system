@@ -1,7 +1,7 @@
 ### Registration.gs
 
 - *function* [`getLastRowInReg_()`](#getlastrowinreg_)
-- *function* [`onNewRegistration_({ newRow: row, member: memberArr })`](#onnewregistration_-newrow-row-member-memberarr-)
+- *function* [`onNewRegistration_({ newRow: row, member: memberArr })`](#onnewregistration_)
 - *function* [`addNewRegistration_(registrationObj)`](#addnewregistration_registrationobj)
 - *function* [`extractPaymentInfo_(memberArr)`](#extractpaymentinfo_memberarr)
 - *function* [`extractFromSheet_(row)`](#extractfromsheet_row)
@@ -15,7 +15,7 @@ Returns:
 - (integer) - The last non-empty row in the `Registration` sheet.
 
 
-#### onNewRegistration_({ newRow: row, member: memberArr })
+#### onNewRegistration_({ newRow: row, member: memberArr }) {#onnewregistration_}
 
 Processes a new registration by extracting payment information, verifying payment, 
 and formatting the registration sheet.
