@@ -15,11 +15,14 @@ nav:
       - FAQ: start/faq.md
   - User Guide:
       - Overview: users/index.md
+      - McRace:
+        - Cross Referencing: users/crossref-users.md
   - Developer Guide:
       - Overview: developers/index.md
-      - Contributing: developers/contributing-code.md
-      - Contributing to the documentation: developers/contributing-docs.md
-      - Formatting the documentation: developers/formatting.md
+      - Documentation:
+        - Contributing: developers/contributing-code.md
+        - Contributing to the documentation: developers/contributing-docs.md
+        - Formatting the documentation: developers/formatting.md
   - Projects:
       - Overview: projects/index.md
       - Membership Code:
